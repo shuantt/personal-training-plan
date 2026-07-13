@@ -41,7 +41,7 @@ body{
   color:var(--ink);
   line-height:1.6;
   -webkit-font-smoothing:antialiased;
-  padding-bottom:calc(78px + env(safe-area-inset-bottom));
+  padding-bottom:100px; /* 固定值，避免 env() 在某些環境算出 0 */
 }
 .wrap{max-width:600px;margin:0 auto;padding:0 18px}
 
@@ -100,13 +100,17 @@ header{
 .row-i .k{font-family:"Oswald";font-weight:600;color:var(--amber);letter-spacing:.05em;flex:0 0 auto;font-size:12px;padding-top:1px}
 .row-i .v b{color:#fff;font-weight:700}
 
-/* tabs (bottom, iOS) */
+/* ===== tabs (bottom, iOS) ===== */
 .tabbar{
-  position:fixed;left:0;right:0;bottom:0;z-index:50;
-  background:rgba(243,244,241,.86);backdrop-filter:saturate(180%) blur(18px);
+  position:fixed;left:0;right:0;bottom:0;
+  z-index:9999;
+  -webkit-transform:translate3d(0,0,0); /* iOS GPU layer fix */
+  transform:translate3d(0,0,0);
+  background:rgba(243,244,241,.97);
+  backdrop-filter:saturate(180%) blur(18px);
   -webkit-backdrop-filter:saturate(180%) blur(18px);
   border-top:1px solid var(--line);
-  padding-bottom:env(safe-area-inset-bottom);
+  padding-bottom:env(safe-area-inset-bottom,0px);
 }
 .tabbar .inner{max-width:600px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr)}
 .tab span{font-size:10.5px}
@@ -227,7 +231,6 @@ main{padding-top:6px}
   <section class="hero">
     <div class="gauge" id="gauge">
       <div class="track"><div class="fill" id="fill"></div></div>
-      <!-- zones & ticks positioned by % of 230px track (0 = ground bottom) -->
       <div class="zone" style="bottom:82.6%;height:15.2%"></div>
       <div class="tick" style="bottom:0"><i></i><b>地面</b></div>
       <div class="tick" style="bottom:82.6%"><i></i><b>摸高 ≈190</b></div>
@@ -415,19 +418,14 @@ main{padding-top:6px}
 
     <div class="day">
       <div class="day-h"><span class="code">居家</span><span class="focus">全身 · <b>阻力帶＋單槓＋徒手</b></span></div>
-
       <div class="ex tag-jump"><div class="lead"><div class="name">腳踝小彈跳 pogo</div><div class="note">最前面做，身體新鮮時品質最好</div></div><div class="dose">3×20</div></div>
-
       <div class="ex"><div class="lead"><div class="name">徒手深蹲 或 分腿蹲</div><div class="note">要更難：抱一壺水／背包負重</div></div><div class="dose">3×12</div></div>
       <div class="ex"><div class="lead"><div class="name">阻力帶臀橋</div><div class="note">帶子套膝上方，替代髖鉸鏈</div></div><div class="dose">3×15</div></div>
       <div class="ex"><div class="lead"><div class="name">登階（樓梯／穩固箱子）</div><div class="note">爆發快登，練起跳</div></div><div class="dose">3×10<small>/邊</small></div></div>
-
       <div class="ex"><div class="lead"><div class="name">單槓引體</div><div class="note">做不動：彈力繩輔助，或改斜身划船</div></div><div class="dose">3 組</div></div>
       <div class="ex"><div class="lead"><div class="name">阻力帶面拉</div><div class="note">顧肩膀，扣球肩很需要，別漏</div></div><div class="dose">3×15</div></div>
-
       <div class="ex"><div class="lead"><div class="name">阻力帶肩推</div></div><div class="dose">3×12</div></div>
       <div class="ex"><div class="lead"><div class="name">伏地挺身（可跪姿）</div></div><div class="dose">3 組</div></div>
-
       <div class="ex"><div class="lead"><div class="name">棒式＋死蟲式</div></div><div class="dose">各 3 組</div></div>
     </div>
 
@@ -467,7 +465,6 @@ main{padding-top:6px}
 </nav>
 
 <script>
-// tab switching
 var tabs=document.querySelectorAll('.tab'),panels=document.querySelectorAll('.panel');
 tabs.forEach(function(t){
   t.addEventListener('click',function(){
@@ -478,7 +475,6 @@ tabs.forEach(function(t){
     window.scrollTo({top:0,behavior:'auto'});
   });
 });
-// gauge fill animation on load (fills to standing reach 190/230)
 window.addEventListener('load',function(){
   requestAnimationFrame(function(){
     document.getElementById('fill').style.height='82.6%';
