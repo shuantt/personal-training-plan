@@ -302,9 +302,10 @@ function renderTraining(training) {
   }).join('');
   var groups = training.exerciseGroups.map(function(group) {
     var exercises = group.exercises.map(function(exercise) {
+      var details = [exercise.dose, exercise.note].filter(Boolean).join('・');
       return '<button class="exo' + (group.cardio ? ' cardio' : '') + '" data-kcal="' + Number(exercise.calories) +
         '" data-tags="' + escapeHtml(exercise.muscleGroups.join(',')) + '"><span class="exo-l"><span class="exo-name">' +
-        escapeHtml(exercise.name) + '</span><span class="exo-tags">' + escapeHtml(exercise.note) +
+        escapeHtml(exercise.name) + '</span><span class="exo-tags">' + escapeHtml(details) +
         '</span></span><span class="exo-r">' + Number(exercise.calories) + ' kcal</span></button>';
     }).join('');
     return '<div class="eyebrow">' + escapeHtml(group.name) + '</div>' + exercises;

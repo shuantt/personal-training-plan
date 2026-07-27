@@ -15,11 +15,26 @@
       "detail": "半年"
     },
     "months": [
-      { "month": "8月", "weight": "53" },
-      { "month": "9月", "weight": "50.5" },
-      { "month": "10月", "weight": "49" },
-      { "month": "11月", "weight": "維持" },
-      { "month": "12月", "weight": "維持" }
+      {
+        "month": "8月",
+        "weight": "53"
+      },
+      {
+        "month": "9月",
+        "weight": "50.5"
+      },
+      {
+        "month": "10月",
+        "weight": "49"
+      },
+      {
+        "month": "11月",
+        "weight": "維持"
+      },
+      {
+        "month": "12月",
+        "weight": "維持"
+      }
     ],
     "milestones": [
       {
@@ -69,92 +84,352 @@
       }
     ],
     "tracking": [
-      { "label": "力量", "text": "主要動作工作重量，穩定漸進即可。" },
-      { "label": "爆發力", "text": "跳箱高度、垂直跳測試、跳繩連續次數。" },
-      { "label": "運動表現", "text": "打球續航力主觀評分（1-10）。" },
-      { "label": "飲食", "text": "平日 vs 假日熱量落差是否隨時間縮小。" },
-      { "label": "睡眠", "text": "23:00鎖機達成率、實際入睡時間、週末補眠時數。" }
+      {
+        "label": "力量",
+        "text": "主要動作工作重量，穩定漸進即可。"
+      },
+      {
+        "label": "爆發力",
+        "text": "跳箱高度、垂直跳測試、跳繩連續次數。"
+      },
+      {
+        "label": "運動表現",
+        "text": "打球續航力主觀評分（1-10）。"
+      },
+      {
+        "label": "飲食",
+        "text": "平日 vs 假日熱量落差是否隨時間縮小。"
+      },
+      {
+        "label": "睡眠",
+        "text": "23:00鎖機達成率、實際入睡時間、週末補眠時數。"
+      }
     ]
   },
   "training": {
     "weeklySchedule": [
-      { "label": "有約球", "description": "重訓 3練　＋　坡度走／跳繩 2-3次　＋　週末球類本身即訓練" },
-      { "label": "沒約球", "description": "重訓 4練　＋　坡度走／跳繩 3-4次" },
-      { "label": "抱石", "description": "暫停，先把恢復資源讓給重訓與有氧" }
+      {
+        "label": "有約球",
+        "description": "重訓 3練　＋　坡度走／跳繩 2-3次　＋　週末球類本身即訓練"
+      },
+      {
+        "label": "沒約球",
+        "description": "重訓 4練　＋　坡度走／跳繩 3-4次"
+      },
+      {
+        "label": "抱石",
+        "description": "暫停，先把恢復資源讓給重訓與有氧"
+      }
     ],
-    "builderHint": "點一下動作＝加入今天，再點一次＝取消。熱量抓妳習慣的 10下×4組，單側動作左右各一輪算一組。這只是當天的粗略參考，重新整理會歸零，不會記到明天。",
+    "builderHint": "點一下動作＝加入今天，再點一次＝取消。每個動作依照標示的組次估算，熱量只作為當天的粗略參考；重新整理會歸零，不會記到明天。",
     "exerciseGroups": [
       {
         "name": "下肢・蹲系",
         "exercises": [
-          { "name": "槓鈴深蹲", "calories": 40, "muscleGroups": ["大腿", "臀"], "note": "大腿・臀" },
-          { "name": "分腿蹲", "calories": 30, "muscleGroups": ["大腿", "臀"], "note": "大腿・臀・左右一輪算一組" }
+          {
+            "name": "槓鈴深蹲",
+            "calories": 30,
+            "dose": "4×10",
+            "muscleGroups": [
+              "大腿",
+              "臀"
+            ],
+            "note": "大腿・臀"
+          },
+          {
+            "name": "分腿蹲",
+            "calories": 32,
+            "dose": "4×10/邊",
+            "muscleGroups": [
+              "大腿",
+              "臀"
+            ],
+            "note": "大腿・臀"
+          }
         ]
       },
       {
         "name": "下肢・髖鉸鏈",
         "exercises": [
-          { "name": "羅馬尼亞硬舉", "calories": 38, "muscleGroups": ["臀", "大腿後側"], "note": "臀・大腿後側" }
+          {
+            "name": "羅馬尼亞硬舉",
+            "calories": 30,
+            "dose": "4×10",
+            "muscleGroups": [
+              "臀",
+              "大腿後側"
+            ],
+            "note": "臀・大腿後側"
+          }
         ]
       },
       {
         "name": "下肢・爆發",
         "exercises": [
-          { "name": "Pogo 小彈跳", "calories": 20, "muscleGroups": ["小腿", "腳踝", "爆發"], "note": "小腿・腳踝・爆發" },
-          { "name": "箱上跳箱", "calories": 24, "muscleGroups": ["大腿", "臀", "爆發"], "note": "大腿・臀・爆發" },
-          { "name": "登階爆發快登", "calories": 28, "muscleGroups": ["大腿", "臀", "爆發"], "note": "大腿・臀・爆發・左右一輪算一組" },
-          { "name": "盪壺 Kettlebell Swing", "calories": 32, "muscleGroups": ["臀", "核心", "爆發"], "note": "臀・核心・爆發" }
+          {
+            "name": "Pogo 小彈跳",
+            "calories": 15,
+            "dose": "3×20",
+            "muscleGroups": [
+              "小腿",
+              "腳踝",
+              "爆發"
+            ],
+            "note": "小腿・腳踝・爆發"
+          },
+          {
+            "name": "箱上跳箱",
+            "calories": 15,
+            "dose": "4×3–5",
+            "muscleGroups": [
+              "大腿",
+              "臀",
+              "爆發"
+            ],
+            "note": "約50公分・每下重置・組間休息90–120秒"
+          },
+          {
+            "name": "登階爆發快登",
+            "calories": 30,
+            "dose": "4×8/邊",
+            "muscleGroups": [
+              "大腿",
+              "臀",
+              "爆發"
+            ],
+            "note": "大腿・臀・爆發"
+          },
+          {
+            "name": "盪壺 Kettlebell Swing",
+            "calories": 24,
+            "dose": "4×10",
+            "muscleGroups": [
+              "臀",
+              "核心",
+              "爆發"
+            ],
+            "note": "臀・核心・爆發"
+          }
         ]
       },
       {
         "name": "上肢・推",
         "exercises": [
-          { "name": "平板臥推", "calories": 30, "muscleGroups": ["胸", "三頭"], "note": "胸・三頭" },
-          { "name": "上斜臥推", "calories": 30, "muscleGroups": ["胸","肩前束","三頭"], "note": "胸・肩前束・三頭" },
-          { "name": "肩推", "calories": 28, "muscleGroups": ["肩", "三頭"], "note": "肩・三頭" }
+          {
+            "name": "平板臥推",
+            "calories": 20,
+            "dose": "4×10",
+            "muscleGroups": [
+              "胸",
+              "三頭"
+            ],
+            "note": "胸・三頭"
+          },
+          {
+            "name": "上斜臥推",
+            "calories": 20,
+            "dose": "4×10",
+            "muscleGroups": [
+              "胸",
+              "肩前束",
+              "三頭"
+            ],
+            "note": "胸・肩前束・三頭"
+          },
+          {
+            "name": "肩推",
+            "calories": 18,
+            "dose": "4×10",
+            "muscleGroups": [
+              "肩",
+              "三頭"
+            ],
+            "note": "肩・三頭"
+          }
         ]
       },
       {
         "name": "上肢・拉",
         "exercises": [
-          { "name": "寬距下拉", "calories": 30, "muscleGroups": ["背", "二頭"], "note": "背・二頭" },
-          { "name": "窄距下拉", "calories": 30, "muscleGroups": ["背", "二頭"], "note": "背・二頭" },
-          { "name": "窄握划船", "calories": 28, "muscleGroups": ["背"], "note": "背" },
-          { "name": "寬握划船", "calories": 28, "muscleGroups": ["背","肩後束"], "note": "背・肩後束" },
-          { "name": "啞鈴側平舉", "calories": 16, "muscleGroups": ["肩中束"], "note": "肩中束" },
-          { "name": "Cable 面拉", "calories": 20, "muscleGroups": ["肩後束", "上背"], "note": "肩後束・上背" },
-          { "name": "引體向上", "calories": 30, "muscleGroups": ["背", "二頭"], "note": "背・二頭" }
+          {
+            "name": "寬距下拉",
+            "calories": 20,
+            "dose": "4×10",
+            "muscleGroups": [
+              "背",
+              "二頭"
+            ],
+            "note": "背・二頭"
+          },
+          {
+            "name": "窄距下拉",
+            "calories": 20,
+            "dose": "4×10",
+            "muscleGroups": [
+              "背",
+              "二頭"
+            ],
+            "note": "背・二頭"
+          },
+          {
+            "name": "窄握划船",
+            "calories": 20,
+            "dose": "4×10",
+            "muscleGroups": [
+              "背"
+            ],
+            "note": "背"
+          },
+          {
+            "name": "寬握划船",
+            "calories": 20,
+            "dose": "4×10",
+            "muscleGroups": [
+              "背",
+              "肩後束"
+            ],
+            "note": "背・肩後束"
+          },
+          {
+            "name": "啞鈴側平舉",
+            "calories": 12,
+            "dose": "4×10",
+            "muscleGroups": [
+              "肩中束"
+            ],
+            "note": "肩中束"
+          },
+          {
+            "name": "Cable 面拉",
+            "calories": 14,
+            "dose": "4×10",
+            "muscleGroups": [
+              "肩後束",
+              "上背"
+            ],
+            "note": "肩後束・上背"
+          },
+          {
+            "name": "引體向上",
+            "calories": 24,
+            "dose": "4×10",
+            "muscleGroups": [
+              "背",
+              "二頭"
+            ],
+            "note": "背・二頭"
+          }
         ]
       },
       {
         "name": "手臂",
         "exercises": [
-          { "name": "二頭彎舉", "calories": 14, "muscleGroups": ["二頭"], "note": "二頭" },
-          { "name": "三頭過頭伸展", "calories": 14, "muscleGroups": ["三頭"], "note": "三頭" },
-          { "name": "三頭下壓", "calories": 14, "muscleGroups": ["三頭"], "note": "三頭" }
+          {
+            "name": "二頭彎舉",
+            "calories": 12,
+            "dose": "4×10",
+            "muscleGroups": [
+              "二頭"
+            ],
+            "note": "二頭"
+          },
+          {
+            "name": "三頭過頭伸展",
+            "calories": 12,
+            "dose": "4×10",
+            "muscleGroups": [
+              "三頭"
+            ],
+            "note": "三頭"
+          },
+          {
+            "name": "三頭下壓",
+            "calories": 12,
+            "dose": "4×10",
+            "muscleGroups": [
+              "三頭"
+            ],
+            "note": "三頭"
+          }
         ]
       },
       {
         "name": "核心",
         "exercises": [
-          { "name": "棒式", "calories": 14, "muscleGroups": ["核心"], "note": "核心" },
-          { "name": "側棒式", "calories": 14, "muscleGroups": ["核心", "側腹"], "note": "核心・側腹・左右一輪算一組" },
-          { "name": "死蟲式", "calories": 14, "muscleGroups": ["核心"], "note": "核心" },
-          { "name": "抗旋轉 Pallof Press", "calories": 16, "muscleGroups": ["核心"], "note": "核心・左右一輪算一組" }
+          {
+            "name": "棒式",
+            "calories": 10,
+            "dose": "4×30–45秒",
+            "muscleGroups": [
+              "核心"
+            ],
+            "note": "核心"
+          },
+          {
+            "name": "側棒式",
+            "calories": 14,
+            "dose": "4×30–45秒/邊",
+            "muscleGroups": [
+              "核心",
+              "側腹"
+            ],
+            "note": "核心・側腹"
+          },
+          {
+            "name": "死蟲式",
+            "calories": 12,
+            "dose": "4×10/邊",
+            "muscleGroups": [
+              "核心"
+            ],
+            "note": "核心"
+          },
+          {
+            "name": "抗旋轉 Pallof Press",
+            "calories": 14,
+            "dose": "4×10/邊",
+            "muscleGroups": [
+              "核心"
+            ],
+            "note": "核心"
+          }
         ]
       },
       {
         "name": "心肺收尾",
         "cardio": true,
         "exercises": [
-          { "name": "坡度走 30分", "calories": 200, "muscleGroups": ["心肺"], "note": "坡度10・速度4.5" },
-          { "name": "跳繩 2000-3000下", "calories": 180, "muscleGroups": ["心肺", "協調"], "note": "30分內・心肺・協調" }
+          {
+            "name": "坡度走",
+            "calories": 210,
+            "dose": "30分鐘",
+            "muscleGroups": [
+              "心肺"
+            ],
+            "note": "坡度10・速度4.5"
+          },
+          {
+            "name": "跳繩間歇",
+            "calories": 200,
+            "dose": "跳2分／休30秒×10輪",
+            "muscleGroups": [
+              "心肺",
+              "協調"
+            ],
+            "note": "有效跳繩20分鐘・下數僅供參考"
+          }
         ]
       }
     ],
     "safetyRules": [
-      { "title": "爆發／彈跳動作永遠放課表最前段", "description": "累了做最傷膝踝。" },
-      { "title": "落地緩衝優先於跳多高", "description": "輕落、膝蓋朝腳尖、像坐椅子般吸收。" }
+      {
+        "title": "爆發／彈跳動作永遠放課表最前段",
+        "description": "累了做最傷膝踝。"
+      },
+      {
+        "title": "落地緩衝優先於跳多高",
+        "description": "輕落、膝蓋朝腳尖、像坐椅子般吸收。"
+      }
     ]
   },
   "jumpTraining": {
@@ -173,24 +448,72 @@
         "name": "健身房版",
         "condition": "有跳箱／壺鈴時",
         "exercises": [
-          { "name": "Pogo 小彈跳", "note": "暖身，練腳踝彈震，零風險", "dose": "3×20" },
-          { "name": "箱上跳箱", "note": "求乾淨的爆發，不追連續，組間休息90秒以上", "dose": "4×3-5" },
-          { "name": "盪壺 Kettlebell Swing", "note": "", "dose": "4×10" },
-          { "name": "登階爆發快登", "note": "左右各8下算一組", "dose": "4×8/邊" },
-          { "name": "深蹲跳", "note": "狀態好再加，每下重新蹲起", "dose": "3×5" },
-          { "name": "助跑摸高", "note": "技術練習，見下方分解", "dose": "5-8趟" }
+          {
+            "name": "Pogo 小彈跳",
+            "note": "暖身，練腳踝彈震，零風險",
+            "dose": "3×20"
+          },
+          {
+            "name": "箱上跳箱",
+            "note": "求乾淨的爆發，不追連續，組間休息90秒以上",
+            "dose": "4×3-5"
+          },
+          {
+            "name": "盪壺 Kettlebell Swing",
+            "note": "",
+            "dose": "4×10"
+          },
+          {
+            "name": "登階爆發快登",
+            "note": "左右各8下算一組",
+            "dose": "4×8/邊"
+          },
+          {
+            "name": "深蹲跳",
+            "note": "狀態好再加，每下重新蹲起",
+            "dose": "3×5"
+          },
+          {
+            "name": "助跑摸高",
+            "note": "技術練習，見下方分解",
+            "dose": "5-8趟"
+          }
         ]
       },
       {
         "name": "地下室版",
         "condition": "沒有箱子、壺鈴時",
         "exercises": [
-          { "name": "Pogo 小彈跳", "note": "", "dose": "3×20" },
-          { "name": "徒手深蹲跳", "note": "原地起跳，落地立即緩衝", "dose": "4×6" },
-          { "name": "登階爆發", "note": "用穩固椅子或樓梯代替箱子，左右各8下算一組", "dose": "4×8/邊" },
-          { "name": "阻力帶蚌式／側抬腿", "note": "補髖外側穩定，幫助落地控制", "dose": "3×15/邊" },
-          { "name": "定點跳下微蹲吸收", "note": "矮台階，純練落地緩衝技巧", "dose": "3×8" },
-          { "name": "助跑摸高", "note": "天花板高度先確認、地面別滑，3-4步助跑距離就夠", "dose": "5-8趟" }
+          {
+            "name": "Pogo 小彈跳",
+            "note": "",
+            "dose": "3×20"
+          },
+          {
+            "name": "徒手深蹲跳",
+            "note": "原地起跳，落地立即緩衝",
+            "dose": "4×6"
+          },
+          {
+            "name": "登階爆發",
+            "note": "用穩固椅子或樓梯代替箱子，左右各8下算一組",
+            "dose": "4×8/邊"
+          },
+          {
+            "name": "阻力帶蚌式／側抬腿",
+            "note": "補髖外側穩定，幫助落地控制",
+            "dose": "3×15/邊"
+          },
+          {
+            "name": "定點跳下微蹲吸收",
+            "note": "矮台階，純練落地緩衝技巧",
+            "dose": "3×8"
+          },
+          {
+            "name": "助跑摸高",
+            "note": "天花板高度先確認、地面別滑，3-4步助跑距離就夠",
+            "dose": "5-8趟"
+          }
         ]
       }
     ],
@@ -199,9 +522,24 @@
       "description": "節奏「小－大－併」：小步啟動、最大最快一步衝出速度、快速跟上併攏起跳。最後兩步腳跟微觸地、身體微後傾，把水平速度「煞車」轉成向上。手臂用力後擺再上帶。找面牆定期記錄摸高，兩三週回頭比一次——動作對了，高度會自己上來。"
     },
     "specialMoves": [
-      { "name": "深蹲跳 Squat Jump", "tag": "爆發＋協調", "tone": "blue", "description": "徒手或輕負重皆可，落地立即緩衝吸收，不連續彈跳（每下重新蹲起）。" },
-      { "name": "排球封網腳步", "tag": "側併步", "tone": "blue", "description": "側併步銜接垂直起跳，練的是腳步轉換效率，不是單純跳高度。" },
-      { "name": "落地穩定練習", "tag": "安全優先", "tone": "amber", "description": "跳完輕落、膝蓋朝腳尖、像坐椅子般吸收——比跳多高更優先。" }
+      {
+        "name": "深蹲跳 Squat Jump",
+        "tag": "爆發＋協調",
+        "tone": "blue",
+        "description": "徒手或輕負重皆可，落地立即緩衝吸收，不連續彈跳（每下重新蹲起）。"
+      },
+      {
+        "name": "排球封網腳步",
+        "tag": "側併步",
+        "tone": "blue",
+        "description": "側併步銜接垂直起跳，練的是腳步轉換效率，不是單純跳高度。"
+      },
+      {
+        "name": "落地穩定練習",
+        "tag": "安全優先",
+        "tone": "amber",
+        "description": "跳完輕落、膝蓋朝腳尖、像坐椅子般吸收——比跳多高更優先。"
+      }
     ],
     "phaseNote": {
       "title": "減脂期的爆發力，該怎麼看",
@@ -210,16 +548,44 @@
   },
   "diet": {
     "dailyTargets": [
-      { "label": "平日熱量", "value": "1550", "tone": "default" },
-      { "label": "蛋白質 g", "value": "75-100", "tone": "amber" },
-      { "label": "假日聚餐", "value": "彈性", "tone": "blue" },
-      { "label": "禁區食物", "value": "無", "tone": "blue" }
+      {
+        "label": "平日熱量",
+        "value": "1550",
+        "tone": "default"
+      },
+      {
+        "label": "蛋白質 g",
+        "value": "75-100",
+        "tone": "amber"
+      },
+      {
+        "label": "假日聚餐",
+        "value": "彈性",
+        "tone": "blue"
+      },
+      {
+        "label": "禁區食物",
+        "value": "無",
+        "tone": "blue"
+      }
     ],
     "meals": [
-      { "name": "早餐", "description": "高蛋白豆漿（230kcal／13C／20P／11F），午餐若吃大份量正餐則跳過。" },
-      { "name": "午餐", "description": "公司訂餐平台，450-850kcal（便當／健康餐盒／三明治／Subway）。" },
-      { "name": "晚餐", "description": "超商，練前約1.5小時吃，份量視前兩餐調整。" },
-      { "name": "練後", "description": "豆漿或乳清，看當天已吃多少決定要不要喝，是補位用不是固定動作。" }
+      {
+        "name": "早餐",
+        "description": "高蛋白豆漿（230kcal／13C／20P／11F），午餐若吃大份量正餐則跳過。"
+      },
+      {
+        "name": "午餐",
+        "description": "公司訂餐平台，450-850kcal（便當／健康餐盒／三明治／Subway）。"
+      },
+      {
+        "name": "晚餐",
+        "description": "超商，練前約1.5小時吃，份量視前兩餐調整。"
+      },
+      {
+        "name": "練後",
+        "description": "豆漿或乳清，看當天已吃多少決定要不要喝，是補位用不是固定動作。"
+      }
     ],
     "proteinSources": [
       "蛋",
