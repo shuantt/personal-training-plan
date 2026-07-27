@@ -183,6 +183,13 @@ svg.profile{width:100%;height:auto;display:block}
 .btags{display:flex;flex-wrap:wrap;gap:6px;min-height:28px}
 .btags .bchip{font-size:12px;background:rgba(245,165,36,.16);color:var(--amber);border-radius:100px;padding:5px 11px;font-weight:500}
 .btags .empty{font-size:12.5px;color:#8A90A8}
+.blist{margin-top:14px;border-top:1px solid rgba(255,255,255,.14);padding-top:4px}
+.blist:empty{display:none}
+.blist .bitem{display:flex;justify-content:space-between;align-items:baseline;gap:12px;padding:8px 0;border-top:1px solid rgba(255,255,255,.07)}
+.blist .bitem:first-child{border-top:0}
+.blist .bname{font-size:13.5px;font-weight:500;color:#EDEEF5}
+.blist .bsub{font-size:11px;color:#8A90A8;margin-top:1px}
+.blist .bkc{font-family:"Oswald",sans-serif;font-size:14px;font-weight:500;color:#8A90A8;white-space:nowrap}
 
 .exo{display:flex;justify-content:space-between;align-items:center;width:100%;text-align:left;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:12px 14px;margin-bottom:8px;color:var(--ink);font-family:inherit;box-shadow:var(--shadow);transition:transform .12s ease}
 .exo:active{transform:scale(.985)}
@@ -316,6 +323,7 @@ svg.profile{width:100%;height:auto;display:block}
         <button class="reset-btn" id="reset-today">清空</button>
       </div>
       <div class="btags" id="sum-tags"><span class="empty">選好動作後，練到的肌群會列在這裡</span></div>
+      <div class="blist" id="sum-list"></div>
     </div>
     <p class="hint">點一下動作＝加入今天，再點一次＝取消。熱量抓妳習慣的 <b>10下×4組</b>，單側動作左右各一輪算一組。這只是當天的粗略參考，重新整理會歸零，不會記到明天。</p>
 
@@ -566,6 +574,13 @@ function updateSummary(){
   } else {
     tagsEl.innerHTML = '<span class="empty">選好動作後，練到的肌群會列在這裡</span>';
   }
+  var listEl = document.getElementById('sum-list');
+  listEl.innerHTML = Array.from(selected).map(function(el){
+    var name = el.querySelector('.exo-name').textContent;
+    var sub = el.querySelector('.exo-tags').textContent;
+    var kc = el.dataset.kcal;
+    return '<div class="bitem"><div><div class="bname">' + name + '</div><div class="bsub">' + sub + '</div></div><div class="bkc">' + kc + ' kcal</div></div>';
+  }).join('');
 }
 document.querySelectorAll('.exo').forEach(function(el){
   el.addEventListener('click', function(){ el.classList.toggle('selected'); updateSummary(); });
