@@ -88,13 +88,13 @@
         "name": "下肢・蹲系",
         "exercises": [
           { "name": "槓鈴深蹲", "calories": 40, "muscleGroups": ["大腿", "臀"], "note": "大腿・臀" },
-          { "name": "分腿蹲", "calories": 30, "muscleGroups": ["大腿", "臀"], "note": "大腿・臀・左右一輪算一組" },
+          { "name": "分腿蹲", "calories": 30, "muscleGroups": ["大腿", "臀"], "note": "大腿・臀・左右一輪算一組" }
         ]
       },
       {
         "name": "下肢・髖鉸鏈",
         "exercises": [
-          { "name": "羅馬尼亞硬舉", "calories": 38, "muscleGroups": ["臀", "大腿後側"], "note": "臀・大腿後側" },
+          { "name": "羅馬尼亞硬舉", "calories": 38, "muscleGroups": ["臀", "大腿後側"], "note": "臀・大腿後側" }
         ]
       },
       {
@@ -111,7 +111,7 @@
         "exercises": [
           { "name": "平板臥推", "calories": 30, "muscleGroups": ["胸", "三頭"], "note": "胸・三頭" },
           { "name": "上斜臥推", "calories": 30, "muscleGroups": ["胸","肩前束","三頭"], "note": "胸・肩前束・三頭" },
-          { "name": "肩推", "calories": 28, "muscleGroups": ["肩", "三頭"], "note": "肩・三頭" },
+          { "name": "肩推", "calories": 28, "muscleGroups": ["肩", "三頭"], "note": "肩・三頭" }
         ]
       },
       {
@@ -123,7 +123,7 @@
           { "name": "寬握划船", "calories": 28, "muscleGroups": ["背","肩後束"], "note": "背・肩後束" },
           { "name": "啞鈴側平舉", "calories": 16, "muscleGroups": ["肩中束"], "note": "肩中束" },
           { "name": "Cable 面拉", "calories": 20, "muscleGroups": ["肩後束", "上背"], "note": "肩後束・上背" },
-          { "name": "引體向上", "calories": 30, "muscleGroups": ["背", "二頭"], "note": "背・二頭" },
+          { "name": "引體向上", "calories": 30, "muscleGroups": ["背", "二頭"], "note": "背・二頭" }
         ]
       },
       {
@@ -229,7 +229,7 @@
       "雞腿肉",
       "板豆腐",
       "蝦仁",
-      "毛豆",
+      "毛豆"
     ],
     "refuelPlans": [
       {
