@@ -1,0 +1,288 @@
+{
+  "profile": {
+    "summary": "149cm・增肌減脂為主，跳躍爆發為輔・2026年8月–12月",
+    "lead": "主線先把體態和力量的底盤打穩；副線是垂直跳與爆發力，隨著減脂強度收斂，逐步把空間讓給它。",
+    "bodyGoal": {
+      "label": "體重",
+      "value": "55-56 → 49-50",
+      "unit": "kg",
+      "detail": "體脂 33% → 24-26%"
+    },
+    "jumpGoal": {
+      "label": "垂直跳（次要・長期）",
+      "value": "40-50",
+      "unit": "cm",
+      "detail": "半年至一年看成果"
+    },
+    "months": [
+      { "month": "8月", "weight": "53" },
+      { "month": "9月", "weight": "50.5" },
+      { "month": "10月", "weight": "49" },
+      { "month": "11月", "weight": "維持" },
+      { "month": "12月", "weight": "維持" }
+    ],
+    "milestones": [
+      {
+        "month": "8月",
+        "title": "重建節奏",
+        "tag": "-2.5kg",
+        "tone": "amber",
+        "description": "每日赤字約640大卡。動作品質優先於重量，盪壺／跳箱先求落地穩定，不追高度不追重量。",
+        "checkLabel": "InBody",
+        "checkValue": "第 1 次回測・月底"
+      },
+      {
+        "month": "9月",
+        "title": "全力期",
+        "tag": "-2.5kg",
+        "tone": "amber",
+        "description": "主要動作漸進加重；爆發力動作可小幅提高強度。這兩個月體感會是全程最辛苦的階段。",
+        "checkLabel": "檢查",
+        "checkValue": "腰圍・褲子鬆緊・垂直跳第 1 測"
+      },
+      {
+        "month": "10月",
+        "title": "收斂",
+        "tag": "-1.5kg",
+        "tone": "amber",
+        "description": "赤字自然縮小到約450大卡，不用再加碼運動或壓低飲食。應該開始有感：同強度心率下降、續航力變好。",
+        "checkLabel": "InBody",
+        "checkValue": "第 2 次回測・約第16週"
+      },
+      {
+        "month": "11月",
+        "title": "守成",
+        "tag": "維持",
+        "tone": "blue",
+        "description": "年末聚餐季開始，任務是「守住」不是「衝」。安排一週降量週（deload），避免疲勞堆到年底。",
+        "checkLabel": "檢查",
+        "checkValue": "垂直跳第 2 測"
+      },
+      {
+        "month": "12月",
+        "title": "鞏固",
+        "tag": "維持",
+        "tone": "blue",
+        "description": "維持訓練頻率，撐過年末不大幅反彈。以鞏固肌力與體能表現為主，不追求破紀錄式降重。",
+        "checkLabel": "InBody",
+        "checkValue": "第 3 次回測・約12月底"
+      }
+    ],
+    "tracking": [
+      { "label": "力量", "text": "主要動作工作重量，穩定漸進即可。" },
+      { "label": "爆發力", "text": "跳箱高度、垂直跳測試、跳繩連續次數。" },
+      { "label": "運動表現", "text": "打球續航力主觀評分（1-10）。" },
+      { "label": "飲食", "text": "平日 vs 假日熱量落差是否隨時間縮小。" },
+      { "label": "睡眠", "text": "23:00鎖機達成率、實際入睡時間、週末補眠時數。" }
+    ]
+  },
+  "training": {
+    "weeklySchedule": [
+      { "label": "有約球", "description": "重訓 3練　＋　坡度走／跳繩 2-3次　＋　週末球類本身即訓練" },
+      { "label": "沒約球", "description": "重訓 4練　＋　坡度走／跳繩 3-4次" },
+      { "label": "抱石", "description": "暫停，先把恢復資源讓給重訓與有氧" }
+    ],
+    "builderHint": "點一下動作＝加入今天，再點一次＝取消。熱量抓妳習慣的 10下×4組，單側動作左右各一輪算一組。這只是當天的粗略參考，重新整理會歸零，不會記到明天。",
+    "exerciseGroups": [
+      {
+        "name": "下肢・蹲系",
+        "exercises": [
+          { "name": "槓鈴深蹲", "calories": 40, "muscleGroups": ["大腿", "臀"], "note": "大腿・臀" },
+          { "name": "高腳杯深蹲", "calories": 32, "muscleGroups": ["大腿", "臀"], "note": "大腿・臀" },
+          { "name": "分腿蹲", "calories": 30, "muscleGroups": ["大腿", "臀"], "note": "大腿・臀・左右一輪算一組" },
+          { "name": "腿推", "calories": 35, "muscleGroups": ["大腿"], "note": "大腿" }
+        ]
+      },
+      {
+        "name": "下肢・髖鉸鏈",
+        "exercises": [
+          { "name": "羅馬尼亞硬舉", "calories": 38, "muscleGroups": ["臀", "大腿後側"], "note": "臀・大腿後側" },
+          { "name": "臀推", "calories": 32, "muscleGroups": ["臀"], "note": "臀" }
+        ]
+      },
+      {
+        "name": "下肢・爆發",
+        "exercises": [
+          { "name": "Pogo 小彈跳", "calories": 20, "muscleGroups": ["小腿", "腳踝", "爆發"], "note": "小腿・腳踝・爆發" },
+          { "name": "箱上跳箱", "calories": 24, "muscleGroups": ["大腿", "臀", "爆發"], "note": "大腿・臀・爆發" },
+          { "name": "登階爆發快登", "calories": 28, "muscleGroups": ["大腿", "臀", "爆發"], "note": "大腿・臀・爆發・左右一輪算一組" },
+          { "name": "盪壺 Kettlebell Swing", "calories": 32, "muscleGroups": ["臀", "核心", "爆發"], "note": "臀・核心・爆發" }
+        ]
+      },
+      {
+        "name": "上肢・推",
+        "exercises": [
+          { "name": "臥推", "calories": 30, "muscleGroups": ["胸", "三頭"], "note": "胸・三頭" },
+          { "name": "肩推", "calories": 28, "muscleGroups": ["肩", "三頭"], "note": "肩・三頭" },
+          { "name": "伏地挺身", "calories": 22, "muscleGroups": ["胸", "三頭"], "note": "胸・三頭" }
+        ]
+      },
+      {
+        "name": "上肢・拉",
+        "exercises": [
+          { "name": "機械划船", "calories": 28, "muscleGroups": ["背"], "note": "背" },
+          { "name": "引體／滑輪下拉", "calories": 30, "muscleGroups": ["背", "二頭"], "note": "背・二頭" },
+          { "name": "Cable 面拉", "calories": 20, "muscleGroups": ["後肩", "上背"], "note": "後肩・上背・顧球肩" },
+          { "name": "側平舉", "calories": 16, "muscleGroups": ["肩"], "note": "肩" }
+        ]
+      },
+      {
+        "name": "手臂",
+        "exercises": [
+          { "name": "二頭彎舉", "calories": 14, "muscleGroups": ["二頭"], "note": "二頭" },
+          { "name": "三頭下壓", "calories": 14, "muscleGroups": ["三頭"], "note": "三頭" }
+        ]
+      },
+      {
+        "name": "核心",
+        "exercises": [
+          { "name": "棒式", "calories": 14, "muscleGroups": ["核心"], "note": "核心" },
+          { "name": "側棒式", "calories": 14, "muscleGroups": ["核心", "側腹"], "note": "核心・側腹・左右一輪算一組" },
+          { "name": "死蟲式", "calories": 14, "muscleGroups": ["核心"], "note": "核心" },
+          { "name": "抗旋轉 Pallof Press", "calories": 16, "muscleGroups": ["核心"], "note": "核心・左右一輪算一組" }
+        ]
+      },
+      {
+        "name": "心肺收尾",
+        "cardio": true,
+        "exercises": [
+          { "name": "坡度走 30分", "calories": 200, "muscleGroups": ["心肺"], "note": "坡度10・速度4.5" },
+          { "name": "跳繩 2000-3000下", "calories": 180, "muscleGroups": ["心肺", "協調"], "note": "30分內・心肺・協調" }
+        ]
+      }
+    ],
+    "safetyRules": [
+      { "title": "爆發／彈跳動作永遠放課表最前段", "description": "累了做最傷膝踝。" },
+      { "title": "落地緩衝優先於跳多高", "description": "輕落、膝蓋朝腳尖、像坐椅子般吸收。" }
+    ]
+  },
+  "jumpTraining": {
+    "target": {
+      "standingReachCm": 190,
+      "netHeightCm": 224,
+      "targetMinCm": 230,
+      "targetMaxCm": 240,
+      "verticalJumpMinCm": 40,
+      "verticalJumpMaxCm": 50,
+      "gaugePercent": 60,
+      "note": "190／224 為先前設定的參考值，等妳實測摸高後可以再換成正確數字。"
+    },
+    "menus": [
+      {
+        "name": "健身房版",
+        "condition": "有跳箱／壺鈴時",
+        "exercises": [
+          { "name": "Pogo 小彈跳", "note": "暖身，練腳踝彈震，零風險", "dose": "3×20" },
+          { "name": "箱上跳箱", "note": "求乾淨的爆發，不追連續，組間休息90秒以上", "dose": "4×3-5" },
+          { "name": "盪壺 Kettlebell Swing", "note": "", "dose": "4×10" },
+          { "name": "登階爆發快登", "note": "左右各8下算一組", "dose": "4×8/邊" },
+          { "name": "深蹲跳", "note": "狀態好再加，每下重新蹲起", "dose": "3×5" },
+          { "name": "助跑摸高", "note": "技術練習，見下方分解", "dose": "5-8趟" }
+        ]
+      },
+      {
+        "name": "地下室版",
+        "condition": "沒有箱子、壺鈴時",
+        "exercises": [
+          { "name": "Pogo 小彈跳", "note": "", "dose": "3×20" },
+          { "name": "徒手深蹲跳", "note": "原地起跳，落地立即緩衝", "dose": "4×6" },
+          { "name": "登階爆發", "note": "用穩固椅子或樓梯代替箱子，左右各8下算一組", "dose": "4×8/邊" },
+          { "name": "阻力帶蚌式／側抬腿", "note": "補髖外側穩定，幫助落地控制", "dose": "3×15/邊" },
+          { "name": "定點跳下微蹲吸收", "note": "矮台階，純練落地緩衝技巧", "dose": "3×8" },
+          { "name": "助跑摸高", "note": "天花板高度先確認、地面別滑，3-4步助跑距離就夠", "dose": "5-8趟" }
+        ]
+      }
+    ],
+    "approachSkill": {
+      "title": "不吃器材、CP值最高的一項",
+      "description": "節奏「小－大－併」：小步啟動、最大最快一步衝出速度、快速跟上併攏起跳。最後兩步腳跟微觸地、身體微後傾，把水平速度「煞車」轉成向上。手臂用力後擺再上帶。找面牆定期記錄摸高，兩三週回頭比一次——動作對了，高度會自己上來。"
+    },
+    "specialMoves": [
+      { "name": "深蹲跳 Squat Jump", "tag": "爆發＋協調", "tone": "blue", "description": "徒手或輕負重皆可，落地立即緩衝吸收，不連續彈跳（每下重新蹲起）。" },
+      { "name": "排球封網腳步", "tag": "側併步", "tone": "blue", "description": "側併步銜接垂直起跳，練的是腳步轉換效率，不是單純跳高度。" },
+      { "name": "落地穩定練習", "tag": "安全優先", "tone": "amber", "description": "跳完輕落、膝蓋朝腳尖、像坐椅子般吸收——比跳多高更優先。" }
+    ],
+    "phaseNote": {
+      "title": "減脂期的爆發力，該怎麼看",
+      "description": "8-10月赤字較大，這階段以動作品質與神經協調為主，不用追破紀錄的重量或高度。明顯的力量與跳躍進步，通常會在11-12月轉維持、能量供應比較充裕之後才顯現。"
+    }
+  },
+  "diet": {
+    "dailyTargets": [
+      { "label": "平日熱量", "value": "1550", "tone": "default" },
+      { "label": "蛋白質 g", "value": "75-100", "tone": "amber" },
+      { "label": "假日聚餐", "value": "彈性", "tone": "blue" },
+      { "label": "禁區食物", "value": "無", "tone": "blue" }
+    ],
+    "meals": [
+      { "name": "早餐", "description": "高蛋白豆漿（230kcal／13C／20P／11F），午餐若吃大份量正餐則跳過。" },
+      { "name": "午餐", "description": "公司訂餐平台，450-850kcal（便當／健康餐盒／三明治／Subway）。" },
+      { "name": "晚餐", "description": "超商，練前約1.5小時吃，份量視前兩餐調整。" },
+      { "name": "練後", "description": "豆漿或乳清，看當天已吃多少決定要不要喝，是補位用不是固定動作。" }
+    ],
+    "proteinSources": [
+      "雞腿肉",
+      "茶葉蛋",
+      "豆漿",
+      "乳清",
+      "舒肥雞胸／雞腿",
+      "鮪魚罐頭（水漬）",
+      "毛豆",
+      "板豆腐",
+      "蝦仁／透抽",
+      "滷味瘦肉＋蛋＋豆製品"
+    ],
+    "refuelPlans": [
+      {
+        "name": "3小時場次",
+        "burn": "400-700 kcal 消耗",
+        "targets": "補碳水 60-80g／蛋白 25-30g／脂肪 10-15g，約 450-550 大卡。",
+        "example": "飯糰1顆＋茶葉蛋2顆＋豆漿1杯"
+      },
+      {
+        "name": "5小時場次",
+        "burn": "700-1100 kcal 消耗",
+        "targets": "補碳水 80-110g／蛋白 30-35g／脂肪 15-20g，約 600-750 大卡。",
+        "example": "飯糰1顆＋地瓜1條＋雞腿肉100g＋豆漿1杯"
+      }
+    ],
+    "strategy": {
+      "title": "看一週總量，不是單餐精算",
+      "description": "球後補充是在還消耗的洞，不是破功；聚餐當餐就是那頓補充餐，不用重複補；平日練後那杯只是補位工具，練前已吃飽正餐時可以不喝。"
+    }
+  },
+  "recovery": {
+    "sections": [
+      {
+        "eyebrow": "RECOVERY・痠痛與漸進",
+        "tone": "good",
+        "title": "不痛也有效，別追求痛",
+        "description": "延遲性痠痛是被「量」和「陌生刺激」堆出來的，不是非痛不可。每次訓練只主打一個下肢重點動作，避免一次把腿練到痛好幾天。"
+      },
+      {
+        "eyebrow": "SLEEP・睡眠目標",
+        "tone": "default",
+        "title": "00:00 – 07:00",
+        "description": "目前常態約6小時，主要破口是到家洗完澡後滑手機。對策：23:00 用螢幕使用時間鎖社群／影音App，手機充電線移到床邊拿不到的地方。週末補眠上限抓「平日起床時間 +1.5-2小時」內。"
+      },
+      {
+        "eyebrow": "GUARD・年末保護",
+        "tone": "warn",
+        "title": "11月安排 deload 週",
+        "description": "放在聚餐季開始前，避免疲勞一路堆到12月才爆掉——這正是去年10月之後崩盤的月份，這次刻意保護起來。"
+      },
+      {
+        "eyebrow": "SIGNALS・該收斂的訊號",
+        "tone": "warn",
+        "title": "出現就先減量，別再往飲食砍",
+        "description": "連續2-3週睡眠沒有跟著改善、重訓表現明顯下滑、或對飲食開始出現「很想放棄」的念頭——這些都是身體在喊卡。這時候寧可拉回保守速度，也不要硬撐。"
+      },
+      {
+        "eyebrow": "MEASURE・量測方式",
+        "tone": "default",
+        "title": "固定時段，看趨勢不看單次",
+        "description": "InBody 每次盡量同一時段（例如早上空腹）、同一台機器測，重點看三個月的走向，單次數字漲跌不用太在意。"
+      }
+    ]
+  }
+}
