@@ -121,7 +121,7 @@
           { "name": "窄距下拉", "calories": 30, "muscleGroups": ["背", "二頭"], "note": "背・二頭" },
           { "name": "窄握划船", "calories": 28, "muscleGroups": ["背"], "note": "背" },
           { "name": "寬握划船", "calories": 28, "muscleGroups": ["背","肩後束"], "note": "背・肩後束" },
-          { "name": "啞鈴側平舉", "calories": 16, "muscleGroups": ["肩中束"], "note": "肩中束" }
+          { "name": "啞鈴側平舉", "calories": 16, "muscleGroups": ["肩中束"], "note": "肩中束" },
           { "name": "Cable 面拉", "calories": 20, "muscleGroups": ["肩後束", "上背"], "note": "肩後束・上背" },
           { "name": "引體向上", "calories": 30, "muscleGroups": ["背", "二頭"], "note": "背・二頭" },
         ]
@@ -130,7 +130,7 @@
         "name": "手臂",
         "exercises": [
           { "name": "二頭彎舉", "calories": 14, "muscleGroups": ["二頭"], "note": "二頭" },
-          { "name": "三頭過頭伸展", "calories": 14, "muscleGroups": ["三頭"], "note": "三頭" }
+          { "name": "三頭過頭伸展", "calories": 14, "muscleGroups": ["三頭"], "note": "三頭" },
           { "name": "三頭下壓", "calories": 14, "muscleGroups": ["三頭"], "note": "三頭" }
         ]
       },
