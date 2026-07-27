@@ -1,18 +1,18 @@
 {
   "profile": {
-    "summary": "149cm・增肌減脂為主，跳躍爆發為輔・2026年8月–12月",
+    "summary": "149cm・55kg・增肌減脂為主，跳躍爆發為輔・2026年8月–12月",
     "lead": "主線先把體態和力量的底盤打穩；副線是垂直跳與爆發力，隨著減脂強度收斂，逐步把空間讓給它。",
     "bodyGoal": {
       "label": "體重",
-      "value": "55-56 → 49-50",
+      "value": "55 → 49",
       "unit": "kg",
-      "detail": "體脂 33% → 24-26%"
+      "detail": "體脂 33% → 24%"
     },
     "jumpGoal": {
-      "label": "垂直跳（次要・長期）",
-      "value": "40-50",
+      "label": "垂直跳（長期）",
+      "value": "40",
       "unit": "cm",
-      "detail": "半年至一年看成果"
+      "detail": "半年"
     },
     "months": [
       { "month": "8月", "weight": "53" },
@@ -88,16 +88,13 @@
         "name": "下肢・蹲系",
         "exercises": [
           { "name": "槓鈴深蹲", "calories": 40, "muscleGroups": ["大腿", "臀"], "note": "大腿・臀" },
-          { "name": "高腳杯深蹲", "calories": 32, "muscleGroups": ["大腿", "臀"], "note": "大腿・臀" },
           { "name": "分腿蹲", "calories": 30, "muscleGroups": ["大腿", "臀"], "note": "大腿・臀・左右一輪算一組" },
-          { "name": "腿推", "calories": 35, "muscleGroups": ["大腿"], "note": "大腿" }
         ]
       },
       {
         "name": "下肢・髖鉸鏈",
         "exercises": [
           { "name": "羅馬尼亞硬舉", "calories": 38, "muscleGroups": ["臀", "大腿後側"], "note": "臀・大腿後側" },
-          { "name": "臀推", "calories": 32, "muscleGroups": ["臀"], "note": "臀" }
         ]
       },
       {
@@ -112,24 +109,28 @@
       {
         "name": "上肢・推",
         "exercises": [
-          { "name": "臥推", "calories": 30, "muscleGroups": ["胸", "三頭"], "note": "胸・三頭" },
+          { "name": "平板臥推", "calories": 30, "muscleGroups": ["胸", "三頭"], "note": "胸・三頭" },
+          { "name": "上斜臥推", "calories": 30, "muscleGroups": ["胸","肩前束","三頭"], "note": "胸・肩前束・三頭" },
           { "name": "肩推", "calories": 28, "muscleGroups": ["肩", "三頭"], "note": "肩・三頭" },
-          { "name": "伏地挺身", "calories": 22, "muscleGroups": ["胸", "三頭"], "note": "胸・三頭" }
         ]
       },
       {
         "name": "上肢・拉",
         "exercises": [
-          { "name": "機械划船", "calories": 28, "muscleGroups": ["背"], "note": "背" },
-          { "name": "引體／滑輪下拉", "calories": 30, "muscleGroups": ["背", "二頭"], "note": "背・二頭" },
-          { "name": "Cable 面拉", "calories": 20, "muscleGroups": ["後肩", "上背"], "note": "後肩・上背・顧球肩" },
-          { "name": "側平舉", "calories": 16, "muscleGroups": ["肩"], "note": "肩" }
+          { "name": "寬距下拉", "calories": 30, "muscleGroups": ["背", "二頭"], "note": "背・二頭" },
+          { "name": "窄距下拉", "calories": 30, "muscleGroups": ["背", "二頭"], "note": "背・二頭" },
+          { "name": "窄握划船", "calories": 28, "muscleGroups": ["背"], "note": "背" },
+          { "name": "寬握划船", "calories": 28, "muscleGroups": ["背","肩後束"], "note": "背・肩後束" },
+          { "name": "啞鈴側平舉", "calories": 16, "muscleGroups": ["肩中束"], "note": "肩中束" }
+          { "name": "Cable 面拉", "calories": 20, "muscleGroups": ["肩後束", "上背"], "note": "肩後束・上背" },
+          { "name": "引體向上", "calories": 30, "muscleGroups": ["背", "二頭"], "note": "背・二頭" },
         ]
       },
       {
         "name": "手臂",
         "exercises": [
           { "name": "二頭彎舉", "calories": 14, "muscleGroups": ["二頭"], "note": "二頭" },
+          { "name": "三頭過頭伸展", "calories": 14, "muscleGroups": ["三頭"], "note": "三頭" }
           { "name": "三頭下壓", "calories": 14, "muscleGroups": ["三頭"], "note": "三頭" }
         ]
       },
@@ -221,16 +222,14 @@
       { "name": "練後", "description": "豆漿或乳清，看當天已吃多少決定要不要喝，是補位用不是固定動作。" }
     ],
     "proteinSources": [
-      "雞腿肉",
-      "茶葉蛋",
+      "蛋",
       "豆漿",
       "乳清",
-      "舒肥雞胸／雞腿",
-      "鮪魚罐頭（水漬）",
-      "毛豆",
+      "雞胸肉",
+      "雞腿肉",
       "板豆腐",
-      "蝦仁／透抽",
-      "滷味瘦肉＋蛋＋豆製品"
+      "蝦仁",
+      "毛豆",
     ],
     "refuelPlans": [
       {
