@@ -219,6 +219,7 @@ svg.profile{width:100%;height:auto;display:block}
 <div class="wrap">
   <section class="panel active" id="p-overview"></section>
   <section class="panel" id="p-train"></section>
+  <section class="panel" id="p-templates"></section>
   <section class="panel" id="p-jump"></section>
   <section class="panel" id="p-diet"></section>
   <section class="panel" id="p-notes"></section>
@@ -232,6 +233,10 @@ svg.profile{width:100%;height:auto;display:block}
   <button class="tabbtn" data-tab="p-train">
     <svg viewBox="0 0 24 24"><path d="M4 12h16M4 8v8M20 8v8M7 6v12M17 6v12" stroke-linecap="round"/></svg>
     訓練
+  </button>
+  <button class="tabbtn" data-tab="p-templates">
+    <svg viewBox="0 0 24 24"><rect x="3.5" y="4" width="17" height="16" rx="2.5" stroke-linejoin="round"/><path d="M3.5 9.5h17M8 4v5.5" stroke-linecap="round"/></svg>
+    訓練模板
   </button>
   <button class="tabbtn" data-tab="p-jump">
     <svg viewBox="0 0 24 24"><path d="M13 2 4 14h6l-1 8 9-12h-6l1-8z" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -322,6 +327,24 @@ function renderTraining(training) {
     '<span class="empty">選好動作後，練到的肌群會列在這裡</span></div><div class="blist" id="sum-list"></div></div>' +
     '<p class="hint">' + escapeHtml(training.builderHint) + '</p>' + groups +
     '<div class="note-card warn" style="margin-top:16px"><h3>兩個安全鐵則</h3><p>' + safetyRules + '</p></div>';
+}
+
+function renderTemplates(trainingTemplates) {
+  var days = trainingTemplates.days.map(function(day) {
+    var exercises = day.exercises.map(function(exercise) {
+      var note = exercise.note ? '<div class="note">' + escapeHtml(exercise.note) + '</div>' : '';
+      return '<div class="ex"><div><div class="name">' + escapeHtml(exercise.name) + '</div>' + note +
+        '</div><div class="dose">' + escapeHtml(exercise.dose) + '</div></div>';
+    }).join('');
+    return '<div class="day"><div class="day-h"><span class="code">' + escapeHtml(day.code) +
+      '</span><span class="focus">' + escapeHtml(day.focus) + '</span></div>' + exercises + '</div>';
+  }).join('');
+
+  document.getElementById('p-templates').innerHTML =
+    '<div class="eyebrow">TEMPLATE・每週課表模板</div><div class="note-card"><p>' +
+    escapeHtml(trainingTemplates.intro) + '</p></div>' + days +
+    '<div class="note-card amber"><h3>' + escapeHtml(trainingTemplates.orderingNote.title) + '</h3><p>' +
+    escapeHtml(trainingTemplates.orderingNote.description) + '</p></div>';
 }
 
 function renderJump(jumpTraining) {
@@ -458,6 +481,7 @@ fetch('./plan.json', { cache: 'no-store' })
   .then(function(plan) {
     renderOverview(plan.profile);
     renderTraining(plan.training);
+    renderTemplates(plan.trainingTemplates);
     renderJump(plan.jumpTraining);
     renderDiet(plan.diet);
     renderRecovery(plan.recovery);
