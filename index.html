@@ -343,9 +343,9 @@ function renderTemplates(trainingTemplates) {
 
   document.getElementById('p-templates').innerHTML =
   '<div class="eyebrow">TEMPLATE・每週課表模板</div>' +
+  '<div class="note-card"><p>' + escapeHtml(trainingTemplates.intro) + '</p></div>' + 
   '<div class="note-card amber"><h3>' + escapeHtml(trainingTemplates.orderingNote.title) + '</h3><p>' +
   escapeHtml(trainingTemplates.orderingNote.description) + '</p></div>' +
-  '<div class="note-card"><p>' + escapeHtml(trainingTemplates.intro) + '</p></div>' +
   days;
 }
 
