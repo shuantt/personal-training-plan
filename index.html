@@ -252,6 +252,12 @@ details.day[open] .day-h .day-arrow{transform:rotate(90deg)}
 .exo.cardio.selected{border-color:var(--blue);background:var(--blue-soft)}
 .exo.cardio.selected .exo-r{color:var(--blue)}
 
+.tmpl-pick-row{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 12px}
+.tmpl-pick{flex:0 0 auto;background:var(--surface);border:1px solid var(--line);color:var(--ink);font-family:"Oswald",sans-serif;font-weight:600;font-size:14px;letter-spacing:.04em;padding:9px 17px;border-radius:100px;box-shadow:var(--shadow)}
+.tmpl-pick:active{transform:scale(.96)}
+.tmpl-pick.active{background:var(--ink);color:#fff;border-color:var(--ink)}
+#tmpl-import-list:not(:empty){margin-bottom:14px}
+
 .hint{font-size:12px;color:var(--muted);margin:-4px 0 14px;line-height:1.6}
 .hint b{color:var(--ink)}
 .disc{font-size:11.5px;color:var(--muted);padding:16px 4px 4px;border-top:1px solid var(--line);margin-top:10px;text-align:center;font-family:"Oswald",sans-serif;letter-spacing:.12em}
@@ -318,6 +324,10 @@ var UI_STRINGS = {
     trackEyebrow: 'TRACK・全程追蹤指標',
     trackCardTitle: '比體重更誠實的幾項',
     weekEyebrow: 'WEEK・每週安排',
+    templateImportEyebrow: '帶入模板・一鍵估算',
+    templateImportHint: '點選一天，直接帶入當天課表動作，熱量與肌群會加進下方的今日菜單，可以再自行取消不做的項目。',
+    templateImportDays: { Monday: '一', Wednesday: '三', Thursday: '四', Friday: '五', Sunday: '日' },
+    templateImportRestDay: '今天是休息日，沒有可估算的動作。',
     todayEyebrow: 'TODAY・今日菜單',
     notSelected: '尚未選擇動作',
     selectedCount: function (n) { return '已選 ' + n + ' 項動作'; },
@@ -365,6 +375,10 @@ var UI_STRINGS = {
     trackEyebrow: 'TRACK・METRICS',
     trackCardTitle: 'Metrics more honest than the scale',
     weekEyebrow: 'WEEK・SCHEDULE',
+    templateImportEyebrow: 'IMPORT TEMPLATE',
+    templateImportHint: "Pick a day to load that day's template exercises. Calories and muscle groups get added to today's menu below — tap any item to remove it.",
+    templateImportDays: { Monday: 'Mon', Wednesday: 'Wed', Thursday: 'Thu', Friday: 'Fri', Sunday: 'Sun' },
+    templateImportRestDay: 'Rest day — nothing to estimate.',
     todayEyebrow: "TODAY'S MENU",
     notSelected: 'No exercises selected',
     selectedCount: function (n) { return n + ' exercises selected'; },
@@ -453,17 +467,23 @@ function renderOverview(profile, t) {
     '<div class="eyebrow">' + escapeHtml(t.trackEyebrow) + '</div><div class="note-card"><h3>' + escapeHtml(t.trackCardTitle) + '</h3><p>' + tracking + '</p></div>';
 }
 
-function renderTraining(training, t) {
+var TEMPLATE_IMPORT_ORDER = ['Monday', 'Wednesday', 'Thursday', 'Friday', 'Sunday'];
+
+function exoButtonHtml(name, note, dose, calories, muscleGroups, cardio, t, selected) {
+  var details = [dose, note].filter(Boolean).join('・');
+  return '<button class="exo' + (cardio ? ' cardio' : '') + (selected ? ' selected' : '') + '" data-kcal="' +
+    Number(calories) + '" data-tags="' + escapeHtml((muscleGroups || []).join(',')) +
+    '"><span class="exo-l"><span class="exo-name">' + escapeHtml(name) + '</span><span class="exo-tags">' +
+    escapeHtml(details) + '</span></span><span class="exo-r">' + Number(calories) + ' ' + escapeHtml(t.kcal) + '</span></button>';
+}
+
+function renderTraining(training, trainingTemplates, t) {
   var schedule = training.weeklySchedule.map(function(item) {
     return '<tr><th>' + escapeHtml(item.label) + '</th><td>' + escapeHtml(item.description) + '</td></tr>';
   }).join('');
   var groups = training.exerciseGroups.map(function(group) {
     var exercises = group.exercises.map(function(exercise) {
-      var details = [exercise.dose, exercise.note].filter(Boolean).join('・');
-      return '<button class="exo' + (group.cardio ? ' cardio' : '') + '" data-kcal="' + Number(exercise.calories) +
-        '" data-tags="' + escapeHtml(exercise.muscleGroups.join(',')) + '"><span class="exo-l"><span class="exo-name">' +
-        escapeHtml(exercise.name) + '</span><span class="exo-tags">' + escapeHtml(details) +
-        '</span></span><span class="exo-r">' + Number(exercise.calories) + ' ' + escapeHtml(t.kcal) + '</span></button>';
+      return exoButtonHtml(exercise.name, exercise.note, exercise.dose, exercise.calories, exercise.muscleGroups, group.cardio, t, false);
     }).join('');
     return '<div class="eyebrow">' + escapeHtml(group.name) + '</div>' + exercises;
   }).join('');
@@ -471,14 +491,66 @@ function renderTraining(training, t) {
     return '<b>' + escapeHtml(rule.title) + '</b>：' + escapeHtml(rule.description);
   }).join('<br>');
 
+  var templatePicks = TEMPLATE_IMPORT_ORDER.map(function(code) {
+    var label = (t.templateImportDays && t.templateImportDays[code]) || code;
+    return '<button class="tmpl-pick" type="button" data-day="' + code + '">' + escapeHtml(label) + '</button>';
+  }).join('');
+  var templateImportBlock = '<div class="eyebrow">' + escapeHtml(t.templateImportEyebrow) + '</div>' +
+    '<p class="hint">' + escapeHtml(t.templateImportHint) + '</p>' +
+    '<div class="tmpl-pick-row" id="tmpl-pick-row">' + templatePicks + '</div>' +
+    '<div id="tmpl-import-list"></div>';
+
   document.getElementById('p-train').innerHTML =
     '<div class="eyebrow">' + escapeHtml(t.weekEyebrow) + '</div><div class="card" style="padding:6px 16px 8px"><table class="sched">' +
-    schedule + '</table></div><div class="eyebrow">' + escapeHtml(t.todayEyebrow) + '</div><div class="builder"><div class="brow"><div>' +
+    schedule + '</table></div>' + templateImportBlock +
+    '<div class="eyebrow">' + escapeHtml(t.todayEyebrow) + '</div><div class="builder"><div class="brow"><div>' +
     '<div class="bkcal" id="sum-kcal">0<small> ' + escapeHtml(t.kcal) + '</small></div><div class="bcount" id="sum-count">' + escapeHtml(t.notSelected) + '</div>' +
     '</div><button class="reset-btn" id="reset-today">' + escapeHtml(t.resetBtn) + '</button></div><div class="btags" id="sum-tags">' +
     '<span class="empty">' + escapeHtml(t.emptyTags) + '</span></div><div class="blist" id="sum-list"></div></div>' +
     '<p class="hint">' + escapeHtml(training.builderHint) + '</p>' + groups +
     '<div class="note-card warn" style="margin-top:16px"><h3>' + escapeHtml(t.safetyTitle) + '</h3><p>' + safetyRules + '</p></div>';
+
+  bindTemplateImport(trainingTemplates, t);
+}
+
+function clearTemplateImport() {
+  var list = document.getElementById('tmpl-import-list');
+  if (list) list.innerHTML = '';
+  document.querySelectorAll('.tmpl-pick').forEach(function(btn) { btn.classList.remove('active'); });
+}
+
+function importTemplateDay(code, trainingTemplates, t) {
+  document.querySelectorAll('.exo.selected').forEach(function(el) { el.classList.remove('selected'); });
+  clearTemplateImport();
+  var pickBtn = document.querySelector('.tmpl-pick[data-day="' + code + '"]');
+  if (pickBtn) pickBtn.classList.add('active');
+  var list = document.getElementById('tmpl-import-list');
+  var day = trainingTemplates.days.filter(function(d) { return d.code === code; })[0];
+  if (!list || !day) return;
+  var validExercises = day.exercises.filter(function(ex) { return typeof ex.calories === 'number'; });
+  if (!validExercises.length) {
+    list.innerHTML = '<p class="hint" style="margin:2px 0 0">' + escapeHtml(t.templateImportRestDay) + '</p>';
+    updateSummary(t);
+    return;
+  }
+  list.innerHTML = validExercises.map(function(exercise) {
+    return exoButtonHtml(exercise.name, exercise.note, exercise.dose, exercise.calories, exercise.muscleGroups, false, t, true);
+  }).join('');
+  list.querySelectorAll('.exo').forEach(function(exercise) {
+    exercise.addEventListener('click', function() {
+      exercise.classList.toggle('selected');
+      updateSummary(t);
+    });
+  });
+  updateSummary(t);
+}
+
+function bindTemplateImport(trainingTemplates, t) {
+  document.querySelectorAll('.tmpl-pick').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      importTemplateDay(btn.dataset.day, trainingTemplates, t);
+    });
+  });
 }
 
 function renderTemplates(trainingTemplates, t) {
@@ -709,6 +781,7 @@ function bindBuilder(t) {
   if (resetBtn) {
     resetBtn.addEventListener('click', function() {
       document.querySelectorAll('.exo.selected').forEach(function(exercise) { exercise.classList.remove('selected'); });
+      clearTemplateImport();
       updateSummary(t);
     });
   }
@@ -734,7 +807,7 @@ function renderAll(lang) {
   localStorage.setItem('trainingLang', lang);
   applyStaticStrings(t);
   renderOverview(plan.profile, t);
-  renderTraining(plan.training, t);
+  renderTraining(plan.training, plan.trainingTemplates, t);
   renderTemplates(plan.trainingTemplates, t);
   renderJump(plan.jumpTraining, t);
   renderDiet(plan.diet, t);

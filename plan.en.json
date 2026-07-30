@@ -435,32 +435,58 @@
           {
             "name": "Wide-Grip Pulldown (Machine)",
             "note": "Upper back・upper lats",
-            "dose": "3×10"
+            "dose": "3×10",
+            "calories": 20,
+            "muscleGroups": [
+              "Back",
+              "Biceps"
+            ]
           },
           {
             "name": "Narrow-Grip Row (Machine)",
             "note": "Mid back・lower lats",
-            "dose": "3×10"
+            "dose": "3×10",
+            "calories": 20,
+            "muscleGroups": [
+              "Back"
+            ]
           },
           {
             "name": "Straight-Arm Pulldown (Cable)",
             "note": "Lower back・lower lats",
-            "dose": "3×10"
+            "dose": "3×10",
+            "calories": 18,
+            "muscleGroups": [
+              "Back"
+            ]
           },
           {
             "name": "Face Pull (Cable)",
             "note": "Rear delts",
-            "dose": "4×10"
+            "dose": "4×10",
+            "calories": 14,
+            "muscleGroups": [
+              "Rear Delts",
+              "Upper Back"
+            ]
           },
           {
             "name": "Lateral Raise (Dumbbell)",
             "note": "Side delts",
-            "dose": "4×10"
+            "dose": "4×10",
+            "calories": 12,
+            "muscleGroups": [
+              "Side Delts"
+            ]
           },
           {
             "name": "Bicep Curl (Dumbbell)",
             "note": "Biceps",
-            "dose": "4×10"
+            "dose": "4×10",
+            "calories": 12,
+            "muscleGroups": [
+              "Biceps"
+            ]
           }
         ]
       },
@@ -471,12 +497,22 @@
           {
             "name": "Approach Jump / Reach",
             "note": "Lower-body power・takeoff rhythm",
-            "dose": "4×5 reps"
+            "dose": "4×5 reps",
+            "calories": 18,
+            "muscleGroups": [
+              "Lower Body",
+              "Power"
+            ]
           },
           {
             "name": "Arm Swing Drill",
             "note": "Shoulder stability・coordination",
-            "dose": "4×8"
+            "dose": "4×8",
+            "calories": 8,
+            "muscleGroups": [
+              "Shoulders",
+              "Coordination"
+            ]
           }
         ]
       },
@@ -487,32 +523,60 @@
           {
             "name": "Split Squat (Dumbbell)",
             "note": "Quads・glutes・ankle stability",
-            "dose": "4×10/side"
+            "dose": "4×10/side",
+            "calories": 32,
+            "muscleGroups": [
+              "Quads",
+              "Glutes"
+            ]
           },
           {
             "name": "Flat Bench Press (Dumbbell)",
             "note": "Chest・triceps",
-            "dose": "4×10"
+            "dose": "4×10",
+            "calories": 20,
+            "muscleGroups": [
+              "Chest",
+              "Triceps"
+            ]
           },
           {
             "name": "Shoulder Press (Dumbbell)",
             "note": "Front delts・triceps",
-            "dose": "4×10"
+            "dose": "4×10",
+            "calories": 18,
+            "muscleGroups": [
+              "Shoulders",
+              "Triceps"
+            ]
           },
           {
             "name": "Face Pull (Cable)",
             "note": "Rear delts",
-            "dose": "4×10"
+            "dose": "4×10",
+            "calories": 14,
+            "muscleGroups": [
+              "Rear Delts",
+              "Upper Back"
+            ]
           },
           {
             "name": "Overhead Tricep Extension (Cable)",
             "note": "Triceps・long head",
-            "dose": "4×10"
+            "dose": "4×10",
+            "calories": 12,
+            "muscleGroups": [
+              "Triceps"
+            ]
           },
           {
             "name": "Tricep Pushdown (Cable)",
             "note": "Triceps・lateral & medial heads",
-            "dose": "4×10"
+            "dose": "4×10",
+            "calories": 12,
+            "muscleGroups": [
+              "Triceps"
+            ]
           }
         ]
       },
@@ -523,27 +587,53 @@
           {
             "name": "Box Jump",
             "note": "Lower-body power",
-            "dose": "4×5"
+            "dose": "4×5",
+            "calories": 15,
+            "muscleGroups": [
+              "Quads",
+              "Glutes",
+              "Power"
+            ]
           },
           {
             "name": "Kettlebell Swing",
             "note": "Glutes・core・power",
-            "dose": "4×10"
+            "dose": "4×10",
+            "calories": 24,
+            "muscleGroups": [
+              "Glutes",
+              "Core",
+              "Power"
+            ]
           },
           {
             "name": "Wide-Grip Pulldown (Machine)",
             "note": "Upper back・upper lats",
-            "dose": "4×10"
+            "dose": "4×10",
+            "calories": 20,
+            "muscleGroups": [
+              "Back",
+              "Biceps"
+            ]
           },
           {
             "name": "Wide-Grip Row (Machine)",
             "note": "Mid back・rear delts",
-            "dose": "4×10"
+            "dose": "4×10",
+            "calories": 20,
+            "muscleGroups": [
+              "Back",
+              "Rear Delts"
+            ]
           },
           {
             "name": "Lateral Raise (Dumbbell)",
             "note": "Side delts",
-            "dose": "4×10"
+            "dose": "4×10",
+            "calories": 12,
+            "muscleGroups": [
+              "Side Delts"
+            ]
           }
         ]
       },
@@ -554,7 +644,9 @@
           {
             "name": "Rest",
             "note": "Recovery day, avoid extra loading",
-            "dose": "—"
+            "dose": "—",
+            "calories": 0,
+            "muscleGroups": []
           }
         ]
       },
@@ -565,32 +657,60 @@
           {
             "name": "Badminton / Volleyball",
             "note": "Full-body power・agility・cardio",
-            "dose": "depends on session"
+            "dose": "depends on session",
+            "calories": null,
+            "muscleGroups": [
+              "Full Body",
+              "Power",
+              "Agility",
+              "Cardio"
+            ]
           },
           {
             "name": "Lateral Raise (Dumbbell)*",
             "note": "Side delts",
-            "dose": "4×10"
+            "dose": "4×10",
+            "calories": 12,
+            "muscleGroups": [
+              "Side Delts"
+            ]
           },
           {
             "name": "Face Pull (Cable)",
             "note": "Rear delts",
-            "dose": "4×10"
+            "dose": "4×10",
+            "calories": 14,
+            "muscleGroups": [
+              "Rear Delts",
+              "Upper Back"
+            ]
           },
           {
             "name": "Overhead Tricep Extension (Cable)",
             "note": "Triceps・long head",
-            "dose": "4×10"
+            "dose": "4×10",
+            "calories": 12,
+            "muscleGroups": [
+              "Triceps"
+            ]
           },
           {
             "name": "Tricep Pushdown (Cable)",
             "note": "Triceps・lateral & medial heads",
-            "dose": "4×10"
+            "dose": "4×10",
+            "calories": 12,
+            "muscleGroups": [
+              "Triceps"
+            ]
           },
           {
             "name": "Bicep Curl (Cable)",
             "note": "Biceps",
-            "dose": "4×10"
+            "dose": "4×10",
+            "calories": 12,
+            "muscleGroups": [
+              "Biceps"
+            ]
           }
         ]
       },
@@ -601,27 +721,52 @@
           {
             "name": "Barbell Squat",
             "note": "Quads・glutes",
-            "dose": "4×8"
+            "dose": "4×8",
+            "calories": 30,
+            "muscleGroups": [
+              "Quads",
+              "Glutes"
+            ]
           },
           {
             "name": "Barbell RDL",
             "note": "Hamstrings・glutes・lower-back stability",
-            "dose": "4×8"
+            "dose": "4×8",
+            "calories": 30,
+            "muscleGroups": [
+              "Glutes",
+              "Hamstrings"
+            ]
           },
           {
             "name": "Incline Bench Press",
             "note": "Chest・front delts",
-            "dose": "4×8"
+            "dose": "4×8",
+            "calories": 20,
+            "muscleGroups": [
+              "Chest",
+              "Front Delts"
+            ]
           },
           {
             "name": "Russian Twist",
             "note": "Core・obliques",
-            "dose": "4×20"
+            "dose": "4×20",
+            "calories": 12,
+            "muscleGroups": [
+              "Core",
+              "Obliques"
+            ]
           },
           {
             "name": "Hanging Leg Raise",
             "note": "Lower abs・grip",
-            "dose": "4×10"
+            "dose": "4×10",
+            "calories": 14,
+            "muscleGroups": [
+              "Core",
+              "Grip"
+            ]
           }
         ]
       }

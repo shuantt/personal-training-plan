@@ -435,21 +435,59 @@
           {
             "name": "寬握下拉(機械)",
             "note": "上背・闊背肌上部",
-            "dose": "3×10"
+            "dose": "3×10",
+            "calories": 20,
+            "muscleGroups": [
+              "背",
+              "二頭"
+            ]
           },
           {
             "name": "窄握划船(機械)",
             "note": "中背・闊背肌下部",
-            "dose": "3×10"
+            "dose": "3×10",
+            "calories": 20,
+            "muscleGroups": [
+              "背"
+            ]
           },
           {
             "name": "直臂下壓(Cable)",
             "note": "下背・闊背肌下部",
-            "dose": "3×10"
+            "dose": "3×10",
+            "calories": 18,
+            "muscleGroups": [
+              "背"
+            ]
           },
-          { "name": "面拉(Cable)", "note": "肩後束", "dose": "4×10" },
-          { "name": "側平舉(啞鈴)", "note": "肩中束", "dose": "4×10" },
-          { "name": "二頭彎舉(啞鈴)", "note": "二頭肌", "dose": "4×10" }
+          {
+            "name": "面拉(Cable)",
+            "note": "肩後束",
+            "dose": "4×10",
+            "calories": 14,
+            "muscleGroups": [
+              "肩後束",
+              "上背"
+            ]
+          },
+          {
+            "name": "側平舉(啞鈴)",
+            "note": "肩中束",
+            "dose": "4×10",
+            "calories": 12,
+            "muscleGroups": [
+              "肩中束"
+            ]
+          },
+          {
+            "name": "二頭彎舉(啞鈴)",
+            "note": "二頭肌",
+            "dose": "4×10",
+            "calories": 12,
+            "muscleGroups": [
+              "二頭"
+            ]
+          }
         ]
       },
       {
@@ -459,12 +497,22 @@
           {
             "name": "助跑摸高",
             "note": "下肢爆發力・起跳節奏",
-            "dose": "4×5趟"
+            "dose": "4×5趟",
+            "calories": 18,
+            "muscleGroups": [
+              "下肢",
+              "爆發"
+            ]
           },
           {
             "name": "揮臂練習",
             "note": "肩關節穩定・協調",
-            "dose": "4×8"
+            "dose": "4×8",
+            "calories": 8,
+            "muscleGroups": [
+              "肩",
+              "協調"
+            ]
           }
         ]
       },
@@ -475,32 +523,60 @@
           {
             "name": "分腿蹲(啞鈴)",
             "note": "股四頭肌・臀肌・踝穩定",
-            "dose": "4×10/邊"
+            "dose": "4×10/邊",
+            "calories": 32,
+            "muscleGroups": [
+              "大腿",
+              "臀"
+            ]
           },
           {
             "name": "平板胸推(啞鈴)",
             "note": "胸大肌・三頭肌",
-            "dose": "4×10"
+            "dose": "4×10",
+            "calories": 20,
+            "muscleGroups": [
+              "胸",
+              "三頭"
+            ]
           },
           {
             "name": "肩推(啞鈴)",
             "note": "肩前束・三頭肌",
-            "dose": "4×10"
+            "dose": "4×10",
+            "calories": 18,
+            "muscleGroups": [
+              "肩",
+              "三頭"
+            ]
           },
           {
             "name": "面拉(Cable)",
             "note": "肩後束",
-            "dose": "4×10"
+            "dose": "4×10",
+            "calories": 14,
+            "muscleGroups": [
+              "肩後束",
+              "上背"
+            ]
           },
           {
             "name": "三頭過頭伸(Cable)",
             "note": "三頭肌・長頭",
-            "dose": "4×10"
+            "dose": "4×10",
+            "calories": 12,
+            "muscleGroups": [
+              "三頭"
+            ]
           },
           {
             "name": "三頭下壓(Cable)",
             "note": "三頭肌・外側頭・內側頭",
-            "dose": "4×10"
+            "dose": "4×10",
+            "calories": 12,
+            "muscleGroups": [
+              "三頭"
+            ]
           }
         ]
       },
@@ -508,19 +584,57 @@
         "code": "Thursday",
         "focus": "爆發・上中背・肩中後束",
         "exercises": [
-          { "name": "跳箱", "note": "下肢爆發力", "dose": "4×5" },
+          {
+            "name": "跳箱",
+            "note": "下肢爆發力",
+            "dose": "4×5",
+            "calories": 15,
+            "muscleGroups": [
+              "大腿",
+              "臀",
+              "爆發"
+            ]
+          },
           {
             "name": "盪壺 Kettlebell Swing",
             "note": "臀肌・核心・爆發",
-            "dose": "4×10"
+            "dose": "4×10",
+            "calories": 24,
+            "muscleGroups": [
+              "臀",
+              "核心",
+              "爆發"
+            ]
           },
           {
             "name": "寬握下拉(機械)",
             "note": "上背・闊背肌上部",
-            "dose": "4×10"
+            "dose": "4×10",
+            "calories": 20,
+            "muscleGroups": [
+              "背",
+              "二頭"
+            ]
           },
-          { "name": "寬握划船(機械)", "note": "中背・肩後束", "dose": "4×10" },
-          { "name": "側平舉(啞鈴)", "note": "肩中束", "dose": "4×10" }
+          {
+            "name": "寬握划船(機械)",
+            "note": "中背・肩後束",
+            "dose": "4×10",
+            "calories": 20,
+            "muscleGroups": [
+              "背",
+              "肩後束"
+            ]
+          },
+          {
+            "name": "側平舉(啞鈴)",
+            "note": "肩中束",
+            "dose": "4×10",
+            "calories": 12,
+            "muscleGroups": [
+              "肩中束"
+            ]
+          }
         ]
       },
       {
@@ -530,7 +644,9 @@
           {
             "name": "休息",
             "note": "恢復日，避免額外負重",
-            "dose": "—"
+            "dose": "—",
+            "calories": 0,
+            "muscleGroups": []
           }
         ]
       },
@@ -541,32 +657,60 @@
           {
             "name": "羽球／排球",
             "note": "全身爆發・敏捷・心肺",
-            "dose": "視場次"
+            "dose": "視場次",
+            "calories": null,
+            "muscleGroups": [
+              "全身",
+              "爆發",
+              "敏捷",
+              "心肺"
+            ]
           },
           {
             "name": "側平舉(啞鈴)*",
             "note": "肩中束",
-            "dose": "4×10"
+            "dose": "4×10",
+            "calories": 12,
+            "muscleGroups": [
+              "肩中束"
+            ]
           },
           {
             "name": "面拉(Cable)",
             "note": "肩後束",
-            "dose": "4×10"
+            "dose": "4×10",
+            "calories": 14,
+            "muscleGroups": [
+              "肩後束",
+              "上背"
+            ]
           },
           {
             "name": "三頭過頭伸(Cable)",
             "note": "三頭肌・長頭",
-            "dose": "4×10"
+            "dose": "4×10",
+            "calories": 12,
+            "muscleGroups": [
+              "三頭"
+            ]
           },
           {
             "name": "三頭下壓(Cable)",
             "note": "三頭肌・外側頭・內側頭",
-            "dose": "4×10"
+            "dose": "4×10",
+            "calories": 12,
+            "muscleGroups": [
+              "三頭"
+            ]
           },
           {
             "name": "二頭彎舉(Cable)",
             "note": "二頭肌",
-            "dose": "4×10"
+            "dose": "4×10",
+            "calories": 12,
+            "muscleGroups": [
+              "二頭"
+            ]
           }
         ]
       },
@@ -577,27 +721,52 @@
           {
             "name": "槓鈴深蹲",
             "note": "股四頭肌・臀肌",
-            "dose": "4×8"
+            "dose": "4×8",
+            "calories": 30,
+            "muscleGroups": [
+              "大腿",
+              "臀"
+            ]
           },
           {
             "name": "槓鈴RDL",
             "note": "腿後肌・臀肌・下背穩定",
-            "dose": "4×8"
+            "dose": "4×8",
+            "calories": 30,
+            "muscleGroups": [
+              "臀",
+              "大腿後側"
+            ]
           },
           {
             "name": "上斜臥推",
             "note": "胸大肌・肩前束",
-            "dose": "4×8"
+            "dose": "4×8",
+            "calories": 20,
+            "muscleGroups": [
+              "胸",
+              "肩前束"
+            ]
           },
           {
             "name": "俄羅斯轉體",
             "note": "核心・腹斜肌",
-            "dose": "4×20"
+            "dose": "4×20",
+            "calories": 12,
+            "muscleGroups": [
+              "核心",
+              "腹斜肌"
+            ]
           },
           {
             "name": "懸吊抬腿",
             "note": "下腹・握力",
-            "dose": "4×10"
+            "dose": "4×10",
+            "calories": 14,
+            "muscleGroups": [
+              "核心",
+              "握力"
+            ]
           }
         ]
       }
