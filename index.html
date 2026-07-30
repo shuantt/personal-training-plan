@@ -252,13 +252,13 @@ details.day[open] .day-h .day-arrow{transform:rotate(90deg)}
 .exo.cardio.selected{border-color:var(--blue);background:var(--blue-soft)}
 .exo.cardio.selected .exo-r{color:var(--blue)}
 
-.tmpl-pick-row{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0 0}
+.tmpl-pick-row{display:flex;gap:8px;flex-wrap:wrap;margin:14px 0 22px}
 .tmpl-pick{flex:0 0 auto;background:var(--surface);border:1px solid var(--line);color:var(--ink);font-family:"Oswald",sans-serif;font-weight:600;font-size:14px;letter-spacing:.04em;padding:9px 17px;border-radius:100px;box-shadow:var(--shadow)}
 .tmpl-pick:active{transform:scale(.96)}
 .tmpl-pick.active{background:var(--ink);color:#fff;border-color:var(--ink)}
 #tmpl-import-list{display:none}
 
-.hint{font-size:12px;color:var(--muted);margin:-4px 0 14px;line-height:1.6}
+.hint{font-size:12px;color:var(--muted);margin:14px 0 0;line-height:1.6}
 .hint b{color:var(--ink)}
 .disc{font-size:11.5px;color:var(--muted);padding:16px 4px 4px;border-top:1px solid var(--line);margin-top:10px;text-align:center;font-family:"Oswald",sans-serif;letter-spacing:.12em}
 
@@ -497,8 +497,9 @@ function renderTraining(training, trainingTemplates, t) {
     '<div class="bkcal" id="sum-kcal">0<small> ' + escapeHtml(t.kcal) + '</small></div><div class="bcount" id="sum-count">' + escapeHtml(t.notSelected) + '</div>' +
     '</div><button class="reset-btn" id="reset-today">' + escapeHtml(t.resetBtn) + '</button></div><div class="btags" id="sum-tags">' +
     '<span class="empty">' + escapeHtml(t.emptyTags) + '</span></div><div class="blist" id="sum-list"></div></div>' +
+    '<p class="hint">' + escapeHtml(training.builderHint) + '</p>' +
     '<div class="tmpl-pick-row" id="tmpl-pick-row">' + templatePicks + '</div><div id="tmpl-import-list"></div>' +
-    '<p class="hint">' + escapeHtml(training.builderHint) + '</p>' + groups +
+    groups +
     '<div class="note-card warn" style="margin-top:16px"><h3>' + escapeHtml(t.safetyTitle) + '</h3><p>' + safetyRules + '</p></div>';
 
   bindTemplateImport(trainingTemplates, t);
