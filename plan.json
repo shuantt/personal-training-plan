@@ -37,7 +37,7 @@
       }
     ],
     "milestones": [
-     {
+      {
         "month": "8月",
         "title": "重建節奏",
         "tag": "-2kg",
@@ -432,71 +432,187 @@
         "code": "Monday",
         "focus": "背・肩後束・二頭",
         "exercises": [
-          { "name": "寬握下拉(機械)", "note": "上背・背闊肌上部", "dose": "4×10" },
-          { "name": "寬握划船(機械)", "note": "中背・肩後束", "dose": "4×10" },
-          { "name": "直臂下壓(Cable)", "note": "下背・背闊肌下部", "dose": "4×10" },
-          { "name": "面拉(Cable)", "note": "肩後束", "dose": "4×10" },
-          { "name": "側平舉(啞鈴)", "note": "肩中束", "dose": "4×10" },
-          { "name": "二頭彎舉(啞鈴)", "note": "二頭肌", "dose": "4×10" }
+          {
+            "name": "寬握下拉(機械)",
+            "note": "上背・背闊肌上部",
+            "dose": "4×10"
+          },
+          {
+            "name": "寬握划船(機械)",
+            "note": "中背・肩後束",
+            "dose": "4×10"
+          },
+          {
+            "name": "直臂下壓(Cable)",
+            "note": "下背・背闊肌下部",
+            "dose": "4×10"
+          },
+          {
+            "name": "面拉(Cable)",
+            "note": "肩後束",
+            "dose": "4×10"
+          },
+          {
+            "name": "側平舉(啞鈴)",
+            "note": "肩中束",
+            "dose": "4×10"
+          },
+          {
+            "name": "二頭彎舉(啞鈴)",
+            "note": "二頭肌",
+            "dose": "4×10"
+          }
         ]
       },
       {
         "code": "Tuesday",
         "focus": "排球技術・爆發",
         "exercises": [
-          { "name": "助跑摸高", "note": "下肢爆發力・起跳節奏", "dose": "4×5趟" },
-          { "name": "揮臂練習", "note": "肩關節穩定・協調", "dose": "4×8" }
+          {
+            "name": "助跑摸高",
+            "note": "下肢爆發力・起跳節奏",
+            "dose": "4×5趟"
+          },
+          {
+            "name": "揮臂練習",
+            "note": "肩關節穩定・協調",
+            "dose": "4×8"
+          }
         ]
       },
       {
         "code": "Wednesday",
         "focus": "胸・肩前束・腿・踝穩定・三頭",
         "exercises": [
-          { "name": "分腿蹲(啞鈴)", "note": "股四頭肌・臀肌・踝穩定", "dose": "4×10/邊" },
-          { "name": "平板胸推(啞鈴)", "note": "胸大肌・三頭肌", "dose": "4×10" },
-          { "name": "肩推(啞鈴)", "note": "肩前束・三頭肌", "dose": "4×10" },
-          { "name": "三頭下壓(Cable)", "note": "三頭肌", "dose": "4×10" },
-          { "name": "面拉(Cable)", "note": "肩後束", "dose": "4×10" }
+          {
+            "name": "分腿蹲(啞鈴)",
+            "note": "股四頭肌・臀肌・踝穩定",
+            "dose": "4×10/邊"
+          },
+          {
+            "name": "平板胸推(啞鈴)",
+            "note": "胸大肌・三頭肌",
+            "dose": "4×10"
+          },
+          {
+            "name": "肩推(啞鈴)",
+            "note": "肩前束・三頭肌",
+            "dose": "4×10"
+          },
+          {
+            "name": "三頭下壓(Cable)",
+            "note": "三頭肌",
+            "dose": "4×10"
+          },
+          {
+            "name": "面拉(Cable)",
+            "note": "肩後束",
+            "dose": "4×10"
+          }
         ]
       },
       {
         "code": "Thursday",
         "focus": "爆發・背・肩中後束",
         "exercises": [
-          { "name": "跳箱", "note": "下肢爆發力", "dose": "4×5" },
-          { "name": "盪壺 Kettlebell Swing", "note": "臀肌・核心・爆發", "dose": "4×10" },
-          { "name": "寬握下拉(機械)", "note": "上背・背闊肌上部", "dose": "4×10" },
-          { "name": "寬握划船(機械)", "note": "中背・肩後束", "dose": "4×10" },
-          { "name": "側平舉(啞鈴)", "note": "肩中束", "dose": "4×10" }
+          {
+            "name": "跳箱",
+            "note": "下肢爆發力",
+            "dose": "4×5"
+          },
+          {
+            "name": "盪壺 Kettlebell Swing",
+            "note": "臀肌・核心・爆發",
+            "dose": "4×10"
+          },
+          {
+            "name": "寬握下拉(機械)",
+            "note": "上背・背闊肌上部",
+            "dose": "4×10"
+          },
+          {
+            "name": "寬握划船(機械)",
+            "note": "中背・肩後束",
+            "dose": "4×10"
+          },
+          {
+            "name": "側平舉(啞鈴)",
+            "note": "肩中束",
+            "dose": "4×10"
+          }
         ]
       },
       {
         "code": "Friday",
         "focus": "休息",
         "exercises": [
-          { "name": "休息", "note": "恢復日，避免額外負重", "dose": "—" }
+          {
+            "name": "休息",
+            "note": "恢復日，避免額外負重",
+            "dose": "—"
+          }
         ]
       },
       {
         "code": "Saturday",
         "focus": "打球・手臂",
         "exercises": [
-          { "name": "羽球／排球", "note": "全身爆發・敏捷・心肺", "dose": "視場次" },
-          { "name": "側平舉(啞鈴)*", "note": "肩中束・不累再做", "dose": "3×10" },
-          { "name": "三頭過頭伸(Cable)*", "note": "三頭肌・不累再做", "dose": "3×10" },
-          { "name": "三頭下壓(Cable)", "note": "三頭肌", "dose": "4×10" },          
-          { "name": "二頭彎舉(Cable)*", "note": "二頭肌・不累再做", "dose": "3×10" }
+          {
+            "name": "羽球／排球",
+            "note": "全身爆發・敏捷・心肺",
+            "dose": "視場次"
+          },
+          {
+            "name": "側平舉(啞鈴)*",
+            "note": "肩中束・不累再做",
+            "dose": "3×10"
+          },
+          {
+            "name": "三頭過頭伸(Cable)*",
+            "note": "三頭肌・不累再做",
+            "dose": "3×10"
+          },
+          {
+            "name": "三頭下壓(Cable)",
+            "note": "三頭肌",
+            "dose": "4×10"
+          },
+          {
+            "name": "二頭彎舉(Cable)*",
+            "note": "二頭肌・不累再做",
+            "dose": "3×10"
+          }
         ]
       },
       {
         "code": "Sunday",
         "focus": "腿・胸・核心",
         "exercises": [
-          { "name": "槓鈴深蹲", "note": "股四頭肌・臀肌", "dose": "4×8" },
-          { "name": "槓鈴RDL", "note": "腿後肌・臀肌・下背穩定", "dose": "4×8" },
-          { "name": "上斜臥推", "note": "胸大肌・肩前束", "dose": "4×8" },
-          { "name": "俄羅斯轉體", "note": "核心・腹斜肌", "dose": "4×20" },
-          { "name": "懸吊抬腿", "note": "下腹・握力", "dose": "4×10" }
+          {
+            "name": "槓鈴深蹲",
+            "note": "股四頭肌・臀肌",
+            "dose": "4×8"
+          },
+          {
+            "name": "槓鈴RDL",
+            "note": "腿後肌・臀肌・下背穩定",
+            "dose": "4×8"
+          },
+          {
+            "name": "上斜臥推",
+            "note": "胸大肌・肩前束",
+            "dose": "4×8"
+          },
+          {
+            "name": "俄羅斯轉體",
+            "note": "核心・腹斜肌",
+            "dose": "4×20"
+          },
+          {
+            "name": "懸吊抬腿",
+            "note": "下腹・握力",
+            "dose": "4×10"
+          }
         ]
       }
     ]
@@ -509,8 +625,7 @@
       "targetMaxCm": 240,
       "verticalJumpMinCm": 40,
       "verticalJumpMaxCm": 50,
-      "gaugePercent": 60,
-      "note": "190／224 為先前設定的參考值，等妳實測摸高後可以再換成正確數字。"
+      "gaugePercent": 60
     },
     "menus": [
       {
@@ -603,6 +718,37 @@
     "phaseNote": {
       "title": "減脂期的爆發力該怎麼看?",
       "description": "8-10月赤字較大，這階段以動作品質與神經協調為主，不用追破紀錄的重量或高度。明顯的力量與跳躍進步，通常會在11-12月轉維持、能量供應比較充裕之後才顯現。"
+    },
+    "testHistory": {
+      "metrics": [
+        {
+          "key": "armSwingReach",
+          "name": "原地擺臂摸高",
+          "color": "#F5A524",
+          "unit": "cm"
+        },
+        {
+          "key": "approachReach",
+          "name": "助跑摸高",
+          "color": "#6D7BEF",
+          "unit": "cm",
+          "primary": true
+        },
+        {
+          "key": "longJump",
+          "name": "立定跳遠",
+          "color": "#6FCF97",
+          "unit": "cm"
+        }
+      ],
+      "records": [
+        {
+          "month": "7月",
+          "armSwingReach": 220,
+          "approachReach": 210,
+          "longJump": 165
+        }
+      ]
     }
   },
   "diet": {

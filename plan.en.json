@@ -1,0 +1,858 @@
+{
+  "profile": {
+    "summary": "149cm・55kg・Build muscle & cut fat, vertical jump as secondary goal・Aug–Dec 2026",
+    "lead": "Primary track: build a solid strength and body-composition base. Secondary track: vertical jump and explosiveness, gradually getting more room as the cut eases up.",
+    "bodyGoal": {
+      "label": "Body Weight",
+      "value": "55 → 48",
+      "unit": "kg",
+      "detail": "Body fat 33% → 24%"
+    },
+    "jumpGoal": {
+      "label": "Vertical Jump (long-term)",
+      "value": "40",
+      "unit": "cm",
+      "detail": "6 months"
+    },
+    "months": [
+      {
+        "month": "Aug",
+        "weight": "53"
+      },
+      {
+        "month": "Sep",
+        "weight": "51"
+      },
+      {
+        "month": "Oct",
+        "weight": "50"
+      },
+      {
+        "month": "Nov",
+        "weight": "49"
+      },
+      {
+        "month": "Dec",
+        "weight": "48"
+      }
+    ],
+    "milestones": [
+      {
+        "month": "Aug",
+        "title": "Rebuild Rhythm",
+        "tag": "-2kg",
+        "tone": "amber",
+        "description": "Hold 1450 kcal consistently, roughly a 400 kcal/day deficit. Quality of movement over load — kettlebell swings and box jumps focus on stable landings, not height or weight.",
+        "checkLabel": "InBody",
+        "checkValue": "Body fat ~30%・1st retest・end of month"
+      },
+      {
+        "month": "Sep",
+        "title": "Full Push",
+        "tag": "-2kg",
+        "tone": "amber",
+        "description": "Deficit ~380 kcal/day, progressively load main lifts. These two months will feel like the hardest stretch overall.",
+        "checkLabel": "Check",
+        "checkValue": "Body fat ~28%・waist・pants fit・1st vertical jump test"
+      },
+      {
+        "month": "Oct",
+        "title": "Taper",
+        "tag": "-1kg",
+        "tone": "amber",
+        "description": "Deficit ~350 kcal/day, no need to add more cardio or cut further. Should start feeling it: lower heart rate at same intensity, better endurance.",
+        "checkLabel": "InBody",
+        "checkValue": "Body fat ~26%・2nd retest・around week 16"
+      },
+      {
+        "month": "Nov",
+        "title": "Hold the Line",
+        "tag": "-1kg",
+        "tone": "blue",
+        "description": "Weekdays stay at 1450 kcal. Year-end dinner season starts — the job is to hold, not push harder.",
+        "checkLabel": "Check",
+        "checkValue": "Body fat ~25%・2nd vertical jump test"
+      },
+      {
+        "month": "Dec",
+        "title": "Consolidate",
+        "tag": "-1kg",
+        "tone": "blue",
+        "description": "Continue the November pattern, weekdays at 1450 kcal. Get through year-end without a big rebound — focus on locking in strength and performance, not chasing new lows.",
+        "checkLabel": "InBody",
+        "checkValue": "Body fat ~24%・3rd retest・around end of Dec"
+      }
+    ],
+    "tracking": [
+      {
+        "label": "Strength",
+        "text": "Working weight on main lifts — steady progression is enough."
+      },
+      {
+        "label": "Explosiveness",
+        "text": "Box jump height, vertical jump tests, jump rope streak."
+      },
+      {
+        "label": "Sports Performance",
+        "text": "Subjective rating (1-10) of endurance during games."
+      },
+      {
+        "label": "Diet",
+        "text": "Whether the weekday vs weekend calorie gap narrows over time."
+      },
+      {
+        "label": "Sleep",
+        "text": "23:00 screen-lock success rate, actual sleep time, weekend catch-up hours."
+      }
+    ]
+  },
+  "training": {
+    "weeklySchedule": [
+      {
+        "label": "Games Scheduled",
+        "description": "4 lifting sessions + 3-4 cardio + ball sports"
+      },
+      {
+        "label": "No Games",
+        "description": "4 lifting sessions + 4-5 cardio"
+      },
+      {
+        "label": "Bouldering",
+        "description": "Paused — focus on lowering weight and rebuilding strength first"
+      }
+    ],
+    "builderHint": "Tap an exercise to add/remove it, or clear all at once. Each exercise is estimated by its listed sets×reps; calories are just a rough daily reference.",
+    "exerciseGroups": [
+      {
+        "name": "Lower Body・Squat Pattern",
+        "exercises": [
+          {
+            "name": "Barbell Squat",
+            "calories": 30,
+            "dose": "4×10",
+            "muscleGroups": [
+              "Quads",
+              "Glutes"
+            ],
+            "note": "Quads・Glutes"
+          },
+          {
+            "name": "Split Squat",
+            "calories": 32,
+            "dose": "4×10/side",
+            "muscleGroups": [
+              "Quads",
+              "Glutes"
+            ],
+            "note": "Quads・Glutes"
+          }
+        ]
+      },
+      {
+        "name": "Lower Body・Hip Hinge",
+        "exercises": [
+          {
+            "name": "Romanian Deadlift",
+            "calories": 30,
+            "dose": "4×10",
+            "muscleGroups": [
+              "Glutes",
+              "Hamstrings"
+            ],
+            "note": "Glutes・Hamstrings"
+          }
+        ]
+      },
+      {
+        "name": "Lower Body・Explosive",
+        "exercises": [
+          {
+            "name": "Pogo Hops",
+            "calories": 15,
+            "dose": "3×20",
+            "muscleGroups": [
+              "Calves",
+              "Ankles",
+              "Power"
+            ],
+            "note": "Calves・Ankles・Power"
+          },
+          {
+            "name": "Box Jump",
+            "calories": 15,
+            "dose": "4×5",
+            "muscleGroups": [
+              "Quads",
+              "Glutes",
+              "Power"
+            ],
+            "note": "~50cm・reset each rep・rest 90–120s between sets"
+          },
+          {
+            "name": "Kettlebell Swing",
+            "calories": 24,
+            "dose": "4×10",
+            "muscleGroups": [
+              "Glutes",
+              "Core",
+              "Power"
+            ],
+            "note": "Glutes・Core・Power"
+          }
+        ]
+      },
+      {
+        "name": "Upper Body・Push",
+        "exercises": [
+          {
+            "name": "Flat Bench Press",
+            "calories": 20,
+            "dose": "4×10",
+            "muscleGroups": [
+              "Chest",
+              "Triceps"
+            ],
+            "note": "Chest・Triceps"
+          },
+          {
+            "name": "Incline Bench Press",
+            "calories": 20,
+            "dose": "4×10",
+            "muscleGroups": [
+              "Chest",
+              "Front Delts",
+              "Triceps"
+            ],
+            "note": "Chest・Front Delts・Triceps"
+          },
+          {
+            "name": "Shoulder Press",
+            "calories": 18,
+            "dose": "4×10",
+            "muscleGroups": [
+              "Shoulders",
+              "Triceps"
+            ],
+            "note": "Shoulders・Triceps"
+          }
+        ]
+      },
+      {
+        "name": "Upper Body・Pull",
+        "exercises": [
+          {
+            "name": "Wide-Grip Pulldown",
+            "calories": 20,
+            "dose": "4×10",
+            "muscleGroups": [
+              "Back",
+              "Biceps"
+            ],
+            "note": "Back・Biceps"
+          },
+          {
+            "name": "Narrow-Grip Pulldown",
+            "calories": 20,
+            "dose": "4×10",
+            "muscleGroups": [
+              "Back",
+              "Biceps"
+            ],
+            "note": "Back・Biceps"
+          },
+          {
+            "name": "Narrow-Grip Row",
+            "calories": 20,
+            "dose": "4×10",
+            "muscleGroups": [
+              "Back"
+            ],
+            "note": "Back"
+          },
+          {
+            "name": "Wide-Grip Row",
+            "calories": 20,
+            "dose": "4×10",
+            "muscleGroups": [
+              "Back",
+              "Rear Delts"
+            ],
+            "note": "Back・Rear Delts"
+          },
+          {
+            "name": "Dumbbell Lateral Raise",
+            "calories": 12,
+            "dose": "4×10",
+            "muscleGroups": [
+              "Side Delts"
+            ],
+            "note": "Side Delts"
+          },
+          {
+            "name": "Cable Face Pull",
+            "calories": 14,
+            "dose": "4×10",
+            "muscleGroups": [
+              "Rear Delts",
+              "Upper Back"
+            ],
+            "note": "Rear Delts・Upper Back"
+          },
+          {
+            "name": "Pull-Up",
+            "calories": 24,
+            "dose": "4×10",
+            "muscleGroups": [
+              "Back",
+              "Biceps"
+            ],
+            "note": "Back・Biceps"
+          }
+        ]
+      },
+      {
+        "name": "Arms",
+        "exercises": [
+          {
+            "name": "Bicep Curl",
+            "calories": 12,
+            "dose": "4×10",
+            "muscleGroups": [
+              "Biceps"
+            ],
+            "note": "Biceps"
+          },
+          {
+            "name": "Overhead Tricep Extension",
+            "calories": 12,
+            "dose": "4×10",
+            "muscleGroups": [
+              "Triceps"
+            ],
+            "note": "Triceps"
+          },
+          {
+            "name": "Tricep Pushdown",
+            "calories": 12,
+            "dose": "4×10",
+            "muscleGroups": [
+              "Triceps"
+            ],
+            "note": "Triceps"
+          }
+        ]
+      },
+      {
+        "name": "Core",
+        "exercises": [
+          {
+            "name": "Plank",
+            "calories": 10,
+            "dose": "4×30–45s",
+            "muscleGroups": [
+              "Core"
+            ],
+            "note": "Core"
+          },
+          {
+            "name": "Side Plank",
+            "calories": 14,
+            "dose": "4×30–45s/side",
+            "muscleGroups": [
+              "Core",
+              "Obliques"
+            ],
+            "note": "Core・Obliques"
+          },
+          {
+            "name": "Dead Bug",
+            "calories": 12,
+            "dose": "4×10/side",
+            "muscleGroups": [
+              "Core"
+            ],
+            "note": "Core"
+          },
+          {
+            "name": "Pallof Press",
+            "calories": 14,
+            "dose": "4×10/side",
+            "muscleGroups": [
+              "Core"
+            ],
+            "note": "Core"
+          }
+        ]
+      },
+      {
+        "name": "Cardio Finisher",
+        "cardio": true,
+        "exercises": [
+          {
+            "name": "Incline Walk",
+            "calories": 210,
+            "dose": "30min",
+            "muscleGroups": [
+              "Cardio"
+            ],
+            "note": "Incline 10・Speed 4.5"
+          },
+          {
+            "name": "Jump Rope Intervals",
+            "calories": 200,
+            "dose": "2min on／30s rest×10 rounds",
+            "muscleGroups": [
+              "Cardio",
+              "Coordination"
+            ],
+            "note": "20 effective minutes・rep count is a rough guide only"
+          }
+        ]
+      }
+    ],
+    "safetyRules": [
+      {
+        "title": "Explosive/jump moves always go first in the session",
+        "description": "Doing them while fatigued is hardest on the knees and ankles."
+      },
+      {
+        "title": "Landing control comes before jump height",
+        "description": "Land light, knees tracking toes, absorb like sitting into a chair."
+      }
+    ]
+  },
+  "trainingTemplates": {
+    "intro": "A reference weekly template, arranged around major and minor muscle groups while avoiding back-to-back work on the same muscle.",
+    "orderingNote": {
+      "title": "Exercise Order",
+      "description": "Ordered for movement quality (and to minimize equipment changes): explosive/jump moves > big compound multi-joint lifts > single-joint isolation moves (fit in a dead hang, 3x30s, for grip whenever you have a spare moment)."
+    },
+    "days": [
+      {
+        "code": "Monday",
+        "focus": "Upper Back・Mid Back・Lower Back・Rear Delts・Biceps",
+        "exercises": [
+          {
+            "name": "Wide-Grip Pulldown (Machine)",
+            "note": "Upper back・upper lats",
+            "dose": "4×10"
+          },
+          {
+            "name": "Wide-Grip Row (Machine)",
+            "note": "Mid back・rear delts",
+            "dose": "4×10"
+          },
+          {
+            "name": "Straight-Arm Pulldown (Cable)",
+            "note": "Lower back・lower lats",
+            "dose": "4×10"
+          },
+          {
+            "name": "Face Pull (Cable)",
+            "note": "Rear delts",
+            "dose": "4×10"
+          },
+          {
+            "name": "Lateral Raise (Dumbbell)",
+            "note": "Side delts",
+            "dose": "4×10"
+          },
+          {
+            "name": "Bicep Curl (Dumbbell)",
+            "note": "Biceps",
+            "dose": "4×10"
+          }
+        ]
+      },
+      {
+        "code": "Tuesday",
+        "focus": "Volleyball Skills・Explosiveness",
+        "exercises": [
+          {
+            "name": "Approach Jump / Reach",
+            "note": "Lower-body power・takeoff rhythm",
+            "dose": "4×5 reps"
+          },
+          {
+            "name": "Arm Swing Drill",
+            "note": "Shoulder stability・coordination",
+            "dose": "4×8"
+          }
+        ]
+      },
+      {
+        "code": "Wednesday",
+        "focus": "Chest・Front Delts・Legs・Ankle Stability・Triceps",
+        "exercises": [
+          {
+            "name": "Split Squat (Dumbbell)",
+            "note": "Quads・glutes・ankle stability",
+            "dose": "4×10/side"
+          },
+          {
+            "name": "Flat Bench Press (Dumbbell)",
+            "note": "Chest・triceps",
+            "dose": "4×10"
+          },
+          {
+            "name": "Shoulder Press (Dumbbell)",
+            "note": "Front delts・triceps",
+            "dose": "4×10"
+          },
+          {
+            "name": "Tricep Pushdown (Cable)",
+            "note": "Triceps",
+            "dose": "4×10"
+          },
+          {
+            "name": "Face Pull (Cable)",
+            "note": "Rear delts",
+            "dose": "4×10"
+          }
+        ]
+      },
+      {
+        "code": "Thursday",
+        "focus": "Explosiveness・Upper Back・Mid Back・Mid/Rear Delts",
+        "exercises": [
+          {
+            "name": "Box Jump",
+            "note": "Lower-body power",
+            "dose": "4×5"
+          },
+          {
+            "name": "Kettlebell Swing",
+            "note": "Glutes・core・power",
+            "dose": "4×10"
+          },
+          {
+            "name": "Wide-Grip Pulldown (Machine)",
+            "note": "Upper back・upper lats",
+            "dose": "4×10"
+          },
+          {
+            "name": "Wide-Grip Row (Machine)",
+            "note": "Mid back・rear delts",
+            "dose": "4×10"
+          },
+          {
+            "name": "Lateral Raise (Dumbbell)",
+            "note": "Side delts",
+            "dose": "4×10"
+          }
+        ]
+      },
+      {
+        "code": "Friday",
+        "focus": "Rest",
+        "exercises": [
+          {
+            "name": "Rest",
+            "note": "Recovery day, avoid extra loading",
+            "dose": "—"
+          }
+        ]
+      },
+      {
+        "code": "Saturday",
+        "focus": "Sports・Arms (optional)",
+        "exercises": [
+          {
+            "name": "Badminton / Volleyball",
+            "note": "Full-body power・agility・cardio",
+            "dose": "depends on session"
+          },
+          {
+            "name": "Lateral Raise (Dumbbell)*",
+            "note": "Side delts・only if not tired",
+            "dose": "3×10"
+          },
+          {
+            "name": "Overhead Tricep Extension (Cable)*",
+            "note": "Triceps・only if not tired",
+            "dose": "3×10"
+          },
+          {
+            "name": "Tricep Pushdown (Cable)",
+            "note": "Triceps",
+            "dose": "4×10"
+          },
+          {
+            "name": "Bicep Curl (Cable)*",
+            "note": "Biceps・only if not tired",
+            "dose": "3×10"
+          }
+        ]
+      },
+      {
+        "code": "Sunday",
+        "focus": "Legs・Chest・Core",
+        "exercises": [
+          {
+            "name": "Barbell Squat",
+            "note": "Quads・glutes",
+            "dose": "4×8"
+          },
+          {
+            "name": "Barbell RDL",
+            "note": "Hamstrings・glutes・lower-back stability",
+            "dose": "4×8"
+          },
+          {
+            "name": "Incline Bench Press",
+            "note": "Chest・front delts",
+            "dose": "4×8"
+          },
+          {
+            "name": "Russian Twist",
+            "note": "Core・obliques",
+            "dose": "4×20"
+          },
+          {
+            "name": "Hanging Leg Raise",
+            "note": "Lower abs・grip",
+            "dose": "4×10"
+          }
+        ]
+      }
+    ]
+  },
+  "jumpTraining": {
+    "target": {
+      "standingReachCm": 190,
+      "netHeightCm": 224,
+      "targetMinCm": 230,
+      "targetMaxCm": 240,
+      "verticalJumpMinCm": 40,
+      "verticalJumpMaxCm": 50,
+      "gaugePercent": 60
+    },
+    "testHistory": {
+      "metrics": [
+        {
+          "key": "armSwingReach",
+          "name": "Standing Arm-Swing Reach",
+          "color": "#F5A524",
+          "unit": "cm"
+        },
+        {
+          "key": "approachReach",
+          "name": "Approach Jump Reach",
+          "color": "#6D7BEF",
+          "unit": "cm",
+          "primary": true
+        },
+        {
+          "key": "longJump",
+          "name": "Standing Long Jump",
+          "color": "#6FCF97",
+          "unit": "cm"
+        }
+      ],
+      "records": [
+        {
+          "month": "Jul",
+          "armSwingReach": 220,
+          "approachReach": 210,
+          "longJump": 165
+        }
+      ]
+    },
+    "menus": [
+      {
+        "name": "Gym Version",
+        "condition": "When box/kettlebell available",
+        "exercises": [
+          {
+            "name": "Pogo Hops",
+            "note": "Warm-up, ankle stiffness, zero risk",
+            "dose": "3×20"
+          },
+          {
+            "name": "Box Jump",
+            "note": "Clean power, don't chain reps, rest 90s+ between sets",
+            "dose": "4×5"
+          },
+          {
+            "name": "Kettlebell Swing",
+            "note": "",
+            "dose": "4×10"
+          },
+          {
+            "name": "Squat Jump",
+            "note": "Add only if feeling good, reset each rep",
+            "dose": "3×5"
+          },
+          {
+            "name": "Approach Jump / Reach",
+            "note": "Technical practice, see breakdown below",
+            "dose": "5-8 reps"
+          }
+        ]
+      },
+      {
+        "name": "Basement Version",
+        "condition": "No box or kettlebell",
+        "exercises": [
+          {
+            "name": "Pogo Hops",
+            "note": "",
+            "dose": "3×20"
+          },
+          {
+            "name": "Bodyweight Squat Jump",
+            "note": "In-place jump, absorb immediately on landing",
+            "dose": "4×6"
+          },
+          {
+            "name": "Band Clamshell / Side Leg Raise",
+            "note": "Hip stability, helps landing control",
+            "dose": "3×15/side"
+          },
+          {
+            "name": "Step-Down Landing Drill",
+            "note": "Low step, pure landing-absorption practice",
+            "dose": "3×8"
+          },
+          {
+            "name": "Approach Jump / Reach",
+            "note": "Check ceiling height first, watch for slippery floor, 3-4 step approach is enough",
+            "dose": "5-8 reps"
+          }
+        ]
+      }
+    ],
+    "approachSkill": {
+      "title": "The approach jump is the single most valuable drill for adding vertical",
+      "description": "Rhythm is \"small – big – together\": a small first step, one fast max-speed stride, then quickly close the feet together into the takeoff. On the last two steps, let the heel touch down briefly and lean the body slightly back to convert horizontal speed into upward force. Swing the arms back hard, then drive them up. Mark a wall and check your reach every 2-3 weeks — get the mechanics right and the height follows on its own."
+    },
+    "specialMoves": [
+      {
+        "name": "Squat Jump",
+        "tag": "Power + Coordination",
+        "tone": "blue",
+        "description": "Bodyweight or light load, absorb on landing immediately, no continuous bouncing (reset each rep)."
+      },
+      {
+        "name": "Volleyball Block Footwork",
+        "tag": "Lateral Shuffle",
+        "tone": "blue",
+        "description": "Lateral shuffle into a vertical jump — trains footwork transition efficiency, not just jump height."
+      },
+      {
+        "name": "Landing Stability Drill",
+        "tag": "Safety First",
+        "tone": "amber",
+        "description": "Land light after each jump, knees tracking toes, absorb like sitting into a chair — this matters more than how high you jump."
+      }
+    ],
+    "phaseNote": {
+      "title": "How to think about explosiveness during the cut?",
+      "description": "The Aug-Oct deficit is bigger, so this phase prioritizes movement quality and neural coordination — don't chase record weights or heights. Real gains in strength and jump usually show up once you shift to maintenance in Nov-Dec, when energy availability is higher."
+    }
+  },
+  "diet": {
+    "dailyTargets": [
+      {
+        "label": "Weekday Calories",
+        "value": "1450",
+        "tone": "default"
+      },
+      {
+        "label": "Protein g",
+        "value": "90",
+        "tone": "amber"
+      },
+      {
+        "label": "Weekend Meals Out",
+        "value": "Flexible",
+        "tone": "blue"
+      },
+      {
+        "label": "Off-Limits Food",
+        "value": "Potato Chips",
+        "tone": "blue"
+      }
+    ],
+    "meals": [
+      {
+        "name": "Breakfast",
+        "description": "High-protein soy milk (230kcal／13C／20P／11F); skip if lunch will be a large meal."
+      },
+      {
+        "name": "Lunch",
+        "description": "Company meal-ordering platform, 450-850kcal (bento／healthy meal box／sandwich／Subway)."
+      },
+      {
+        "name": "Dinner",
+        "description": "Convenience store, eaten 1+ hour before training, portion adjusted based on the first two meals."
+      },
+      {
+        "name": "Post-Workout",
+        "description": "Soy milk or whey — optional depending on how much you've already eaten that day; it's a gap-filler, not a fixed step."
+      }
+    ],
+    "proteinSources": [
+      "Eggs",
+      "Soy Milk",
+      "Whey",
+      "Chicken Breast",
+      "Chicken Thigh",
+      "Firm Tofu",
+      "Shrimp",
+      "Edamame"
+    ],
+    "refuelPlans": [
+      {
+        "name": "3-Hour Session",
+        "burn": "400-700 kcal burned",
+        "targets": "Replace carbs 60-80g／protein 25-30g／fat 10-15g, roughly 450-550 kcal.",
+        "example": "1 rice ball + 2 tea eggs + 1 cup soy milk"
+      },
+      {
+        "name": "5-Hour Session",
+        "burn": "700-1100 kcal burned",
+        "targets": "Replace carbs 80-110g／protein 30-35g／fat 15-20g, roughly 600-750 kcal.",
+        "example": "1 rice ball + 1 sweet potato + 100g chicken thigh + 1 cup soy milk"
+      }
+    ],
+    "strategy": {
+      "title": "Look at the weekly total, not each meal in isolation",
+      "description": "Refueling after sports is filling a real hole, not \"breaking\" the plan; a dinner-out already counts as that meal's refuel — no need to double up; the post-workout weekday drink is just a gap-filler you can skip if you've already eaten a full meal beforehand."
+    }
+  },
+  "recovery": {
+    "sections": [
+      {
+        "eyebrow": "RECOVERY・Soreness & Progression",
+        "tone": "good",
+        "title": "It still works even without soreness — don't chase pain",
+        "description": "Delayed-onset soreness comes from volume and novel stimulus stacking up, not from a requirement to hurt. Each session leads with only one key lower-body movement, to avoid leaving the legs sore for days at a time."
+      },
+      {
+        "eyebrow": "SLEEP・Sleep Target",
+        "tone": "default",
+        "title": "00:00 – 07:00",
+        "description": "Currently averaging around 6 hours; needs to move to 7+ hours. Cap weekend catch-up sleep at \"weekday wake time + 1.5-2 hours\"."
+      },
+      {
+        "eyebrow": "GUARD・Year-End Protection",
+        "tone": "warn",
+        "title": "Deload week in November",
+        "description": "Placed right before dinner season starts, to stop fatigue from piling up into December — that's exactly when things fell apart last year, so this time it's deliberately protected."
+      },
+      {
+        "eyebrow": "SIGNALS・When to Pull Back",
+        "tone": "warn",
+        "title": "If these show up, scale back — don't cut the diet further",
+        "description": "2-3 straight weeks of no sleep improvement, a clear drop in lifting performance, or starting to feel like giving up on the diet — these are all signs the body is asking to stop. Better to pull back to a more conservative pace than to push through."
+      },
+      {
+        "eyebrow": "MEASURE・How to Measure",
+        "tone": "default",
+        "title": "Same time, same conditions — track the trend, not single readings",
+        "description": "Do InBody at the same time of day (e.g. fasted in the morning) on the same machine each time. Focus on the 3-month trend — don't worry too much about any single reading going up or down."
+      }
+    ]
+  }
+}

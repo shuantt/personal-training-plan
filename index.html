@@ -29,6 +29,7 @@
   --blue:#2C43D8;
   --blue-soft:#E9ECFF;
   --amber:#F5A524;
+  --amber-strong:#C2570D;
   --amber-soft:#FCEFD4;
   --good:#159C73;
   --shadow:0 1px 2px rgba(21,23,42,.04),0 8px 24px rgba(21,23,42,.06);
@@ -56,7 +57,10 @@ header{
 .brand{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
 .brand h1{font-family:"Oswald",sans-serif;font-weight:600;font-size:28px;letter-spacing:.05em;line-height:1.1}
 .brand .sub{font-family:"Oswald",sans-serif;font-weight:500;font-size:12px;letter-spacing:.2em;color:var(--blue)}
+.brand-row{display:flex;align-items:center;justify-content:space-between;gap:10px}
 .who{margin-top:4px;font-size:12.5px;color:var(--muted)}
+.lang-btn{flex:0 0 auto;background:var(--ink);color:#EDEEF5;border:none;font-family:"Oswald",sans-serif;font-weight:600;font-size:12px;letter-spacing:.08em;padding:8px 14px;border-radius:100px;box-shadow:var(--shadow)}
+.lang-btn:active{transform:scale(.96)}
 
 /* hero dark card */
 .hero{
@@ -79,9 +83,12 @@ svg.profile{width:100%;height:auto;display:block}
 .month-chip .m{font-size:11px;color:#8A90A8}
 .month-chip .w{font-family:"Oswald",sans-serif;font-size:16px;font-weight:600;color:var(--amber);margin-top:1px}
 
-/* gauge hero */
-.hero.gauge-hero{display:grid;grid-template-columns:auto 1fr;gap:18px;align-items:center}
-.gauge{position:relative;width:92px;height:240px;flex:0 0 92px}
+/* gauge hero — gauge has no fixed height; grid stretch makes it
+   match the height of the text column automatically (top aligns
+   with TARGET, bottom aligns with whatever is currently the last
+   line in that column) */
+.gauge-hero{display:grid;grid-template-columns:auto 1fr;gap:40px}
+.gauge{position:relative;width:92px}
 .gauge .track{position:absolute;right:2px;top:0;bottom:0;width:10px;border-radius:6px;background:rgba(255,255,255,.09);overflow:hidden}
 .gauge .fill{position:absolute;left:0;bottom:0;width:100%;background:linear-gradient(180deg,#5B6BF0,#2C43D8);height:0;border-radius:6px;transition:height 1.1s cubic-bezier(.2,.8,.2,1) .25s}
 .gauge .zone{position:absolute;right:2px;width:10px;border-radius:6px;background:repeating-linear-gradient(180deg,var(--amber) 0 5px,transparent 5px 10px);opacity:.9}
@@ -91,7 +98,42 @@ svg.profile{width:100%;height:auto;display:block}
 .gtxt .gk{font-family:"Oswald",sans-serif;font-size:12px;letter-spacing:.14em;color:var(--amber);margin-bottom:6px}
 .gtxt .gv{font-size:14px;line-height:1.6;color:#C7CBDE}
 .gtxt .gv b{color:#fff}
-.gtxt .grow{border-top:1px solid rgba(255,255,255,.12);padding-top:9px;margin-top:9px;font-size:12.5px;color:#8A90A8}
+.gtxt .tests{border-top:1px solid rgba(255,255,255,.12);padding-top:11px;margin-top:11px}
+.gtxt .tests-label{font-family:"Oswald",sans-serif;font-size:11px;letter-spacing:.14em;color:var(--amber);margin-bottom:8px;display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:4px}
+.gtxt .tests-label .delta{font-family:"Noto Sans TC",sans-serif;font-size:10.5px;color:#6FCF97;font-weight:500;letter-spacing:0}
+.gtxt .tests-label .delta.down{color:#E08A8A}
+.gtxt .tests-row{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.gtxt .tests-row .ti{text-align:left}
+.gtxt .tests-row .tv{font-family:"Oswald",sans-serif;font-size:18px;font-weight:600;color:#fff;line-height:1.1}
+.gtxt .tests-row .tv small{font-family:"Noto Sans TC",sans-serif;font-size:10.5px;color:#8A90A8;font-weight:400;margin-left:1px}
+.gtxt .tests-row .tl{font-size:10.5px;color:#8A90A8;margin-top:3px;line-height:1.3}
+.gtxt .spark-wrap{margin-top:11px;border-top:1px solid rgba(255,255,255,.12);padding-top:11px}
+.gtxt .spark-row{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:6px;flex-wrap:wrap;gap:4px}
+.gtxt .spark-label{font-family:"Oswald",sans-serif;font-size:11px;letter-spacing:.14em;color:var(--amber)}
+.gtxt .spark-legend{display:flex;gap:10px;font-size:10px;color:#8A90A8}
+.gtxt .spark-legend span{display:inline-flex;align-items:center;gap:4px}
+.gtxt .spark-legend i{width:7px;height:7px;border-radius:50%;display:inline-block}
+svg.spark{width:100%;height:auto;display:block;margin-top:2px}
+.gtxt .spark-empty{font-size:12px;color:#8A90A8;padding:4px 0 2px}
+
+/* history toggle sits inside .gtxt (so the gauge matches up to
+   here) — the panel it reveals is a SIBLING of .gauge-hero, so
+   expanding it never changes the gauge's height */
+.hist-toggle{
+  margin-top:11px;padding-top:9px;border-top:1px solid rgba(255,255,255,.12);
+  background:none;border-left:none;border-right:none;border-bottom:none;
+  font-family:"Noto Sans TC",sans-serif;font-size:12px;color:#C7CBDE;
+  display:flex;align-items:center;gap:5px;cursor:pointer;width:100%;text-align:left;padding-left:0;padding-right:0;
+}
+.hist-toggle .arrow{transition:transform .2s ease;font-size:10px;display:inline-block}
+.hist-toggle.open .arrow{transform:rotate(90deg)}
+.hist-panel{display:none}
+.hist-panel.open{display:block}
+.hist-panel-inner{border-top:1px solid rgba(255,255,255,.12);margin-top:14px;padding-top:12px}
+.hist-panel .hrow{display:grid;grid-template-columns:40px repeat(3,1fr);gap:10px;font-size:12px;color:#C7CBDE;padding:6px 0;border-top:1px solid rgba(255,255,255,.08)}
+.hist-panel .hrow:first-child{border-top:0;color:#8A90A8;font-size:10.5px}
+.hist-panel .hrow b{color:#fff;font-weight:500}
+.hist-panel .hrow div:nth-child(n+2){text-align:right}
 
 /* stats */
 .stat-row{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:6px}
@@ -137,8 +179,15 @@ svg.profile{width:100%;height:auto;display:block}
 .day{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:15px 15px 5px;margin-bottom:12px;box-shadow:var(--shadow)}
 .day-h{display:flex;align-items:center;gap:9px;margin-bottom:6px;flex-wrap:wrap}
 .day-h .code{font-family:"Oswald",sans-serif;font-size:12px;font-weight:600;letter-spacing:.06em;color:#fff;background:var(--blue);padding:4px 11px;border-radius:100px}
-.tmpl-day .day-h .code{background:var(--amber)}
+.tmpl-day .day-h .code{background:var(--amber-strong)}
 .day-h .focus{font-size:12.5px;color:var(--muted)}
+details.day{padding-bottom:15px}
+details.day[open]{padding-bottom:5px}
+details.day summary.day-h{cursor:pointer;list-style:none;margin-bottom:0}
+details.day summary.day-h::-webkit-details-marker{display:none}
+.day-h .day-arrow{margin-left:auto;color:var(--muted);font-size:11px;transition:transform .2s ease;flex:0 0 auto}
+details.day[open] .day-h .day-arrow{transform:rotate(90deg)}
+.day-body{margin-top:6px}
 .ex{display:flex;justify-content:space-between;align-items:flex-start;gap:10px;padding:10px 0;border-top:1px solid var(--line)}
 .ex .name{font-size:14px;font-weight:700}
 .ex .note{font-size:12px;color:var(--muted);margin-top:2px}
@@ -213,7 +262,10 @@ svg.profile{width:100%;height:auto;display:block}
 <body>
 
 <header>
-  <div class="brand"><h1>向上訓練</h1><span class="sub">JUMP HIGHER</span></div>
+  <div class="brand-row">
+    <div class="brand"><h1 id="brand-title">向上訓練</h1><span class="sub">JUMP HIGHER</span></div>
+    <button class="lang-btn" id="lang-toggle" type="button">EN</button>
+  </div>
   <div class="who" id="profile-summary"></div>
 </header>
 
@@ -229,31 +281,130 @@ svg.profile{width:100%;height:auto;display:block}
 <nav class="tabbar">
   <button class="tabbtn active" data-tab="p-overview">
     <svg viewBox="0 0 24 24"><path d="M3 17l5-6 4 4 9-10" stroke-linecap="round" stroke-linejoin="round"/><circle cx="8" cy="11" r="1.3" fill="currentColor" stroke="none"/><circle cx="12" cy="15" r="1.3" fill="currentColor" stroke="none"/><circle cx="21" cy="5" r="1.3" fill="currentColor" stroke="none"/></svg>
-    總覽
+    <span data-i18n="tab.overview">總覽</span>
   </button>
   <button class="tabbtn" data-tab="p-train">
     <svg viewBox="0 0 24 24"><path d="M4 12h16M4 8v8M20 8v8M7 6v12M17 6v12" stroke-linecap="round"/></svg>
-    訓練
+    <span data-i18n="tab.train">訓練</span>
   </button>
   <button class="tabbtn" data-tab="p-templates">
     <svg viewBox="0 0 24 24"><rect x="3.5" y="4" width="17" height="16" rx="2.5" stroke-linejoin="round"/><path d="M3.5 9.5h17M8 4v5.5" stroke-linecap="round"/></svg>
-    訓練模板
+    <span data-i18n="tab.templates">訓練模板</span>
   </button>
   <button class="tabbtn" data-tab="p-jump">
     <svg viewBox="0 0 24 24"><path d="M13 2 4 14h6l-1 8 9-12h-6l1-8z" stroke-linecap="round" stroke-linejoin="round"/></svg>
-    爆發力
+    <span data-i18n="tab.jump">爆發力</span>
   </button>
   <button class="tabbtn" data-tab="p-diet">
     <svg viewBox="0 0 24 24"><path d="M5 3v7a3 3 0 003 3v8M5 3v5M7 3v5M9 3v5M9 3v18M18 3c-2 2-2 6-2 8s.5 3 2 3 2-1 2-3 0-6-2-8zM18 14v7" stroke-linecap="round" stroke-linejoin="round"/></svg>
-    飲食
+    <span data-i18n="tab.diet">飲食</span>
   </button>
   <button class="tabbtn" data-tab="p-notes">
     <svg viewBox="0 0 24 24"><path d="M12 2l8 3.5v6c0 5-3.4 8.5-8 10.5-4.6-2-8-5.5-8-10.5v-6L12 2z" stroke-linecap="round" stroke-linejoin="round"/><path d="M12 8v5" stroke-linecap="round"/><circle cx="12" cy="16.3" r="1" fill="currentColor" stroke="none"/></svg>
-    注意
+    <span data-i18n="tab.notes">注意</span>
   </button>
 </nav>
 
 <script>
+var UI_STRINGS = {
+  zh: {
+    htmlLang: 'zh-Hant',
+    brandTitle: '向上訓練',
+    tabs: { overview: '總覽', train: '訓練', templates: '訓練模板', jump: '爆發力', diet: '飲食', notes: '注意' },
+    legendAmber: '減脂強度',
+    legendBlue: '爆發力空間',
+    chartTitle: '5-MONTH PROFILE',
+    milestonesEyebrow: 'MILESTONES・月度里程碑',
+    trackEyebrow: 'TRACK・全程追蹤指標',
+    trackCardTitle: '比體重更誠實的幾項',
+    weekEyebrow: 'WEEK・每週安排',
+    todayEyebrow: 'TODAY・今日菜單',
+    notSelected: '尚未選擇動作',
+    selectedCount: function (n) { return '已選 ' + n + ' 項動作'; },
+    resetBtn: '清空',
+    emptyTags: '選好動作後，練到的肌群會列在這裡',
+    safetyTitle: '兩個安全鐵則',
+    templateEyebrow: 'TEMPLATE・每週課表模板',
+    jumpTargetLabel: 'TARGET',
+    jumpReachLabel: '摸高',
+    jumpNetLabel: '女網',
+    jumpGoalLabel: '目標',
+    jumpMenuEyebrow: 'MENU・當日菜單',
+    jumpSkillEyebrow: 'SKILL・助跑摸高',
+    jumpMovesEyebrow: 'MOVES・專項動作',
+    dietDailyEyebrow: 'DAILY・每日框架',
+    dietMealsTitle: '三餐彈性抵換',
+    dietProteinEyebrow: 'PROTEIN・蛋白質來源',
+    dietRefuelEyebrow: 'REFUEL・週末球類補充',
+    dietExamplePrefix: '例：',
+    disclaimer: '向上訓練・自用版',
+    kcal: 'kcal',
+    jumpTargetSentence: function (reach, net, diff, jMin, jMax) {
+      return '摸高 <b>' + reach + '</b> 到女網 <b>' + net + '</b>，差距 <b>' + diff + 'cm</b>，目標垂直跳 <b>' + jMin + '–' + jMax + 'cm</b>。';
+    },
+    jumpLatestLabel: function (month) { return month + '實測（最新）'; },
+    jumpDeltaVs: function (diffText, month) { return diffText + ' vs ' + month; },
+    jumpTrendLabel: function (fromMonth, toMonth) {
+      return fromMonth === toMonth ? 'TREND' : 'TREND・' + fromMonth + '–' + toMonth;
+    },
+    jumpTrendEmpty: '再多測一次，這裡就會出現趨勢線。',
+    jumpHistoryToggle: '查看每月完整數字',
+    jumpHistoryMonthCol: '月份',
+    loadError: '訓練計畫載入失敗',
+    loadErrorHint: '。請確認 plan.json 與 plan.en.json 與 index.html 位於相同目錄，並透過網站伺服器開啟。',
+    toggleLabel: 'EN'
+  },
+  en: {
+    htmlLang: 'en',
+    brandTitle: 'LEVEL UP',
+    tabs: { overview: 'Overview', train: 'Training', templates: 'Templates', jump: 'Explosive', diet: 'Diet', notes: 'Notes' },
+    legendAmber: 'Cut Intensity',
+    legendBlue: 'Explosive Headroom',
+    chartTitle: '5-MONTH PROFILE',
+    milestonesEyebrow: 'MILESTONES',
+    trackEyebrow: 'TRACK・METRICS',
+    trackCardTitle: 'Metrics more honest than the scale',
+    weekEyebrow: 'WEEK・SCHEDULE',
+    todayEyebrow: "TODAY'S MENU",
+    notSelected: 'No exercises selected',
+    selectedCount: function (n) { return n + ' exercises selected'; },
+    resetBtn: 'Clear',
+    emptyTags: 'Muscle groups trained will show here once you pick exercises',
+    safetyTitle: 'Two Safety Rules',
+    templateEyebrow: 'TEMPLATE・WEEKLY PLAN',
+    jumpTargetLabel: 'TARGET',
+    jumpReachLabel: 'Reach',
+    jumpNetLabel: 'Net',
+    jumpGoalLabel: 'Goal',
+    jumpMenuEyebrow: 'MENU・TODAY',
+    jumpSkillEyebrow: 'SKILL・APPROACH JUMP',
+    jumpMovesEyebrow: 'MOVES・SPECIAL DRILLS',
+    dietDailyEyebrow: 'DAILY・TARGETS',
+    dietMealsTitle: 'Flexible Meal Swaps',
+    dietProteinEyebrow: 'PROTEIN・SOURCES',
+    dietRefuelEyebrow: 'REFUEL・WEEKEND SPORTS',
+    dietExamplePrefix: 'e.g. ',
+    disclaimer: 'LEVEL UP・PERSONAL BUILD',
+    kcal: 'kcal',
+    jumpTargetSentence: function (reach, net, diff, jMin, jMax) {
+      return 'Reach <b>' + reach + '</b> to net <b>' + net + '</b>, a <b>' + diff + 'cm</b> gap, targeting a <b>' + jMin + '–' + jMax + 'cm</b> vertical jump.';
+    },
+    jumpLatestLabel: function (month) { return month + ' Test (Latest)'; },
+    jumpDeltaVs: function (diffText, month) { return diffText + ' vs ' + month; },
+    jumpTrendLabel: function (fromMonth, toMonth) {
+      return fromMonth === toMonth ? 'TREND' : 'TREND・' + fromMonth + '–' + toMonth;
+    },
+    jumpTrendEmpty: 'Add one more test and a trend line will show up here.',
+    jumpHistoryToggle: 'View full monthly history',
+    jumpHistoryMonthCol: 'Month',
+    loadError: 'Failed to load the training plan',
+    loadErrorHint: '. Make sure plan.json / plan.en.json are in the same folder as index.html and served through a web server.',
+    toggleLabel: '中'
+  }
+};
+var currentLang = localStorage.getItem('trainingLang') || 'zh';
+var planData = {};
+
 function escapeHtml(value) {
   return String(value)
     .replaceAll('&', '&amp;')
@@ -263,7 +414,7 @@ function escapeHtml(value) {
     .replaceAll("'", '&#039;');
 }
 
-function renderOverview(profile) {
+function renderOverview(profile, t) {
   var monthPositions = [45, 182, 320, 458, 595];
   var monthTicks = profile.months.map(function(item, index) {
     return '<text class="axis-tick" x="' + monthPositions[index] + '" y="167" text-anchor="middle">' + escapeHtml(item.month) + '</text>';
@@ -285,7 +436,7 @@ function renderOverview(profile) {
   document.getElementById('profile-summary').textContent = profile.summary;
   document.getElementById('p-overview').innerHTML =
     '<div class="hero"><p class="lead">' + escapeHtml(profile.lead) + '</p>' +
-    '<div class="chart-head"><div class="chart-title">5-MONTH PROFILE</div><div class="legend"><span><i class="dot amber"></i>減脂強度</span><span><i class="dot blue"></i>爆發力空間</span></div></div>' +
+    '<div class="chart-head"><div class="chart-title">' + escapeHtml(t.chartTitle) + '</div><div class="legend"><span><i class="dot amber"></i>' + escapeHtml(t.legendAmber) + '</span><span><i class="dot blue"></i>' + escapeHtml(t.legendBlue) + '</span></div></div>' +
     '<svg class="profile" viewBox="0 0 640 180" xmlns="http://www.w3.org/2000/svg">' +
     '<line x1="45" y1="145" x2="595" y2="145" stroke="rgba(255,255,255,.12)" stroke-width="1"/>' +
     '<path d="M45,126 L182,119 L320,103 L458,80 L595,64" fill="none" stroke="#6D7BEF" stroke-width="2.5" stroke-dasharray="5 5"/>' +
@@ -298,11 +449,11 @@ function renderOverview(profile) {
     '<div class="stat s"><div class="k">' + escapeHtml(profile.jumpGoal.label) + '</div><div class="v">' +
     escapeHtml(profile.jumpGoal.value) + '<small> ' + escapeHtml(profile.jumpGoal.unit) +
     '</small></div><div class="v2">' + escapeHtml(profile.jumpGoal.detail) + '</div></div></div>' +
-    '<div class="eyebrow">MILESTONES・月度里程碑</div>' + milestones +
-    '<div class="eyebrow">TRACK・全程追蹤指標</div><div class="note-card"><h3>比體重更誠實的幾項</h3><p>' + tracking + '</p></div>';
+    '<div class="eyebrow">' + escapeHtml(t.milestonesEyebrow) + '</div>' + milestones +
+    '<div class="eyebrow">' + escapeHtml(t.trackEyebrow) + '</div><div class="note-card"><h3>' + escapeHtml(t.trackCardTitle) + '</h3><p>' + tracking + '</p></div>';
 }
 
-function renderTraining(training) {
+function renderTraining(training, t) {
   var schedule = training.weeklySchedule.map(function(item) {
     return '<tr><th>' + escapeHtml(item.label) + '</th><td>' + escapeHtml(item.description) + '</td></tr>';
   }).join('');
@@ -312,7 +463,7 @@ function renderTraining(training) {
       return '<button class="exo' + (group.cardio ? ' cardio' : '') + '" data-kcal="' + Number(exercise.calories) +
         '" data-tags="' + escapeHtml(exercise.muscleGroups.join(',')) + '"><span class="exo-l"><span class="exo-name">' +
         escapeHtml(exercise.name) + '</span><span class="exo-tags">' + escapeHtml(details) +
-        '</span></span><span class="exo-r">' + Number(exercise.calories) + ' kcal</span></button>';
+        '</span></span><span class="exo-r">' + Number(exercise.calories) + ' ' + escapeHtml(t.kcal) + '</span></button>';
     }).join('');
     return '<div class="eyebrow">' + escapeHtml(group.name) + '</div>' + exercises;
   }).join('');
@@ -321,35 +472,104 @@ function renderTraining(training) {
   }).join('<br>');
 
   document.getElementById('p-train').innerHTML =
-    '<div class="eyebrow">WEEK・每週安排</div><div class="card" style="padding:6px 16px 8px"><table class="sched">' +
-    schedule + '</table></div><div class="eyebrow">TODAY・今日菜單</div><div class="builder"><div class="brow"><div>' +
-    '<div class="bkcal" id="sum-kcal">0<small> kcal</small></div><div class="bcount" id="sum-count">尚未選擇動作</div>' +
-    '</div><button class="reset-btn" id="reset-today">清空</button></div><div class="btags" id="sum-tags">' +
-    '<span class="empty">選好動作後，練到的肌群會列在這裡</span></div><div class="blist" id="sum-list"></div></div>' +
+    '<div class="eyebrow">' + escapeHtml(t.weekEyebrow) + '</div><div class="card" style="padding:6px 16px 8px"><table class="sched">' +
+    schedule + '</table></div><div class="eyebrow">' + escapeHtml(t.todayEyebrow) + '</div><div class="builder"><div class="brow"><div>' +
+    '<div class="bkcal" id="sum-kcal">0<small> ' + escapeHtml(t.kcal) + '</small></div><div class="bcount" id="sum-count">' + escapeHtml(t.notSelected) + '</div>' +
+    '</div><button class="reset-btn" id="reset-today">' + escapeHtml(t.resetBtn) + '</button></div><div class="btags" id="sum-tags">' +
+    '<span class="empty">' + escapeHtml(t.emptyTags) + '</span></div><div class="blist" id="sum-list"></div></div>' +
     '<p class="hint">' + escapeHtml(training.builderHint) + '</p>' + groups +
-    '<div class="note-card warn" style="margin-top:16px"><h3>兩個安全鐵則</h3><p>' + safetyRules + '</p></div>';
+    '<div class="note-card warn" style="margin-top:16px"><h3>' + escapeHtml(t.safetyTitle) + '</h3><p>' + safetyRules + '</p></div>';
 }
 
-function renderTemplates(trainingTemplates) {
+function renderTemplates(trainingTemplates, t) {
   var days = trainingTemplates.days.map(function(day) {
     var exercises = day.exercises.map(function(exercise) {
       var note = exercise.note ? '<div class="note">' + escapeHtml(exercise.note) + '</div>' : '';
       return '<div class="ex"><div><div class="name">' + escapeHtml(exercise.name) + '</div>' + note +
         '</div><div class="dose">' + escapeHtml(exercise.dose) + '</div></div>';
     }).join('');
-    return '<div class="day tmpl-day"><div class="day-h"><span class="code">' + escapeHtml(day.code) +
-      '</span><span class="focus">' + escapeHtml(day.focus) + '</span></div>' + exercises + '</div>';
+    return '<details class="day tmpl-day"><summary class="day-h"><span class="code">' + escapeHtml(day.code) +
+      '</span><span class="focus">' + escapeHtml(day.focus) + '</span><span class="day-arrow">▸</span></summary>' +
+      '<div class="day-body">' + exercises + '</div></details>';
   }).join('');
 
   document.getElementById('p-templates').innerHTML =
-  '<div class="eyebrow">TEMPLATE・每週課表模板</div>' +
+  '<div class="eyebrow">' + escapeHtml(t.templateEyebrow) + '</div>' +
   '<div class="note-card"><p>' + escapeHtml(trainingTemplates.intro) + '</p></div>' + 
   '<div class="note-card amber"><h3>' + escapeHtml(trainingTemplates.orderingNote.title) + '</h3><p>' +
   escapeHtml(trainingTemplates.orderingNote.description) + '</p></div>' +
   days;
 }
 
-function renderJump(jumpTraining) {
+function buildTestHistoryHtml(testHistory, t) {
+  if (!testHistory || !testHistory.records || !testHistory.records.length) return { gtxt: '', panel: '' };
+  var metrics = testHistory.metrics || [];
+  var records = testHistory.records;
+  var latest = records[records.length - 1];
+  var primaryMetric = metrics.filter(function(m) { return m.primary; })[0] || metrics[0];
+
+  var testItems = metrics.map(function(m) {
+    var unit = m.unit || 'cm';
+    return '<div class="ti"><div class="tv">' + escapeHtml(String(latest[m.key])) + '<small> ' + escapeHtml(unit) +
+      '</small></div><div class="tl">' + escapeHtml(m.name) + '</div></div>';
+  }).join('');
+
+  var deltaHtml = '';
+  if (records.length >= 2 && primaryMetric) {
+    var prev = records[records.length - 2];
+    var diff = Number(latest[primaryMetric.key]) - Number(prev[primaryMetric.key]);
+    var unit = primaryMetric.unit || 'cm';
+    var diffText = (diff >= 0 ? '▲ +' : '▼ ') + diff + unit;
+    deltaHtml = '<span class="delta' + (diff < 0 ? ' down' : '') + '">' + escapeHtml(t.jumpDeltaVs(diffText, prev.month)) + '</span>';
+  }
+
+  var testsBlock = '<div class="tests"><div class="tests-label"><span>' + escapeHtml(t.jumpLatestLabel(latest.month)) +
+    '</span>' + deltaHtml + '</div><div class="tests-row">' + testItems + '</div></div>';
+
+  var sparkBlock;
+  if (records.length >= 2) {
+    var w = 560, h = 70, padX = 10, padY = 6;
+    var innerW = w - padX * 2, innerH = h - padY * 2;
+    var legend = metrics.map(function(m) {
+      return '<span><i style="background:' + m.color + '"></i>' + escapeHtml(m.name) + '</span>';
+    }).join('');
+    var lines = metrics.map(function(m) {
+      var values = records.map(function(r) { return Number(r[m.key]); });
+      var minV = Math.min.apply(null, values), maxV = Math.max.apply(null, values);
+      if (minV === maxV) { minV -= 1; maxV += 1; }
+      var points = values.map(function(v, i) {
+        var x = padX + (records.length === 1 ? 0 : i * (innerW / (records.length - 1)));
+        var y = padY + innerH - ((v - minV) / (maxV - minV)) * innerH;
+        return x.toFixed(1) + ',' + y.toFixed(1);
+      });
+      var lastPoint = points[points.length - 1].split(',');
+      return '<polyline points="' + points.join(' ') + '" fill="none" stroke="' + m.color +
+        '" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="' + lastPoint[0] +
+        '" cy="' + lastPoint[1] + '" r="3" fill="' + m.color + '"/>';
+    }).join('');
+    sparkBlock = '<div class="spark-wrap"><div class="spark-row"><div class="spark-label">' +
+      escapeHtml(t.jumpTrendLabel(records[0].month, records[records.length - 1].month)) +
+      '</div><div class="spark-legend">' + legend + '</div></div><svg class="spark" viewBox="0 0 ' + w + ' ' + h +
+      '" xmlns="http://www.w3.org/2000/svg">' + lines + '</svg></div>';
+  } else {
+    sparkBlock = '<div class="spark-wrap"><div class="spark-empty">' + escapeHtml(t.jumpTrendEmpty) + '</div></div>';
+  }
+
+  var toggleBlock = '<button class="hist-toggle" type="button" id="jump-hist-toggle"><span class="arrow">▸</span> ' +
+    escapeHtml(t.jumpHistoryToggle) + '</button>';
+
+  var headerRow = '<div class="hrow"><div>' + escapeHtml(t.jumpHistoryMonthCol) + '</div>' +
+    metrics.map(function(m) { return '<div>' + escapeHtml(m.name) + '</div>'; }).join('') + '</div>';
+  var dataRows = records.map(function(r) {
+    return '<div class="hrow"><div>' + escapeHtml(r.month) + '</div>' +
+      metrics.map(function(m) { return '<div><b>' + escapeHtml(String(r[m.key])) + '</b></div>'; }).join('') + '</div>';
+  }).join('');
+  var panelHtml = '<div class="hist-panel" id="jump-hist-panel"><div class="hist-panel-inner">' + headerRow + dataRows + '</div></div>';
+
+  return { gtxt: testsBlock + sparkBlock + toggleBlock, panel: panelHtml };
+}
+
+function renderJump(jumpTraining, t) {
   var target = jumpTraining.target;
   var menus = jumpTraining.menus.map(function(menu) {
     var exercises = menu.exercises.map(function(exercise) {
@@ -366,26 +586,33 @@ function renderJump(jumpTraining) {
       '</span></div><p>' + escapeHtml(move.description) + '</p></div>';
   }).join('');
   var difference = target.netHeightCm - target.standingReachCm;
+  var history = buildTestHistoryHtml(jumpTraining.testHistory, t);
 
   document.getElementById('p-jump').innerHTML =
-    '<div class="hero gauge-hero"><div class="gauge" id="gauge"><div class="track"><div class="fill" id="fill"></div></div>' +
-    '<div class="zone" style="bottom:82%;height:11%"></div><div class="tick" style="bottom:60%"><i></i><b>摸高 ' +
-    Number(target.standingReachCm) + '</b></div><div class="tick" style="bottom:82%"><i></i><b>女網 ' +
-    Number(target.netHeightCm) + '</b></div><div class="tick" style="bottom:93%"><i></i><b>目標 ' +
-    Number(target.targetMaxCm) + '</b></div></div><div class="gtxt"><div class="gk">TARGET</div><div class="gv">' +
-    '從站立摸高 <b>' + Number(target.standingReachCm) + '</b> 到女網 <b>' + Number(target.netHeightCm) +
-    '</b>，差距 ' + difference + 'cm；目標區設在 <b>' + Number(target.targetMinCm) + '–' +
-    Number(target.targetMaxCm) + '</b>，對應垂直跳 <b>' + Number(target.verticalJumpMinCm) + '–' +
-    Number(target.verticalJumpMaxCm) + 'cm</b>。</div><div class="grow">' + escapeHtml(target.note) +
-    '</div></div></div><div class="eyebrow">MENU・當日菜單</div>' + menus +
-    '<div class="eyebrow">SKILL・助跑摸高</div><div class="note-card amber"><h3>' +
+    '<div class="hero"><div class="gauge-hero"><div class="gauge" id="gauge"><div class="track"><div class="fill" id="fill"></div></div>' +
+    '<div class="zone" style="bottom:82%;height:11%"></div><div class="tick" style="bottom:60%"><i></i><b>' + escapeHtml(t.jumpReachLabel) + ' ' +
+    Number(target.standingReachCm) + '</b></div><div class="tick" style="bottom:82%"><i></i><b>' + escapeHtml(t.jumpNetLabel) + ' ' +
+    Number(target.netHeightCm) + '</b></div><div class="tick" style="bottom:93%"><i></i><b>' + escapeHtml(t.jumpGoalLabel) + ' ' +
+    Number(target.targetMaxCm) + '</b></div></div><div class="gtxt"><div class="gk">' + escapeHtml(t.jumpTargetLabel) + '</div><div class="gv">' +
+    t.jumpTargetSentence(Number(target.standingReachCm), Number(target.netHeightCm), difference, Number(target.verticalJumpMinCm), Number(target.verticalJumpMaxCm)) +
+    '</div>' + history.gtxt + '</div></div>' + history.panel + '</div><div class="eyebrow">' + escapeHtml(t.jumpMenuEyebrow) + '</div>' + menus +
+    '<div class="eyebrow">' + escapeHtml(t.jumpSkillEyebrow) + '</div><div class="note-card amber"><h3>' +
     escapeHtml(jumpTraining.approachSkill.title) + '</h3><p>' + escapeHtml(jumpTraining.approachSkill.description) +
-    '</p></div><div class="eyebrow">MOVES・專項動作</div>' + moves +
+    '</p></div><div class="eyebrow">' + escapeHtml(t.jumpMovesEyebrow) + '</div>' + moves +
     '<div class="note-card amber"><h3>' + escapeHtml(jumpTraining.phaseNote.title) + '</h3><p>' +
     escapeHtml(jumpTraining.phaseNote.description) + '</p></div>';
+
+  var histToggle = document.getElementById('jump-hist-toggle');
+  if (histToggle) {
+    histToggle.addEventListener('click', function() {
+      var panel = document.getElementById('jump-hist-panel');
+      var isOpen = panel.classList.toggle('open');
+      histToggle.classList.toggle('open', isOpen);
+    });
+  }
 }
 
-function renderDiet(diet) {
+function renderDiet(diet, t) {
   var targets = diet.dailyTargets.map(function(target) {
     var valueClass = 'v' + (target.tone === 'amber' ? ' a' : target.tone === 'blue' ? ' b t' : '');
     return '<div><div class="l">' + escapeHtml(target.label) + '</div><div class="' + valueClass + '">' +
@@ -400,28 +627,28 @@ function renderDiet(diet) {
   var refuels = diet.refuelPlans.map(function(plan) {
     return '<div class="card"><div class="card-h"><span class="name">' + escapeHtml(plan.name) +
       '</span><span class="tag">' + escapeHtml(plan.burn) + '</span></div><p>' + escapeHtml(plan.targets) +
-      '<br><span style="color:var(--muted)">例：' + escapeHtml(plan.example) + '</span></p></div>';
+      '<br><span style="color:var(--muted)">' + escapeHtml(t.dietExamplePrefix) + escapeHtml(plan.example) + '</span></p></div>';
   }).join('');
 
   document.getElementById('p-diet').innerHTML =
-    '<div class="eyebrow">DAILY・每日框架</div><div class="macro">' + targets +
-    '</div><div class="note-card"><h3>三餐彈性抵換</h3><p>' + meals +
-    '</p></div><div class="eyebrow">PROTEIN・蛋白質來源</div><div class="chips">' + proteinSources +
-    '</div><div class="eyebrow">REFUEL・週末球類補充</div>' + refuels +
+    '<div class="eyebrow">' + escapeHtml(t.dietDailyEyebrow) + '</div><div class="macro">' + targets +
+    '</div><div class="note-card"><h3>' + escapeHtml(t.dietMealsTitle) + '</h3><p>' + meals +
+    '</p></div><div class="eyebrow">' + escapeHtml(t.dietProteinEyebrow) + '</div><div class="chips">' + proteinSources +
+    '</div><div class="eyebrow">' + escapeHtml(t.dietRefuelEyebrow) + '</div>' + refuels +
     '<div class="note-card good"><h3>' + escapeHtml(diet.strategy.title) + '</h3><p>' +
     escapeHtml(diet.strategy.description) + '</p></div>';
 }
 
-function renderRecovery(recovery) {
+function renderRecovery(recovery, t) {
   var sections = recovery.sections.map(function(section) {
     var tone = section.tone === 'default' ? '' : ' ' + section.tone;
     return '<div class="eyebrow">' + escapeHtml(section.eyebrow) + '</div><div class="note-card' + tone +
       '"><h3>' + escapeHtml(section.title) + '</h3><p>' + escapeHtml(section.description) + '</p></div>';
   }).join('');
-  document.getElementById('p-notes').innerHTML = sections + '<div class="disc">向上訓練・自用版</div>';
+  document.getElementById('p-notes').innerHTML = sections + '<div class="disc">' + escapeHtml(t.disclaimer) + '</div>';
 }
 
-function updateSummary() {
+function updateSummary(t) {
   var selected = document.querySelectorAll('.exo.selected');
   var kcal = 0;
   var tagsSet = new Set();
@@ -429,26 +656,24 @@ function updateSummary() {
     kcal += parseInt(el.dataset.kcal, 10);
     el.dataset.tags.split(',').forEach(function(tag) { tagsSet.add(tag); });
   });
-  document.getElementById('sum-kcal').innerHTML = kcal + '<small> kcal</small>';
-  document.getElementById('sum-count').textContent = selected.length ? ('已選 ' + selected.length + ' 項動作') : '尚未選擇動作';
+  document.getElementById('sum-kcal').innerHTML = kcal + '<small> ' + escapeHtml(t.kcal) + '</small>';
+  document.getElementById('sum-count').textContent = selected.length ? t.selectedCount(selected.length) : t.notSelected;
   var tagsEl = document.getElementById('sum-tags');
   tagsEl.innerHTML = tagsSet.size
     ? Array.from(tagsSet).map(function(tag) { return '<span class="bchip">' + escapeHtml(tag) + '</span>'; }).join('')
-    : '<span class="empty">選好動作後，練到的肌群會列在這裡</span>';
+    : '<span class="empty">' + escapeHtml(t.emptyTags) + '</span>';
   document.getElementById('sum-list').innerHTML = Array.from(selected).map(function(el) {
     var name = el.querySelector('.exo-name').textContent;
     var sub = el.querySelector('.exo-tags').textContent;
     return '<div class="bitem"><div><div class="bname">' + escapeHtml(name) + '</div><div class="bsub">' +
-      escapeHtml(sub) + '</div></div><div class="bkc">' + Number(el.dataset.kcal) + ' kcal</div></div>';
+      escapeHtml(sub) + '</div></div><div class="bkc">' + Number(el.dataset.kcal) + ' ' + escapeHtml(t.kcal) + '</div></div>';
   }).join('');
 }
 
-function bindInteractions(gaugePercent) {
-  var fillEl = document.getElementById('fill');
-  function runGauge() {
-    if (fillEl) fillEl.style.height = Number(gaugePercent) + '%';
-  }
-  setTimeout(runGauge, 250);
+var tabsBound = false;
+function bindTabs() {
+  if (tabsBound) return;
+  tabsBound = true;
   document.querySelectorAll('.tabbtn').forEach(function(btn) {
     btn.addEventListener('click', function() {
       document.querySelectorAll('.tabbtn').forEach(function(item) { item.classList.remove('active'); });
@@ -456,43 +681,93 @@ function bindInteractions(gaugePercent) {
       btn.classList.add('active');
       document.getElementById(btn.dataset.tab).classList.add('active');
       window.scrollTo(0, 0);
-      if (btn.dataset.tab === 'p-jump' && fillEl) {
-        fillEl.style.height = '0%';
-        setTimeout(runGauge, 60);
-      }
+      if (btn.dataset.tab === 'p-jump') runGauge(true);
     });
   });
+}
+
+var currentGaugePercent = 0;
+function runGauge(reset) {
+  var fillEl = document.getElementById('fill');
+  if (!fillEl) return;
+  if (reset) {
+    fillEl.style.height = '0%';
+    setTimeout(function() { fillEl.style.height = currentGaugePercent + '%'; }, 60);
+  } else {
+    setTimeout(function() { fillEl.style.height = currentGaugePercent + '%'; }, 250);
+  }
+}
+
+function bindBuilder(t) {
   document.querySelectorAll('.exo').forEach(function(exercise) {
     exercise.addEventListener('click', function() {
       exercise.classList.toggle('selected');
-      updateSummary();
+      updateSummary(t);
     });
   });
-  document.getElementById('reset-today').addEventListener('click', function() {
-    document.querySelectorAll('.exo.selected').forEach(function(exercise) { exercise.classList.remove('selected'); });
-    updateSummary();
-  });
-  updateSummary();
+  var resetBtn = document.getElementById('reset-today');
+  if (resetBtn) {
+    resetBtn.addEventListener('click', function() {
+      document.querySelectorAll('.exo.selected').forEach(function(exercise) { exercise.classList.remove('selected'); });
+      updateSummary(t);
+    });
+  }
+  updateSummary(t);
 }
 
-fetch('./plan.json', { cache: 'no-store' })
-  .then(function(response) {
-    if (!response.ok) throw new Error('無法載入 plan.json（HTTP ' + response.status + '）');
-    return response.json();
+function applyStaticStrings(t) {
+  document.documentElement.lang = t.htmlLang;
+  document.title = t.brandTitle;
+  document.getElementById('brand-title').textContent = t.brandTitle;
+  document.getElementById('lang-toggle').textContent = t.toggleLabel;
+  document.querySelectorAll('[data-i18n]').forEach(function(el) {
+    var parts = el.getAttribute('data-i18n').split('.');
+    var text = t.tabs[parts[1]];
+    if (text) el.textContent = text;
+  });
+}
+
+function renderAll(lang) {
+  var plan = planData[lang];
+  var t = UI_STRINGS[lang];
+  currentLang = lang;
+  localStorage.setItem('trainingLang', lang);
+  applyStaticStrings(t);
+  renderOverview(plan.profile, t);
+  renderTraining(plan.training, t);
+  renderTemplates(plan.trainingTemplates, t);
+  renderJump(plan.jumpTraining, t);
+  renderDiet(plan.diet, t);
+  renderRecovery(plan.recovery, t);
+  currentGaugePercent = Number(plan.jumpTraining.target.gaugePercent);
+  bindTabs();
+  bindBuilder(t);
+  runGauge(document.getElementById('p-jump').classList.contains('active'));
+}
+
+Promise.all([
+  fetch('./plan.json', { cache: 'no-store' }).then(function(r) {
+    if (!r.ok) throw new Error('HTTP ' + r.status + ' (plan.json)');
+    return r.json();
+  }),
+  fetch('./plan.en.json', { cache: 'no-store' }).then(function(r) {
+    if (!r.ok) throw new Error('HTTP ' + r.status + ' (plan.en.json)');
+    return r.json();
   })
-  .then(function(plan) {
-    renderOverview(plan.profile);
-    renderTraining(plan.training);
-    renderTemplates(plan.trainingTemplates);
-    renderJump(plan.jumpTraining);
-    renderDiet(plan.diet);
-    renderRecovery(plan.recovery);
-    bindInteractions(plan.jumpTraining.target.gaugePercent);
+])
+  .then(function(results) {
+    planData.zh = results[0];
+    planData.en = results[1];
+    renderAll(currentLang);
+    document.getElementById('lang-toggle').addEventListener('click', function() {
+      renderAll(currentLang === 'zh' ? 'en' : 'zh');
+    });
   })
   .catch(function(error) {
+    var t = UI_STRINGS[currentLang];
     document.querySelector('.wrap').innerHTML =
-      '<div class="note-card warn"><h3>訓練計畫載入失敗</h3><p>' + escapeHtml(error.message) +
-      '。請確認 plan.json 與 index.html 位於相同目錄，並透過網站伺服器開啟。</p></div>';
+      '<div class="note-card warn"><h3>' + escapeHtml(t.loadError) + '</h3><p>' + escapeHtml(error.message) +
+      escapeHtml(t.loadErrorHint) + '</p></div>';
     console.error(error);
   });
 </script>
