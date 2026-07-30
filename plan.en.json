@@ -430,22 +430,22 @@
     "days": [
       {
         "code": "Monday",
-        "focus": "Upper Back・Mid Back・Lower Back・Rear Delts・Biceps",
+        "focus": "Upper/Mid/Lower Back・Side & Rear Delts・Biceps",
         "exercises": [
           {
             "name": "Wide-Grip Pulldown (Machine)",
             "note": "Upper back・upper lats",
-            "dose": "4×10"
+            "dose": "3×10"
           },
           {
-            "name": "Wide-Grip Row (Machine)",
-            "note": "Mid back・rear delts",
-            "dose": "4×10"
+            "name": "Narrow-Grip Row (Machine)",
+            "note": "Mid back・lower lats",
+            "dose": "3×10"
           },
           {
             "name": "Straight-Arm Pulldown (Cable)",
             "note": "Lower back・lower lats",
-            "dose": "4×10"
+            "dose": "3×10"
           },
           {
             "name": "Face Pull (Cable)",
@@ -500,20 +500,25 @@
             "dose": "4×10"
           },
           {
-            "name": "Tricep Pushdown (Cable)",
-            "note": "Triceps",
+            "name": "Face Pull (Cable)",
+            "note": "Rear delts",
             "dose": "4×10"
           },
           {
-            "name": "Face Pull (Cable)",
-            "note": "Rear delts",
+            "name": "Overhead Tricep Extension (Cable)",
+            "note": "Triceps・long head",
+            "dose": "4×10"
+          },
+          {
+            "name": "Tricep Pushdown (Cable)",
+            "note": "Triceps・lateral & medial heads",
             "dose": "4×10"
           }
         ]
       },
       {
         "code": "Thursday",
-        "focus": "Explosiveness・Upper Back・Mid Back・Mid/Rear Delts",
+        "focus": "Explosiveness・Upper/Mid Back・Side & Rear Delts",
         "exercises": [
           {
             "name": "Box Jump",
@@ -555,7 +560,7 @@
       },
       {
         "code": "Saturday",
-        "focus": "Sports・Arms (optional)",
+        "focus": "Sports・Side & Rear Delts・Biceps・Triceps",
         "exercises": [
           {
             "name": "Badminton / Volleyball",
@@ -564,23 +569,28 @@
           },
           {
             "name": "Lateral Raise (Dumbbell)*",
-            "note": "Side delts・only if not tired",
-            "dose": "3×10"
-          },
-          {
-            "name": "Overhead Tricep Extension (Cable)*",
-            "note": "Triceps・only if not tired",
-            "dose": "3×10"
-          },
-          {
-            "name": "Tricep Pushdown (Cable)",
-            "note": "Triceps",
+            "note": "Side delts",
             "dose": "4×10"
           },
           {
-            "name": "Bicep Curl (Cable)*",
-            "note": "Biceps・only if not tired",
-            "dose": "3×10"
+            "name": "Face Pull (Cable)",
+            "note": "Rear delts",
+            "dose": "4×10"
+          },
+          {
+            "name": "Overhead Tricep Extension (Cable)",
+            "note": "Triceps・long head",
+            "dose": "4×10"
+          },
+          {
+            "name": "Tricep Pushdown (Cable)",
+            "note": "Triceps・lateral & medial heads",
+            "dose": "4×10"
+          },
+          {
+            "name": "Bicep Curl (Cable)",
+            "note": "Biceps",
+            "dose": "4×10"
           }
         ]
       },
