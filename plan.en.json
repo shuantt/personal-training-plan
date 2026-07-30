@@ -121,7 +121,7 @@
         "description": "Paused — focus on lowering weight and rebuilding strength first"
       }
     ],
-    "builderHint": "Tap an exercise to add/remove it, or clear all at once. Each exercise is estimated by its listed sets×reps; calories are just a rough daily reference.",
+    "builderHint": "Tap a day button above to load that day's template exercises in one go. You can also tap any exercise to add/remove it, or clear all at once. Each exercise is estimated by its listed sets×reps; calories are just a rough daily reference.",
     "exerciseGroups": [
       {
         "name": "Lower Body・Squat Pattern",

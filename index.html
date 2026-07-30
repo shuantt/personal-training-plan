@@ -252,11 +252,11 @@ details.day[open] .day-h .day-arrow{transform:rotate(90deg)}
 .exo.cardio.selected{border-color:var(--blue);background:var(--blue-soft)}
 .exo.cardio.selected .exo-r{color:var(--blue)}
 
-.tmpl-pick-row{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 12px}
+.tmpl-pick-row{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0 0}
 .tmpl-pick{flex:0 0 auto;background:var(--surface);border:1px solid var(--line);color:var(--ink);font-family:"Oswald",sans-serif;font-weight:600;font-size:14px;letter-spacing:.04em;padding:9px 17px;border-radius:100px;box-shadow:var(--shadow)}
 .tmpl-pick:active{transform:scale(.96)}
 .tmpl-pick.active{background:var(--ink);color:#fff;border-color:var(--ink)}
-#tmpl-import-list:not(:empty){margin-bottom:14px}
+#tmpl-import-list{display:none}
 
 .hint{font-size:12px;color:var(--muted);margin:-4px 0 14px;line-height:1.6}
 .hint b{color:var(--ink)}
@@ -324,10 +324,7 @@ var UI_STRINGS = {
     trackEyebrow: 'TRACK・全程追蹤指標',
     trackCardTitle: '比體重更誠實的幾項',
     weekEyebrow: 'WEEK・每週安排',
-    templateImportEyebrow: '帶入模板・一鍵估算',
-    templateImportHint: '點選一天，直接帶入當天課表動作，熱量與肌群會加進下方的今日菜單，可以再自行取消不做的項目。',
     templateImportDays: { Monday: '一', Wednesday: '三', Thursday: '四', Friday: '五', Sunday: '日' },
-    templateImportRestDay: '今天是休息日，沒有可估算的動作。',
     todayEyebrow: 'TODAY・今日菜單',
     notSelected: '尚未選擇動作',
     selectedCount: function (n) { return '已選 ' + n + ' 項動作'; },
@@ -375,10 +372,7 @@ var UI_STRINGS = {
     trackEyebrow: 'TRACK・METRICS',
     trackCardTitle: 'Metrics more honest than the scale',
     weekEyebrow: 'WEEK・SCHEDULE',
-    templateImportEyebrow: 'IMPORT TEMPLATE',
-    templateImportHint: "Pick a day to load that day's template exercises. Calories and muscle groups get added to today's menu below — tap any item to remove it.",
     templateImportDays: { Monday: 'Mon', Wednesday: 'Wed', Thursday: 'Thu', Friday: 'Fri', Sunday: 'Sun' },
-    templateImportRestDay: 'Rest day — nothing to estimate.',
     todayEyebrow: "TODAY'S MENU",
     notSelected: 'No exercises selected',
     selectedCount: function (n) { return n + ' exercises selected'; },
@@ -495,18 +489,15 @@ function renderTraining(training, trainingTemplates, t) {
     var label = (t.templateImportDays && t.templateImportDays[code]) || code;
     return '<button class="tmpl-pick" type="button" data-day="' + code + '">' + escapeHtml(label) + '</button>';
   }).join('');
-  var templateImportBlock = '<div class="eyebrow">' + escapeHtml(t.templateImportEyebrow) + '</div>' +
-    '<p class="hint">' + escapeHtml(t.templateImportHint) + '</p>' +
-    '<div class="tmpl-pick-row" id="tmpl-pick-row">' + templatePicks + '</div>' +
-    '<div id="tmpl-import-list"></div>';
 
   document.getElementById('p-train').innerHTML =
     '<div class="eyebrow">' + escapeHtml(t.weekEyebrow) + '</div><div class="card" style="padding:6px 16px 8px"><table class="sched">' +
-    schedule + '</table></div>' + templateImportBlock +
+    schedule + '</table></div>' +
     '<div class="eyebrow">' + escapeHtml(t.todayEyebrow) + '</div><div class="builder"><div class="brow"><div>' +
     '<div class="bkcal" id="sum-kcal">0<small> ' + escapeHtml(t.kcal) + '</small></div><div class="bcount" id="sum-count">' + escapeHtml(t.notSelected) + '</div>' +
     '</div><button class="reset-btn" id="reset-today">' + escapeHtml(t.resetBtn) + '</button></div><div class="btags" id="sum-tags">' +
     '<span class="empty">' + escapeHtml(t.emptyTags) + '</span></div><div class="blist" id="sum-list"></div></div>' +
+    '<div class="tmpl-pick-row" id="tmpl-pick-row">' + templatePicks + '</div><div id="tmpl-import-list"></div>' +
     '<p class="hint">' + escapeHtml(training.builderHint) + '</p>' + groups +
     '<div class="note-card warn" style="margin-top:16px"><h3>' + escapeHtml(t.safetyTitle) + '</h3><p>' + safetyRules + '</p></div>';
 
@@ -529,7 +520,6 @@ function importTemplateDay(code, trainingTemplates, t) {
   if (!list || !day) return;
   var validExercises = day.exercises.filter(function(ex) { return typeof ex.calories === 'number'; });
   if (!validExercises.length) {
-    list.innerHTML = '<p class="hint" style="margin:2px 0 0">' + escapeHtml(t.templateImportRestDay) + '</p>';
     updateSummary(t);
     return;
   }
