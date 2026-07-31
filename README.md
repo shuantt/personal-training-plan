@@ -32,7 +32,8 @@
 
 | 想改什麼 | 對應欄位 |
 |---|---|
-| 每月體重／里程碑 | `profile.months`、`profile.milestones` |
+| 每月里程碑 | `profile.milestones` |
+| 總覽每 15 日體重與體脂目標／實際紀錄 | `profile.progressHistory.records`、`profile.progressHistory.bodyFatRecords` |
 | 每週固定課表 | `trainingTemplates.days` |
 | 訓練頁可點選的動作庫 | `training.exerciseGroups` |
 | 垂直跳目標與測驗紀錄 | `jumpTraining.target`、`jumpTraining.testHistory` |

@@ -74,14 +74,63 @@ header{
 .legend{display:flex;gap:12px;font-size:11px;color:#8A90A8}
 .legend span{display:inline-flex;align-items:center;gap:5px}
 .dot{width:8px;height:8px;border-radius:50%;display:inline-block}
-.dot.amber{background:var(--amber)}
-.dot.blue{background:transparent;border:1.5px dashed #6D7BEF}
-svg.profile{width:100%;height:auto;display:block}
-.axis-tick{font-family:"Oswald",sans-serif;font-size:12px;fill:#8A90A8}
-.month-strip{display:grid;grid-template-columns:repeat(5,1fr);gap:6px;margin-top:12px}
-.month-chip{text-align:center;padding:9px 2px 0;border-top:1px solid rgba(255,255,255,.12)}
-.month-chip .m{font-size:11px;color:#8A90A8}
-.month-chip .w{font-family:"Oswald",sans-serif;font-size:16px;font-weight:600;color:var(--amber);margin-top:1px}
+
+/* primary goals */
+.goal-board{background:var(--ink);color:#EDEEF5;border-radius:22px;padding:20px;margin-bottom:8px;box-shadow:var(--shadow)}
+.goal-top{display:flex;justify-content:space-between;align-items:baseline;gap:12px;margin-bottom:14px}
+.goal-kicker{font-family:"Oswald",sans-serif;font-size:12px;letter-spacing:.16em;color:var(--amber)}
+.goal-period{font-family:"Oswald",sans-serif;font-size:11px;color:#8A90A8}
+.goal-grid{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid rgba(255,255,255,.12);border-bottom:1px solid rgba(255,255,255,.12)}
+.goal-item{padding:16px 14px 16px 0;min-width:0}
+.goal-item + .goal-item{border-left:1px solid rgba(255,255,255,.12);padding-left:18px;padding-right:0}
+.goal-label{font-size:11.5px;color:#8A90A8;margin-bottom:3px}
+.goal-metrics{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.goal-metric{min-width:0}
+.goal-metric + .goal-metric{border-left:1px solid rgba(255,255,255,.1);padding-left:10px}
+.goal-value{font-family:"Oswald",sans-serif;font-size:46px;font-weight:600;line-height:1;color:#fff}
+.goal-value.weight{color:var(--amber)}
+.goal-value.jump{color:#8793FF}
+.goal-value small{font-family:"Noto Sans TC",sans-serif;font-size:12px;font-weight:400;color:#8A90A8;margin-left:4px}
+.goal-value.range{font-size:30px;line-height:1.25;white-space:nowrap;margin-top:8px}
+.goal-value.range .arrow{font-size:18px;color:#8A90A8;margin:0 3px}
+.goal-caption{font-size:10.5px;color:#8A90A8;margin-top:7px;line-height:1.35}
+.goal-meta{font-size:11.5px;color:#C7CBDE;margin-top:8px;line-height:1.45}
+
+/* overview progress */
+.progress-card{background:var(--ink);color:#EDEEF5;border-radius:22px;padding:18px 18px 16px;margin:14px 0 6px;box-shadow:var(--shadow)}
+.progress-card .chart-head{margin-bottom:12px}
+.progress-card .dot.weight{background:var(--amber)}
+.progress-card .dot.body-fat{background:#6FCF97}
+.progress-card .line-key{width:13px;height:0;border-top:2px solid #8A90A8;display:inline-block}
+.progress-card .line-key.target{border-top-style:dashed}
+.progress-legend{display:grid;grid-template-columns:auto auto;justify-content:start;gap:5px 16px;font-size:10.5px;color:#8A90A8;margin-bottom:8px}
+.progress-legend span{display:inline-flex;align-items:center;gap:5px}
+.progress-chart{width:100%;height:auto;display:block;overflow:visible}
+.progress-grid{stroke:rgba(255,255,255,.1);stroke-width:1}
+.progress-axis{font-family:"Oswald",sans-serif;font-size:10px;fill:#8A90A8}
+.progress-axis.weight-axis{fill:#D89524}
+.progress-axis.body-fat-axis{fill:#55B986}
+.progress-axis-unit{font-family:"Oswald",sans-serif;font-size:10px;font-weight:600}
+.progress-axis-unit.weight-axis{fill:#D89524}
+.progress-axis-unit.body-fat-axis{fill:#55B986}
+.progress-value{font-family:"Oswald",sans-serif;font-size:11px;font-weight:600}
+.progress-latest{display:flex;justify-content:space-between;align-items:baseline;gap:12px;border-top:1px solid rgba(255,255,255,.12);margin-top:8px;padding-top:12px}
+.progress-latest .label{font-size:11px;color:#8A90A8}
+.progress-latest .value{font-family:"Oswald",sans-serif;font-size:22px;font-weight:600;color:#fff;white-space:nowrap}
+.progress-latest .value small{font-family:"Noto Sans TC",sans-serif;font-size:11px;font-weight:400;color:#8A90A8}
+.progress-summaries{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid rgba(255,255,255,.12);margin-top:8px}
+.progress-summary{padding:12px 12px 0 0;min-width:0}
+.progress-summary + .progress-summary{border-left:1px solid rgba(255,255,255,.12);padding-left:14px;padding-right:0}
+.progress-summary .label{font-size:10.5px;color:#8A90A8}
+.progress-summary .value{font-family:"Oswald",sans-serif;font-size:24px;font-weight:600;color:#fff;white-space:nowrap}
+.progress-summary.weight .value{color:var(--amber)}
+.progress-summary.body-fat .value{color:#6FCF97}
+.progress-summary .value small{font-family:"Noto Sans TC",sans-serif;font-size:10.5px;font-weight:400;color:#8A90A8}
+.progress-delta{display:inline-block;font-family:"Noto Sans TC",sans-serif;font-size:10.5px;font-weight:700;color:#6FCF97;margin-left:5px;vertical-align:middle}
+.progress-delta.down{color:#E08A8A}
+.progress-delta.neutral{color:#8A90A8}
+.progress-card .hist-panel .hrow{grid-template-columns:52px repeat(2,1fr)}
+.progress-card .hist-panel .hrow small{display:block;color:#8A90A8;font-size:9.5px;margin-top:1px}
 
 /* gauge hero — gauge has no fixed height; grid stretch makes it
    match the height of the text column automatically (top aligns
@@ -134,16 +183,6 @@ svg.spark{width:100%;height:auto;display:block;margin-top:2px}
 .hist-panel .hrow:first-child{border-top:0;color:#8A90A8;font-size:10.5px}
 .hist-panel .hrow b{color:#fff;font-weight:500}
 .hist-panel .hrow div:nth-child(n+2){text-align:right}
-
-/* stats */
-.stat-row{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:6px}
-.stat{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:15px;box-shadow:var(--shadow)}
-.stat .k{font-size:11.5px;color:var(--muted);margin-bottom:5px}
-.stat .v{font-family:"Oswald",sans-serif;font-size:19px;font-weight:600;letter-spacing:.02em}
-.stat .v small{font-family:"Noto Sans TC",sans-serif;font-weight:400;color:var(--muted);font-size:11.5px}
-.stat .v2{font-family:"Oswald",sans-serif;font-size:14px;font-weight:500;color:var(--muted);margin-top:2px}
-.stat.p .v{color:var(--amber)}
-.stat.s .v{color:var(--blue)}
 
 /* tabs */
 .tabbar{
@@ -206,6 +245,10 @@ details.day[open] .day-h .day-arrow{transform:rotate(90deg)}
 .sched th,.sched td{text-align:left;padding:10px 4px;border-top:1px solid var(--line);vertical-align:top}
 .sched th{color:var(--muted);font-weight:500;width:58px}
 .sched tr:first-child th,.sched tr:first-child td{border-top:0}
+.schedule-card{background:var(--ink);color:#EDEEF5;border-radius:18px;padding:6px 16px 8px;margin-bottom:12px;box-shadow:var(--shadow)}
+.schedule-card .sched th,.schedule-card .sched td{border-top-color:rgba(255,255,255,.12)}
+.schedule-card .sched th{color:var(--amber)}
+.schedule-card .sched td{color:#C7CBDE}
 
 .macro{
   background:var(--surface);border:1px solid var(--line);border-radius:18px;
@@ -317,14 +360,30 @@ var UI_STRINGS = {
     htmlLang: 'zh-Hant',
     brandTitle: '向上訓練',
     tabs: { overview: '總覽', train: '訓練', templates: '訓練模板', jump: '爆發力', diet: '飲食', notes: '注意' },
-    legendAmber: '減脂強度',
-    legendBlue: '爆發力空間',
-    chartTitle: '5-MONTH PROFILE',
+    goalHeading: 'PRIMARY GOALS・總目標',
+    goalBodyLabel: '體態目標',
+    goalWeightLabel: '體重',
+    goalBodyFatLabel: '體脂',
+    goalStandingReach: '站立摸高',
+    goalArmSwingReach: '原地擺臂',
+    goalVerticalRange: '垂直高度',
+    progressEyebrow: 'PROGRESS・進度紀錄',
+    progressWeightTitle: '體重進度',
+    progressBodyFatTitle: '體脂進度',
+    progressCombinedTitle: '體重・體脂進度',
+    progressTarget: '預計目標',
+    progressActual: '實際紀錄',
+    progressLatestLabel: function (month) { return month + '最新紀錄'; },
+    progressHistoryToggle: '查看每 15 日完整數字',
+    progressMonthCol: '日期',
+    progressWeightHistory: '體重 目標／實際',
+    progressBodyFatHistory: '體脂 目標／實際',
+    progressNoRecord: '—',
     milestonesEyebrow: 'MILESTONES・月度里程碑',
     trackEyebrow: 'TRACK・全程追蹤指標',
     trackCardTitle: '比體重更誠實的幾項',
     weekEyebrow: 'WEEK・每週安排',
-    templateImportDays: { Monday: '一', Wednesday: '三', Thursday: '四', Friday: '五', Sunday: '日' },
+    templateImportDays: { Monday: '一', Wednesday: '三', Thursday: '四', Saturday: '六', Sunday: '日' },
     todayEyebrow: 'TODAY・今日菜單',
     notSelected: '尚未選擇動作',
     selectedCount: function (n) { return '已選 ' + n + ' 項動作'; },
@@ -347,7 +406,8 @@ var UI_STRINGS = {
     disclaimer: '向上訓練・自用版',
     kcal: 'kcal',
     jumpTargetSentence: function (reach, net, diff, jMin, jMax) {
-      return '摸高 <b>' + reach + '</b> 到女網 <b>' + net + '</b>，差距 <b>' + diff + 'cm</b>，目標垂直跳 <b>' + jMin + '–' + jMax + 'cm</b>。';
+      var jumpGoal = jMin === jMax ? jMin : jMin + '–' + jMax;
+      return '摸高 <b>' + reach + '</b> 到女網 <b>' + net + '</b>，差距 <b>' + diff + 'cm</b>，目標垂直跳 <b>' + jumpGoal + 'cm</b>。';
     },
     jumpLatestLabel: function (month) { return month + '實測（最新）'; },
     jumpDeltaVs: function (diffText, month) { return diffText + ' vs ' + month; },
@@ -365,14 +425,30 @@ var UI_STRINGS = {
     htmlLang: 'en',
     brandTitle: 'LEVEL UP',
     tabs: { overview: 'Overview', train: 'Training', templates: 'Templates', jump: 'Explosive', diet: 'Diet', notes: 'Notes' },
-    legendAmber: 'Cut Intensity',
-    legendBlue: 'Explosive Headroom',
-    chartTitle: '5-MONTH PROFILE',
+    goalHeading: 'PRIMARY GOALS',
+    goalBodyLabel: 'BODY GOALS',
+    goalWeightLabel: 'Weight',
+    goalBodyFatLabel: 'Body Fat',
+    goalStandingReach: 'Standing Reach',
+    goalArmSwingReach: 'Arm-Swing Reach',
+    goalVerticalRange: 'Vertical Height',
+    progressEyebrow: 'PROGRESS',
+    progressWeightTitle: 'WEIGHT PROGRESS',
+    progressBodyFatTitle: 'BODY FAT PROGRESS',
+    progressCombinedTitle: 'WEIGHT & BODY FAT PROGRESS',
+    progressTarget: 'Target',
+    progressActual: 'Actual',
+    progressLatestLabel: function (month) { return month + ' Latest Record'; },
+    progressHistoryToggle: 'View full 15-day history',
+    progressMonthCol: 'Date',
+    progressWeightHistory: 'Weight Target / Actual',
+    progressBodyFatHistory: 'Body Fat Target / Actual',
+    progressNoRecord: '—',
     milestonesEyebrow: 'MILESTONES',
     trackEyebrow: 'TRACK・METRICS',
     trackCardTitle: 'Metrics more honest than the scale',
     weekEyebrow: 'WEEK・SCHEDULE',
-    templateImportDays: { Monday: 'Mon', Wednesday: 'Wed', Thursday: 'Thu', Friday: 'Fri', Sunday: 'Sun' },
+    templateImportDays: { Monday: 'Mon', Wednesday: 'Wed', Thursday: 'Thu', Saturday: 'Sat', Sunday: 'Sun' },
     todayEyebrow: "TODAY'S MENU",
     notSelected: 'No exercises selected',
     selectedCount: function (n) { return n + ' exercises selected'; },
@@ -395,7 +471,8 @@ var UI_STRINGS = {
     disclaimer: 'LEVEL UP・PERSONAL BUILD',
     kcal: 'kcal',
     jumpTargetSentence: function (reach, net, diff, jMin, jMax) {
-      return 'Reach <b>' + reach + '</b> to net <b>' + net + '</b>, a <b>' + diff + 'cm</b> gap, targeting a <b>' + jMin + '–' + jMax + 'cm</b> vertical jump.';
+      var jumpGoal = jMin === jMax ? jMin : jMin + '–' + jMax;
+      return 'Reach <b>' + reach + '</b> to net <b>' + net + '</b>, a <b>' + diff + 'cm</b> gap, targeting a <b>' + jumpGoal + 'cm</b> vertical jump.';
     },
     jumpLatestLabel: function (month) { return month + ' Test (Latest)'; },
     jumpDeltaVs: function (diffText, month) { return diffText + ' vs ' + month; },
@@ -422,14 +499,140 @@ function escapeHtml(value) {
     .replaceAll("'", '&#039;');
 }
 
+function progressDelta(records, recordIndex) {
+  var current = records[recordIndex];
+  if (!current || typeof current.actual !== 'number') return null;
+  var currentDisplay = Number(current.actualDisplay);
+  var currentValue = Number.isFinite(currentDisplay) ? currentDisplay : current.actual;
+  for (var index = recordIndex - 1; index >= 0; index -= 1) {
+    if (typeof records[index].actual === 'number') {
+      var previousDisplay = Number(records[index].actualDisplay);
+      var previousValue = Number.isFinite(previousDisplay) ? previousDisplay : records[index].actual;
+      return currentValue - previousValue;
+    }
+  }
+  return null;
+}
+
+function formatProgressDelta(delta, unit) {
+  if (delta === null) return '';
+  var rounded = Math.round(delta * 10) / 10;
+  var value = Math.abs(rounded).toFixed(1).replace('.0', '');
+  var prefix = rounded > 0 ? '+' : rounded < 0 ? '-' : '';
+  var tone = rounded < 0 ? ' down' : rounded === 0 ? ' neutral' : '';
+  return '<span class="progress-delta' + tone + '">(' + prefix + value + unit + ')</span>';
+}
+
+function buildCombinedProgressChart(weightRecords, bodyFatRecords, t) {
+  var width = 560, height = 230, left = 36, right = 36, top = 30, bottom = 34;
+  var innerWidth = width - left - right, innerHeight = height - top - bottom;
+  function rangeFor(records) {
+    var values = [];
+    records.forEach(function(record) {
+      if (typeof record.target === 'number') values.push(record.target);
+      if (typeof record.actual === 'number') values.push(record.actual);
+    });
+    var min = Math.floor(Math.min.apply(null, values)) - 1;
+    var max = Math.ceil(Math.max.apply(null, values)) + 1;
+    return { min: min, max: max };
+  }
+  var weightRange = rangeFor(weightRecords);
+  var bodyFatRange = rangeFor(bodyFatRecords);
+  function point(value, index, range) {
+    var x = left + (weightRecords.length === 1 ? innerWidth / 2 : index * innerWidth / (weightRecords.length - 1));
+    var y = top + (range.max - value) / (range.max - range.min) * innerHeight;
+    return { x: x, y: y };
+  }
+  function recordIndex(record) {
+    return weightRecords.map(function(item) { return item.month; }).indexOf(record.month);
+  }
+  function seriesHtml(records, range, color, targetDash) {
+    var targets = records.filter(function(record) { return typeof record.target === 'number'; });
+    var actuals = records.filter(function(record) { return typeof record.actual === 'number'; });
+    var targetPoints = targets.map(function(record) {
+      var p = point(record.target, recordIndex(record), range);
+      return p.x.toFixed(1) + ',' + p.y.toFixed(1);
+    });
+    var actualPoints = actuals.map(function(record) {
+      var p = point(record.actual, recordIndex(record), range);
+      return p.x.toFixed(1) + ',' + p.y.toFixed(1);
+    });
+    var html = targetPoints.length > 1 ? '<polyline points="' + targetPoints.join(' ') + '" fill="none" stroke="' + color +
+      '" stroke-width="2" stroke-opacity=".72" stroke-dasharray="' + targetDash + '" stroke-linecap="round" stroke-linejoin="round"/>' : '';
+    html += targets.map(function(record) {
+      var p = point(record.target, recordIndex(record), range);
+      return '<circle cx="' + p.x.toFixed(1) + '" cy="' + p.y.toFixed(1) + '" r="2.8" fill="#15172A" stroke="' + color + '" stroke-opacity=".78" stroke-width="1.7"/>';
+    }).join('');
+    if (actualPoints.length > 1) html += '<polyline points="' + actualPoints.join(' ') + '" fill="none" stroke="' + color +
+      '" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>';
+    html += actuals.map(function(record) {
+      var p = point(record.actual, recordIndex(record), range);
+      var displayValue = record.actualDisplay || String(record.actual);
+      return '<circle cx="' + p.x.toFixed(1) + '" cy="' + p.y.toFixed(1) + '" r="5" fill="' + color + '" stroke="#EDEEF5" stroke-width="2"><title>' +
+        escapeHtml(record.month + ' ' + displayValue) + '</title></circle>';
+    }).join('');
+    return html;
+  }
+
+  var grid = '';
+  for (var tick = 0; tick <= 4; tick += 1) {
+    var y = top + innerHeight * tick / 4;
+    var weightTick = weightRange.max - (weightRange.max - weightRange.min) * tick / 4;
+    var bodyFatTick = bodyFatRange.max - (bodyFatRange.max - bodyFatRange.min) * tick / 4;
+    grid += '<line class="progress-grid" x1="' + left + '" y1="' + y.toFixed(1) + '" x2="' + (width - right) + '" y2="' + y.toFixed(1) + '"/>' +
+      '<text class="progress-axis weight-axis" x="' + (left - 8) + '" y="' + (y + 4).toFixed(1) + '" text-anchor="end">' + weightTick.toFixed(0) + '</text>' +
+      '<text class="progress-axis body-fat-axis" x="' + (width - right + 8) + '" y="' + (y + 4).toFixed(1) + '" text-anchor="start">' + bodyFatTick.toFixed(0) + '</text>';
+  }
+  var dates = weightRecords.map(function(record, index) {
+    var p = point(weightRange.min, index, weightRange);
+    return '<text class="progress-axis" x="' + p.x.toFixed(1) + '" y="' + (height - 8) + '" text-anchor="middle">' + escapeHtml(record.month) + '</text>';
+  }).join('');
+  return '<div class="chart-head"><div class="chart-title">' + escapeHtml(t.progressCombinedTitle) + '</div></div>' +
+    '<div class="progress-legend"><span><i class="dot weight"></i>' + escapeHtml(t.goalWeightLabel) + '</span><span><i class="dot body-fat"></i>' + escapeHtml(t.goalBodyFatLabel) +
+    '</span><span><i class="line-key target"></i>' + escapeHtml(t.progressTarget) + '</span><span><i class="line-key"></i>' + escapeHtml(t.progressActual) + '</span></div>' +
+    '<svg class="progress-chart" viewBox="0 0 ' + width + ' ' + height + '" role="img" aria-label="' + escapeHtml(t.progressCombinedTitle) +
+    '" xmlns="http://www.w3.org/2000/svg"><text class="progress-axis-unit weight-axis" x="' + left + '" y="12">kg</text>' +
+    '<text class="progress-axis-unit body-fat-axis" x="' + (width - right) + '" y="12" text-anchor="end">%</text>' + grid +
+    seriesHtml(weightRecords, weightRange, '#F5A524', '8 6') + seriesHtml(bodyFatRecords, bodyFatRange, '#6FCF97', '2 5') + dates + '</svg>';
+}
+
+function latestProgressSummary(records, label, unit, metricClass, t) {
+  var latestIndex = -1;
+  records.forEach(function(record, index) { if (typeof record.actual === 'number') latestIndex = index; });
+  if (latestIndex < 0) return '';
+  var latest = records[latestIndex];
+  var previous = null;
+  for (var index = latestIndex - 1; index >= 0; index -= 1) {
+    if (typeof records[index].actual === 'number') { previous = records[index]; break; }
+  }
+  var displayValue = latest.actualDisplay || String(latest.actual);
+  var periodLabel = previous ? latest.month + ' vs ' + previous.month : t.progressLatestLabel(latest.month);
+  return '<div class="progress-summary ' + metricClass + '"><div class="label">' + escapeHtml(label + '・' + periodLabel) + '</div><div class="value">' +
+    escapeHtml(displayValue) + '<small> ' + escapeHtml(unit) + '</small>' + formatProgressDelta(progressDelta(records, latestIndex), unit) + '</div></div>';
+}
+
+function buildProgressHistoryHtml(progressHistory, t) {
+  if (!progressHistory || !progressHistory.records || !progressHistory.records.length) return '';
+  var records = progressHistory.records;
+  var bodyFatRecords = progressHistory.bodyFatRecords || [];
+  var summaries = latestProgressSummary(records, t.goalWeightLabel, 'kg', 'weight', t) + latestProgressSummary(bodyFatRecords, t.goalBodyFatLabel, '%', 'body-fat', t);
+  var rows = records.map(function(record, index) {
+    var bodyFatIndex = bodyFatRecords.map(function(item) { return item.month; }).indexOf(record.month);
+    var bodyFatRecord = bodyFatRecords[bodyFatIndex] || {};
+    var weightActual = typeof record.actual === 'number' ? (record.actualDisplay || record.actual) : t.progressNoRecord;
+    var bodyFatActual = typeof bodyFatRecord.actual === 'number' ? (bodyFatRecord.actualDisplay || bodyFatRecord.actual) : t.progressNoRecord;
+    return '<div class="hrow"><div>' + escapeHtml(record.month) + '</div><div><b>' + escapeHtml(String(record.target)) + ' / ' + escapeHtml(String(weightActual)) +
+      formatProgressDelta(progressDelta(records, index), '') + '</b><small>kg</small></div><div><b>' + escapeHtml(String(bodyFatRecord.target)) + ' / ' + escapeHtml(String(bodyFatActual)) +
+      formatProgressDelta(progressDelta(bodyFatRecords, bodyFatIndex), '%') + '</b></div></div>';
+  }).join('');
+  return '<div class="eyebrow">' + escapeHtml(t.progressEyebrow) + '</div><div class="progress-card">' +
+    buildCombinedProgressChart(records, bodyFatRecords, t) + '<div class="progress-summaries">' + summaries + '</div>' +
+    '<button class="hist-toggle" type="button" id="progress-hist-toggle"><span class="arrow">▸</span> ' + escapeHtml(t.progressHistoryToggle) + '</button>' +
+    '<div class="hist-panel" id="progress-hist-panel"><div class="hist-panel-inner"><div class="hrow"><div>' + escapeHtml(t.progressMonthCol) +
+    '</div><div>' + escapeHtml(t.progressWeightHistory) + '</div><div>' + escapeHtml(t.progressBodyFatHistory) + '</div></div>' + rows + '</div></div></div>';
+}
+
 function renderOverview(profile, t) {
-  var monthPositions = [45, 182, 320, 458, 595];
-  var monthTicks = profile.months.map(function(item, index) {
-    return '<text class="axis-tick" x="' + monthPositions[index] + '" y="167" text-anchor="middle">' + escapeHtml(item.month) + '</text>';
-  }).join('');
-  var monthChips = profile.months.map(function(item) {
-    return '<div class="month-chip"><div class="m">' + escapeHtml(item.month) + '</div><div class="w">' + escapeHtml(item.weight) + '</div></div>';
-  }).join('');
   var milestones = profile.milestones.map(function(item) {
     var tagClass = item.tone === 'blue' ? 'tag blue' : 'tag';
     return '<div class="card"><div class="card-h"><span class="name">' + escapeHtml(item.month + '・' + item.title) +
@@ -440,28 +643,35 @@ function renderOverview(profile, t) {
   var tracking = profile.tracking.map(function(item) {
     return '<b>' + escapeHtml(item.label) + '</b>：' + escapeHtml(item.text);
   }).join('<br>');
+  var progressHistory = buildProgressHistoryHtml(profile.progressHistory, t);
 
   document.getElementById('profile-summary').textContent = profile.summary;
   document.getElementById('p-overview').innerHTML =
-    '<div class="hero"><p class="lead">' + escapeHtml(profile.lead) + '</p>' +
-    '<div class="chart-head"><div class="chart-title">' + escapeHtml(t.chartTitle) + '</div><div class="legend"><span><i class="dot amber"></i>' + escapeHtml(t.legendAmber) + '</span><span><i class="dot blue"></i>' + escapeHtml(t.legendBlue) + '</span></div></div>' +
-    '<svg class="profile" viewBox="0 0 640 180" xmlns="http://www.w3.org/2000/svg">' +
-    '<line x1="45" y1="145" x2="595" y2="145" stroke="rgba(255,255,255,.12)" stroke-width="1"/>' +
-    '<path d="M45,126 L182,119 L320,103 L458,80 L595,64" fill="none" stroke="#6D7BEF" stroke-width="2.5" stroke-dasharray="5 5"/>' +
-    '<path d="M45,28 L182,35 L320,74 L458,109 L595,119" fill="none" stroke="#F5A524" stroke-width="3.5" stroke-linecap="round"/>' +
-    '<circle cx="45" cy="28" r="4.5" fill="#F5A524"/><circle cx="182" cy="35" r="4.5" fill="#F5A524"/><circle cx="320" cy="74" r="4.5" fill="#F5A524"/><circle cx="458" cy="109" r="4.5" fill="#F5A524"/><circle cx="595" cy="119" r="4.5" fill="#F5A524"/>' +
-    monthTicks + '</svg><div class="month-strip">' + monthChips + '</div></div>' +
-    '<div class="stat-row"><div class="stat p"><div class="k">' + escapeHtml(profile.bodyGoal.label) +
-    '</div><div class="v">' + escapeHtml(profile.bodyGoal.value) + '<small> ' + escapeHtml(profile.bodyGoal.unit) +
-    '</small></div><div class="v2">' + escapeHtml(profile.bodyGoal.detail) + '</div></div>' +
-    '<div class="stat s"><div class="k">' + escapeHtml(profile.jumpGoal.label) + '</div><div class="v">' +
-    escapeHtml(profile.jumpGoal.value) + '<small> ' + escapeHtml(profile.jumpGoal.unit) +
-    '</small></div><div class="v2">' + escapeHtml(profile.jumpGoal.detail) + '</div></div></div>' +
+    '<div class="goal-board"><div class="goal-top"><div class="goal-kicker">' + escapeHtml(t.goalHeading) + '</div><div class="goal-period">' + escapeHtml(profile.goalPeriod) + '</div></div>' +
+    '<div class="goal-grid"><div class="goal-item"><div class="goal-label">' + escapeHtml(t.goalBodyLabel) + '</div><div class="goal-metrics">' +
+    '<div class="goal-metric"><div class="goal-value weight">' + escapeHtml(String(profile.bodyGoal.target)) + '<small>' + escapeHtml(profile.bodyGoal.unit) + '</small></div>' +
+    '<div class="goal-caption">' + escapeHtml(t.goalWeightLabel) + ' ' + escapeHtml(String(profile.bodyGoal.current)) + ' →</div></div>' +
+    '<div class="goal-metric"><div class="goal-value weight">' + escapeHtml(String(profile.bodyGoal.bodyFatTarget)) + '<small>%</small></div>' +
+    '<div class="goal-caption">' + escapeHtml(t.goalBodyFatLabel) + ' ' + escapeHtml(String(profile.bodyGoal.bodyFatCurrent)) + ' →</div></div></div></div>' +
+    '<div class="goal-item"><div class="goal-label">' + escapeHtml(profile.jumpGoal.label) + '</div>' +
+    '<div class="goal-value range jump">' + escapeHtml(String(profile.jumpGoal.current)) + '<span class="arrow">→</span>' + escapeHtml(String(profile.jumpGoal.target)) + '<small>' + escapeHtml(profile.jumpGoal.unit) + '</small></div>' +
+    '<div class="goal-meta">' + escapeHtml(t.goalVerticalRange) + ' +' + escapeHtml(String(profile.jumpGoal.currentVerticalCm)) + ' → +' + escapeHtml(String(profile.jumpGoal.targetVerticalCm)) + ' cm<br>' +
+    escapeHtml(t.goalStandingReach) + ' ' + escapeHtml(String(profile.jumpGoal.standingReachCm)) + ' cm・' + escapeHtml(t.goalArmSwingReach) + ' ' + escapeHtml(String(profile.jumpGoal.armSwingReachCm)) + ' cm (+30)</div></div></div></div>' +
+    progressHistory +
     '<div class="eyebrow">' + escapeHtml(t.milestonesEyebrow) + '</div>' + milestones +
     '<div class="eyebrow">' + escapeHtml(t.trackEyebrow) + '</div><div class="note-card"><h3>' + escapeHtml(t.trackCardTitle) + '</h3><p>' + tracking + '</p></div>';
+
+  var progressToggle = document.getElementById('progress-hist-toggle');
+  if (progressToggle) {
+    progressToggle.addEventListener('click', function() {
+      var panel = document.getElementById('progress-hist-panel');
+      var isOpen = panel.classList.toggle('open');
+      progressToggle.classList.toggle('open', isOpen);
+    });
+  }
 }
 
-var TEMPLATE_IMPORT_ORDER = ['Monday', 'Wednesday', 'Thursday', 'Friday', 'Sunday'];
+var TEMPLATE_IMPORT_ORDER = ['Monday', 'Wednesday', 'Thursday', 'Saturday', 'Sunday'];
 
 function exoButtonHtml(name, note, dose, calories, muscleGroups, cardio, t, selected) {
   var details = [dose, note].filter(Boolean).join('・');
@@ -491,7 +701,7 @@ function renderTraining(training, trainingTemplates, t) {
   }).join('');
 
   document.getElementById('p-train').innerHTML =
-    '<div class="eyebrow">' + escapeHtml(t.weekEyebrow) + '</div><div class="card" style="padding:6px 16px 8px"><table class="sched">' +
+    '<div class="eyebrow">' + escapeHtml(t.weekEyebrow) + '</div><div class="schedule-card"><table class="sched">' +
     schedule + '</table></div>' +
     '<div class="eyebrow">' + escapeHtml(t.todayEyebrow) + '</div><div class="builder"><div class="brow"><div>' +
     '<div class="bkcal" id="sum-kcal">0<small> ' + escapeHtml(t.kcal) + '</small></div><div class="bcount" id="sum-count">' + escapeHtml(t.notSelected) + '</div>' +

@@ -1,41 +1,107 @@
 {
   "profile": {
-    "summary": "149cm・55kg・增肌減脂為主，跳躍爆發為輔・2026年8月–12月",
+    "summary": "149cm・53.9kg・增肌減脂為主，跳躍爆發為輔・2026年8月–12月",
+    "goalPeriod": "2026.12",
     "lead": "主線先把體態和力量的底盤打穩；副線是垂直跳與爆發力，隨著減脂強度收斂，逐步把空間讓給它。",
     "bodyGoal": {
       "label": "體重",
-      "value": "55 → 48",
+      "current": 55.6,
+      "target": 47,
+      "bodyFatCurrent": 33,
+      "bodyFatTarget": 24,
       "unit": "kg",
       "detail": "體脂 33% → 24%"
     },
     "jumpGoal": {
-      "label": "垂直跳（長期）",
-      "value": "40",
+      "label": "助跑摸高",
+      "current": 215,
+      "target": 230,
       "unit": "cm",
-      "detail": "半年"
+      "standingReachCm": 190,
+      "armSwingReachCm": 220,
+      "currentVerticalCm": 25,
+      "targetVerticalCm": 40
     },
-    "months": [
-      {
-        "month": "8月",
-        "weight": "53"
-      },
-      {
-        "month": "9月",
-        "weight": "51"
-      },
-      {
-        "month": "10月",
-        "weight": "50"
-      },
-      {
-        "month": "11月",
-        "weight": "49"
-      },
-      {
-        "month": "12月",
-        "weight": "48"
-      }
-    ],
+    "progressHistory": {
+      "unit": "kg",
+      "bodyFatRecords": [
+        { "month": "7/15", "target": 33, "actual": 33 },
+        { "month": "7/30", "target": 32, "actual": null },
+        { "month": "8/15", "target": 31, "actual": null },
+        { "month": "8/30", "target": 30, "actual": null },
+        { "month": "9/15", "target": 29, "actual": null },
+        { "month": "9/30", "target": 28, "actual": null },
+        { "month": "10/15", "target": 27, "actual": null },
+        { "month": "10/30", "target": 26, "actual": null },
+        { "month": "11/15", "target": 25.5, "actual": null },
+        { "month": "11/30", "target": 25, "actual": null },
+        { "month": "12/15", "target": 24.5, "actual": null },
+        { "month": "12/30", "target": 24, "actual": null }
+      ],
+      "records": [
+        {
+          "month": "7/15",
+          "target": 55,
+          "actual": 55.5,
+          "actualDisplay": "55.6"
+        },
+        {
+          "month": "7/30",
+          "target": 54,
+          "actual": 53.9
+        },
+        {
+          "month": "8/15",
+          "target": 53,
+          "actual": null
+        },
+        {
+          "month": "8/30",
+          "target": 52,
+          "actual": null
+        },
+        {
+          "month": "9/15",
+          "target": 51,
+          "actual": null
+        },
+        {
+          "month": "9/30",
+          "target": 50,
+          "actual": null
+        },
+        {
+          "month": "10/15",
+          "target": 49.5,
+          "actual": null
+        },
+        {
+          "month": "10/30",
+          "target": 49,
+          "actual": null
+        },
+        {
+          "month": "11/15",
+          "target": 48.5,
+          "actual": null
+        },
+        {
+          "month": "11/30",
+          "target": 48,
+          "actual": null
+        },
+        {
+          "month": "12/15",
+          "target": 47.5,
+          "actual": null
+        },
+        {
+          "month": "12/30",
+          "target": 47,
+          "actual": null
+        }
+      ]
+    },
     "milestones": [
       {
         "month": "8月",
@@ -667,7 +733,7 @@
             ]
           },
           {
-            "name": "側平舉(啞鈴)*",
+            "name": "側平舉(啞鈴)",
             "note": "肩中束",
             "dose": "4×10",
             "calories": 12,
@@ -777,10 +843,10 @@
       "standingReachCm": 190,
       "netHeightCm": 224,
       "targetMinCm": 230,
-      "targetMaxCm": 240,
+      "targetMaxCm": 230,
       "verticalJumpMinCm": 40,
-      "verticalJumpMaxCm": 50,
-      "gaugePercent": 60
+      "verticalJumpMaxCm": 40,
+      "gaugePercent": 63
     },
     "menus": [
       {
@@ -900,7 +966,7 @@
         {
           "month": "7月",
           "armSwingReach": 220,
-          "approachReach": 210,
+          "approachReach": 215,
           "longJump": 165
         }
       ]
